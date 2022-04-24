@@ -1,0 +1,26 @@
+/* https://blog.hubspot.com/website/css-loading-animation */
+/* isLoading animation */
+
+.spinner {
+    margin: auto;
+    margin-top: 250px;
+    border: 20px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 20px solid darkblue;
+    width: 200px;
+    height: 200px;
+    animation: spinner 2s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .spinnerText {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 25px;
+  }
+  

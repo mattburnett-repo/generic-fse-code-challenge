@@ -1,0 +1,1396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PolicyTable component tests creates a snapshot 1`] = `
+Array [
+  <table
+    aria-label="policy-table"
+    className="border border-black mx-auto"
+    role="table"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        <th
+          aria-label="id_placeholder_0"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": undefined,
+            }
+          }
+        >
+           
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="Customer_1"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={3}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": undefined,
+            }
+          }
+        >
+          Customer
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="Policy_4"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={7}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": undefined,
+            }
+          }
+        >
+          Policy
+          <span>
+            
+          </span>
+        </th>
+      </tr>
+      <tr
+        role="row"
+      >
+        <th
+          aria-label="id"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          ID
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="firstName"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          First Name
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="lastName"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Last Name
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="dateOfBirth"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Date of Birth
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="provider"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Provider
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="insuranceType"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Insurance Type
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="policyStatus"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Policy Status
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="policyNumber"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Policy Number
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="startDate"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Start Date
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="endDate"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          End Date
+          <span>
+            
+          </span>
+        </th>
+        <th
+          aria-label="createdAt"
+          className="bg-blue-200  border border-black p-4"
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Created At
+          <span>
+            
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      aria-label="policy-records"
+      className="bg-white"
+      role="rowgroup"
+    >
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="firstName 01"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="lastName 01"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1970-01-01
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Allianz
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Liability
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Active
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="ALLaaa111"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2000-01-01
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2001-01-01
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="firstName 02"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="lastName 02"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1980-02-02
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          AXA
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Household
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Pending
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="AXAbbb222"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2000-02-02
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2002-02-02
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          3
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="firstName 03"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="lastName 03"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1990-03-03
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          ERGO Insurance Group
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Health
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Cancelled
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="ERGccc333"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2000-03-03
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2003-03-03
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          4
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="firstName 04"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="lastName 04"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2001-04-04
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          AXA
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Health
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Cancelled
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="ALLddd444"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2000-04-04
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2004-04-04
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          5
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="firstName 05"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="lastName 05"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2002-05-05
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          AXA
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Household
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Pending
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="ALLddd444"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2000-05-05
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2004-05-05
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          6
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Catharine"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Crist"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2000-12-14
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          AXA
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Liability
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Pending
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="5319732204935764"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1974-05-27
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2014-03-22
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          7
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Misael"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Jakubowski"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1989-10-29
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          AXA
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Household
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Active
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="371122959962813"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1983-02-10
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-11-30
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          8
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Cassandre"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Haley"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1980-08-11
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          ERGO Insurance Group
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Household
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Active
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="4393655321064"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1970-03-26
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2002-12-11
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          9
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Pat"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Swaniawski"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1997-07-09
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          ERGO Insurance Group
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Household
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Pending
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="4245547237199093"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1973-12-10
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-03-06
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+      <tr
+        aria-label="policy-record"
+        className="p-4"
+        role="row"
+      >
+        <td
+          aria-label="id"
+          className="px-4 py-1"
+          role="cell"
+        >
+          10
+        </td>
+        <td
+          aria-label="firstName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="firstName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Oceane"
+          />
+        </td>
+        <td
+          aria-label="lastName"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="lastName"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="Kunze"
+          />
+        </td>
+        <td
+          aria-label="dateOfBirth"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1993-08-12
+        </td>
+        <td
+          aria-label="provider"
+          className="px-4 py-1"
+          role="cell"
+        >
+          AXA
+        </td>
+        <td
+          aria-label="insuranceType"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Liability
+        </td>
+        <td
+          aria-label="policyStatus"
+          className="px-4 py-1"
+          role="cell"
+        >
+          Active
+        </td>
+        <td
+          aria-label="policyNumber"
+          className="px-4 py-1"
+          role="cell"
+        >
+          <input
+            aria-label="policyNumber"
+            className="bg-blue-50 border-2 border-blue"
+            onBlur={[Function]}
+            onChange={[Function]}
+            value="377569510654397"
+          />
+        </td>
+        <td
+          aria-label="startDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          1973-08-20
+        </td>
+        <td
+          aria-label="endDate"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2017-11-30
+        </td>
+        <td
+          aria-label="createdAt"
+          className="px-4 py-1"
+          role="cell"
+        >
+          2022-04-02
+        </td>
+      </tr>
+    </tbody>
+  </table>,
+  <div
+    aria-label="pagination"
+    className="text-center m-4"
+    role="navigation"
+  >
+    <button
+      aria-label="pagination-start"
+      className="hover:bg-blue-50 px-4"
+      disabled={true}
+      onClick={[Function]}
+    >
+      &lt;&lt;
+    </button>
+     
+    <button
+      aria-label="pagination-back"
+      className="hover:bg-blue-50 px-2"
+      disabled={true}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+     
+    <button
+      aria-label="pagination-forward"
+      className="hover:bg-blue-50 px-2"
+      disabled={false}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+     
+    <button
+      aria-label="pagination-end"
+      className="hover:bg-blue-50 px-4"
+      disabled={false}
+      onClick={[Function]}
+    >
+      &gt;&gt;
+    </button>
+     
+    <span
+      aria-label="page-indicator"
+      role="presentation"
+    >
+      Page
+       
+      <strong>
+        1
+         of 
+        101
+      </strong>
+       
+    </span>
+    <span
+      className="p-2"
+    >
+      |
+    </span>
+    <span
+      aria-label="pagination-goto-page"
+      className="p-2"
+    >
+      Go to page:
+       
+      <input
+        aria-label="pagination-goto-page-number"
+        className="w-100 border border-black"
+        defaultValue={1}
+        onChange={[Function]}
+        type="number"
+      />
+    </span>
+     
+    <select
+      aria-label="pagination-page-size"
+      className="px-2 border border-black"
+      onChange={[Function]}
+      value={10}
+    >
+      <option
+        value={10}
+      >
+        Show 
+        10
+      </option>
+      <option
+        value={20}
+      >
+        Show 
+        20
+      </option>
+      <option
+        value={30}
+      >
+        Show 
+        30
+      </option>
+      <option
+        value={40}
+      >
+        Show 
+        40
+      </option>
+      <option
+        value={50}
+      >
+        Show 
+        50
+      </option>
+    </select>
+  </div>,
+]
+`;

@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "description": "A simple admin panel backend",
+  "main": "src/index.ts",
+  "license": "no license",
+  "private": true,
+  "dependencies": {
+    "apollo-datasource-rest": "^3.5.2",
+    "apollo-server": "^3.2.0",
+    "graphql": "^15.5.1",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "test": "mocha -w",
+    "testOnce": "mocha -b --exit"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "mocha": "^9.2.2",
+    "supertest": "^6.2.2"
+  }
+}
