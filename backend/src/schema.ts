@@ -21,7 +21,7 @@ const typeDefs = gql`
 
   type Mutation {
     "Updates specified fields in a record. Record to update is determined by providing either policyId or customerId. Valid specified fields are firstName / lastName / policyNumber. Use only one specified field at a time."
-    updateField(policyId: Int, customerId: Int, firstName: String, lastName: String, policyNumber: String): updateFieldResponse!
+    updateField(customerId: Int, firstName: String, lastName: String, policyId: Int, policyNumber: String): updateFieldResponse!
   }
   type updateFieldResponse {
     "Similar to HTTP status code, represents the status of the mutation"
@@ -79,16 +79,6 @@ const typeDefs = gql`
     id: ID!
     description: String!
   }
-  
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. 
-  # "Entry points into the rest of the schema"
-  # type Query {
-  #  customer: [Customer]
-  #  insuranceTypes: [InsuranceTypes]
-  #  policyStatus: [PolicyStatus]
-  #  policy: [Policy]
-  # }
 `;
 
 //  https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/

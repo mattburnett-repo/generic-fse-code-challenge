@@ -22,10 +22,29 @@ You will need these environment variables:
 DATASTORE_BASE_URL=https://feather-api-v1.herokuapp.com/api/v1/
 APOLLOQL_PORT=5000
 ```
-And run the development server:
+To run the development server:
 
 ```bash
 npm run dev
+```
+
+## Testing
+---
+Tests are located in /backend/test. They use Mocha, with the Chai 'expect' module.
+
+The test to pull all policies from the data store ('retrieve policies') is pending / turned off using '.skip'. 
+Remove '.skip' to run this particular test.
+This is because there are a lot of policy records, and this often creates a problem with the data store,
+specifically a 'DB connection refused' error.
+
+You can run the tests in watch mode. Sometimes this causes a 'port already in use' error
+```
+npm test
+```
+
+You can run the tests once, then quit / exit / close server connection
+```
+npm run testOnce
 ```
 
 ## Dev Notes
@@ -33,9 +52,8 @@ npm run dev
 * ApolloGL has no default Date datatype. Here is a fix: 
   * https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
   * Can't figure out how to use this. Need help with this.
-* Initial testing results in empty objects being returned. This is probably a simple issue to fix, but I need help with this.
----
 
 ## TO DO
+---
 * Resolve the date / dateScalar issue
-* Fix the 'empty object' issue in Backend.test.js
+  * https://stackoverflow.com/questions/59810960/how-can-i-define-date-data-type-in-graphql-schema

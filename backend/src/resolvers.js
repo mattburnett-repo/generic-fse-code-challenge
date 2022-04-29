@@ -20,8 +20,7 @@ const resolvers = {
     },  
     Mutation: {
         updateField: (_, {policyId, customerId, firstName, lastName, policyNumber}, { dataSources }) => {
-            if(customerId !== undefined) {
-                
+            if(customerId !== undefined) { // we want to patch a customer record
                 if(firstName !== undefined) {
                     try {
                         const customer = dataSources.policyAPI.updateCustomerFirstName({customerId, firstName});
@@ -60,7 +59,7 @@ const resolvers = {
                 }
             } // end if customerId
               
-            if(policyId !== undefined) {
+            if(policyId !== undefined) {    // we want to patch a policy record
                 if(policyNumber !== undefined) {
                     try {
                         const policy = dataSources.policyAPI.updatePolicyPolicyNumber({policyId, policyNumber});

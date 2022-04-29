@@ -9,7 +9,6 @@ class PolicyAPI extends RESTDataSource {
     constructor() {
         super();
         this.baseURL = process.env.DATASTORE_BASE_URL;
-        // this.baseURL = "http://localhost:4000/api/v1/";
     }
 
     getPolicies() {

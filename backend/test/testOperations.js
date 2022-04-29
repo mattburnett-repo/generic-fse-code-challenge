@@ -35,8 +35,6 @@ const customers =
         }
       }`
 
-    
-
 const policies =
     `query getPolicies {
         policies {
