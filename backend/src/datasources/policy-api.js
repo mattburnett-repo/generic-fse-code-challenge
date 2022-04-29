@@ -1,10 +1,15 @@
 
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 const {RESTDataSource} = require('apollo-datasource-rest');
 
 class PolicyAPI extends RESTDataSource {
     constructor() {
         super();
         this.baseURL = process.env.DATASTORE_BASE_URL;
+        // this.baseURL = "http://localhost:4000/api/v1/";
     }
 
     getPolicies() {
@@ -18,6 +23,9 @@ class PolicyAPI extends RESTDataSource {
     }
     getProviders() {
         return this.get("provider")
+    }
+    getCustomers() {
+        return this.get("customer")
     }
 
     getPolicy(id) {
@@ -34,6 +42,16 @@ class PolicyAPI extends RESTDataSource {
     }
     getPolicyStatus(id) {
         return this.get(`policy-status/${id}`);
+    }
+
+    updateCustomerFirstName(customer) {
+        return this.patch(`customer`, {id: customer.customerId, firstName: customer.firstName});
+    }
+    updateCustomerLastName(customer) {
+        return this.patch(`customer`, {id: customer.customerId, lastName: customer.lastName});
+    }
+    updatePolicyPolicyNumber(policy) {
+        return this.patch(`policy`, {id: policy.policyId, policyNumber: policy.policyNumber});
     }
 }
 

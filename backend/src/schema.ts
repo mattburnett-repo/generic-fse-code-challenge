@@ -15,6 +15,25 @@ const typeDefs = gql`
     policyStatuses: [PolicyStatus!]!
     "Query to get all providers"
     providers: [Provider!]!
+    "Query to get all customers"
+    customers: [Customer!]!
+  }
+
+  type Mutation {
+    "Updates specified fields in a record. Record to update is determined by providing either policyId or customerId. Valid specified fields are firstName / lastName / policyNumber. Use only one specified field at a time."
+    updateField(policyId: Int, customerId: Int, firstName: String, lastName: String, policyNumber: String): updateFieldResponse!
+  }
+  type updateFieldResponse {
+    "Similar to HTTP status code, represents the status of the mutation"
+    code: Int!
+    "Indicates whether the mutation was successful"
+    success: Boolean!
+    "Human-readable message for the UI"
+    message: String!
+    "Newly updated policy after a successful mutation"
+    policy: Policy
+    "Newly updated customer after a successful mutation"
+    customer: Customer
   }
 
   # Date is a custom scalar datatype thing
@@ -63,16 +82,17 @@ const typeDefs = gql`
   
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. 
-  "Entry points into the rest of the schema"
-  type Query {
-    customer: [Customer]
-    insuranceTypes: [InsuranceTypes]
-    policyStatus: [PolicyStatus]
-    policy: [Policy]
-  }
+  # "Entry points into the rest of the schema"
+  # type Query {
+  #  customer: [Customer]
+  #  insuranceTypes: [InsuranceTypes]
+  #  policyStatus: [PolicyStatus]
+  #  policy: [Policy]
+  # }
 `;
 
 //  https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
+//    https://www.apollographql.com/docs/apollo-server/schema/custom-scalars#example-the-date-scalar
 //    also, add ': any' to value args 
 //      (https://stackoverflow.com/questions/47848778/parameter-implicitly-has-an-any-type/56826668#56826668)
 //      not sure this is the best solution. but it at least lets us compile

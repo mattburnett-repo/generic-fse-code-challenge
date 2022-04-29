@@ -1,7 +1,6 @@
-# Feather - Fullstack Engineer code challenge
+# Generic Fullstack Engineer code challenge
 
-This repo contains frontend and backend code for the Feather FSE code challenge. \
-(https://github.com/getPopsure/fullstack-engineer-challenge)
+This repo contains frontend and backend code for a generic FSE code challenge. 
 
 It uses data provided by a REST API datastore.
 * The repo for the datastore: https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore 

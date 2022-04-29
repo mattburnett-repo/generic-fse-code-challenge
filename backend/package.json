@@ -15,8 +15,8 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "test": "mocha -w",
-    "testOnce": "mocha -b --exit"
+    "test": "mocha -w --timeout 10000",
+    "testOnce": "mocha -b --exit --timeout 10000"
   },
   "devDependencies": {
     "chai": "^4.3.6",

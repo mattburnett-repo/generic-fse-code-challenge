@@ -1,6 +1,6 @@
 # Backend
 
-This is the backend part of the [Junior Fullstack Engineer code challenge](../Readme.md)
+This is the backend part of the [Generic Fullstack Engineer code challenge](../Readme.md)
 
 This code consumes data from a REST API. API doc can be viewed at 
 * The repo for the datastore: https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore
@@ -8,27 +8,26 @@ This code consumes data from a REST API. API doc can be viewed at
 
 ## Technology used
 * ApolloGL Server / datasource-rest
+* Mocha / SuperTest / Chai
   
 ## Getting started
 
 Install the dependencies:
 
 ```bash
-yarn install
+npm install
 ```
-
-And run the development server:
-
-```bash
-yarn dev
-```
-
-### Environment Variables
 You will need these environment variables: 
 ```bash
 DATASTORE_BASE_URL=https://feather-api-v1.herokuapp.com/api/v1/
 APOLLOQL_PORT=5000
 ```
+And run the development server:
+
+```bash
+npm run dev
+```
+
 ## Dev Notes
 ---
 * ApolloGL has no default Date datatype. Here is a fix: 

@@ -1,24 +1,25 @@
 import { ApolloServer } from "apollo-server";
 
-const { dateScalar, typeDefs } = require('./schema'); // FIXME: dateScalar
-const resolvers = require('./resolvers');
-const PolicyAPI = require('./datasources/policy-api');
-
 if(process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
+
+const { dateScalar, typeDefs } = require('./schema'); // FIXME: dateScalar
+const resolvers = require('./resolvers');
+const PolicyAPI = require('./datasources/policy-api');
+const PORT = process.env.APOLLOQL_PORT || 5000
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => {
     return {
-      policyAPI: new PolicyAPI()    // this has all of the get methods
+      policyAPI: new PolicyAPI()  
     };
   }
 });
 
 // The `listen` method launches a web server.
-server.listen(process.env.APOLLOQL_PORT).then(({ url }) => {
+server.listen(PORT).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
