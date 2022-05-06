@@ -1,4 +1,4 @@
-const { UniqueDirectiveNamesRule } = require("graphql");
+// const { UniqueDirectiveNamesRule } = require("graphql");
 
 const resolvers = {
     Query: {

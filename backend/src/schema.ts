@@ -1,11 +1,12 @@
 
 const { gql } = require('apollo-server');
 
-// Apollo GL doesn't look like it supports Date data type natively
-//    try the solution from this link: https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
-// const { GraphQLScalarType, Kind } = require('graphql');  // FIXME: dateScalar. can't figure this out
-
 const typeDefs = gql`
+  # Date is a custom scalar datatype thing
+  #   https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
+  # 'Date' type is defined in './misc/makeDateScaler.ts'
+  scalar Date
+
   type Query {
     "Query to get all policies"
     policies: [Policy!]!
@@ -35,10 +36,6 @@ const typeDefs = gql`
     "Newly updated customer after a successful mutation"
     customer: Customer
   }
-
-  # Date is a custom scalar datatype thing
-  #   https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
-  scalar Date
   
   "Insurance policy"
   type Policy {
@@ -81,29 +78,6 @@ const typeDefs = gql`
   }
 `;
 
-//  https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
-//    https://www.apollographql.com/docs/apollo-server/schema/custom-scalars#example-the-date-scalar
-//    also, add ': any' to value args 
-//      (https://stackoverflow.com/questions/47848778/parameter-implicitly-has-an-any-type/56826668#56826668)
-//      not sure this is the best solution. but it at least lets us compile
-// const dateScalar = new GraphQLScalarType({
-//   name: 'Date',
-//   description: 'Date custom scalar type',
-//   serialize(value: any) {
-//     return value.getTime(); // Convert outgoing Date to integer for JSON
-//   },
-//   parseValue(value: any) {
-//     return new Date(value); // Convert incoming integer to Date
-//   },
-//   parseLiteral(ast: any) {
-//     if (ast.kind === Kind.INT) {
-//       return new Date(parseInt(ast.value, 10)); // Convert hard-coded AST string to integer and then to Date
-//     }
-//     return null; // Invalid hard-coded value (not an integer)
-//   },
-// });
-
 module.exports = {
-  typeDefs,
-  // dateScalar
+  typeDefs
 };

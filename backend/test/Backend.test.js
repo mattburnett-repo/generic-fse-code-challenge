@@ -1,4 +1,10 @@
 
+
+//  *** PLEASE NOTE ***
+//    'retrieves policies' test is set to 'skip'
+//      this is because it sometimes overloads the database connection and then the test fails. 
+//      Remove '.skip' from the test call to include the test when running this test file
+
 const { ApolloServer, request, expect } = require('./testConfig')
 
 const { typeDefs } = require('../src/schema.ts'); // FIXME: dateScalars in schema.ts 

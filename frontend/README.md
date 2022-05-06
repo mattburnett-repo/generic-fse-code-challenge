@@ -1,6 +1,6 @@
 # Frontend
 
-This is the frontend part of the [Junior Fullstack Engineer code challenge](../Readme.md).
+This is the frontend part of the [Generic FSE code challenge](../Readme.md).
 
 ## Getting started
 
