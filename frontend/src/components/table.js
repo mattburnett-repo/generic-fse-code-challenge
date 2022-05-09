@@ -5,97 +5,149 @@
 // REACT-TABLE EDITABLE FUNCTIONALITY
 // https://codesandbox.io/s/github/tannerlinsley/react-table/tree/v7/examples/editable-data?from-embed=&file=/src/App.js:6738-6747
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useContext } from 'react'
 import { useTable, useSortBy, usePagination } from 'react-table'
 
+import { useMutation } from '@apollo/client';
+import { UPDATE_POLICY_FIELD } from '../dataSources/gqlOperations'
+
+import { policy_jsonToArray, hasChanged, isEmpty } from './util/tableFunctions'
+import { ResultMessageContext } from "./util/resultMessage-context"
+
+import DatePicker from 'react-date-picker'
+import { format } from 'date-fns'
+
 export function Table(props) {
+    const [data, setData] = useState(() => policy_jsonToArray(props.tableData))
+    const [vars, setVars] = useState({})  // an object, not a string. zB: {customerId: 1, firstName: 'asdf'}
 
-    const { tableData } = props;
+    const { setMessage, swapMessageText } = useContext(ResultMessageContext)
 
-    // table component needs array data to work.
-    const jsonToArray = (theData) => {
-        let theArray = []
+    const [ updateField ] = useMutation(UPDATE_POLICY_FIELD, {
+        variables: vars,            
+        isLoading: loading => {
+            setMessage(loading.message)
+            swapMessageText()
+        },
+        onError: error => {    
+            setMessage(error.message)
+            console.log('Error ' , error)
+        },
+        onCompleted: data => {  
+            setMessage(data.updateField.message)
+            swapMessageText()
+        }
+    });
 
-        theData?.policies?.forEach((policy) => {
-            theArray.push(
-                {id: policy.id, firstName: policy.customer.first_name, lastName: policy.customer.last_name, 
-                dateOfBirth: policy.customer.date_of_birth.substring(0,10),
-                provider: policy.provider.description, insuranceType: policy.insuranceType.description,
-                policyStatus: policy.status.description, policyNumber: policy.policy_number, 
-                startDate: policy.start_date.substring(0,10), 
-                endDate: policy.end_date.substring(0,10),
-                createdAt: policy.created_at.substring(0,10)
+    useEffect(() => {
+        // startup always runs useEffect. On mount it sends updateField with empty 'vars'. This makes needless error.
+        if(Object.keys(vars).length !== 0) updateField()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [vars])
+
+    // update the 'local' / memo-ized data
+    const updateTableData = (rowIndex, columnId, value) => {
+        setData(old =>
+            old.map((row, index) => {
+                if (index === rowIndex) {
+                    return {
+                        ...old[rowIndex],
+                        [columnId]: value,
+                    }
+                }
+                return row
             })
-        })
-
-        return theArray;
+        )
     }
 
-    const [data, setData] = useState(() => jsonToArray(tableData))
-    const [skipPageReset, setSkipPageReset] = useState(false)
-
-    // Create an editable cell renderer
-    const EditableCell = ({
-        value: initialValue,
-        row: { index },
-        column: { id },
-        updateMyData, // This is a custom function that we supplied to our table instance
+    // use this in column defs to enable editing / updating data store from the UI
+    const EditTextField = ({
+        row,
+        value: initialValue, 
+        column,
+        updateTableData
     }) => {
-        // We need to keep and update the state of the cell normally
         const [value, setValue] = useState(initialValue)
-    
+
         const onChange = e => {
             setValue(e.target.value)
         }
-    
-        // We'll only update the external data when the input is blurred
-        const onBlur = () => {
-            updateMyData(index, id, value)
+        const onBlur = (e) => {
+            if(hasChanged(initialValue, e.target.value)) {
+                if(isEmpty(e.target.value)) {
+                    setMessage(`${column.id} can not be blank`)
+                    let el = document.getElementsByName(e.target.name)[0]
+                    el.focus();
+                    swapMessageText()
+                } else {
+                    updateTableData(row.index, column.id, value)
+
+                    // we can tell what to update by the column name / id
+                    let isCustomer = ['firstName', 'lastName'].includes(column.id)
+                    let isPolicy = ['policyNumber'].includes(column.id)
+
+                    if(isCustomer) {
+                        setVars({
+                            customerId: parseInt(row.original.customerId, 10),
+                            [column.id]: e.target.value
+                        })
+                    } 
+                    if (isPolicy) {
+                        setVars({
+                            policyId: parseInt(row.original.policyId, 10),
+                            [column.id]: e.target.value
+                        })
+                    }
+                }
+
+                // do mutation (updateField()) upstairs in useEffect
+            }
         }
     
         // If the initialValue is changed external, sync it up with our state
         useEffect(() => {
             setValue(initialValue)
         }, [initialValue])
+
+        return  <input className="bg-blue-50 border-2 border-blue" value={value} name={`${column.id}${row.original.policyId}`} onChange={onChange} onBlur={onBlur} aria-label={column.id} />
+    }
     
-        return <input className="bg-blue-50 border-2 border-blue" value={value} onChange={onChange} onBlur={onBlur} aria-label={id}/>
+    const EditDateField = ({
+        row,
+        value: initialValue, 
+        column,
+        updateTableData
+    }) => {
+        // we can tell what to update by the column name / id
+        let isCustomer = ['dateOfBirth'].includes(column.id)
+        let isPolicy = ['startDate', 'endDate', 'createdAt'].includes(column.id)
+
+        const handleOnChange = e => {
+            updateTableData(row.index, column.id, e)
+
+            if(isCustomer) {
+                setVars({
+                    customerId: parseInt(row.original.customerId, 10),
+                    [column.id]: format(e, 'yyyy-MM-dd')
+                })      
+            }
+            if(isPolicy) {
+                console.log('EditDateField.handleOnChange: policy field needs code')
+            }
+        }
+           
+        return (
+          <div>
+            <DatePicker className="w-48 bg-blue-50" onChange={handleOnChange} format='yyyy-MM-dd' value={new Date(initialValue)} calendarAriaLabel={column.id}/>
+          </div>
+        );
     }
 
-    // When our cell renderer calls updateMyData, we'll use
-    // the rowIndex, columnId and new value to update the
-    // original data
-    const updateMyData = (rowIndex, columnId, value) => {
-        alert('rowIndex: ' + rowIndex + ' columnId: ' + columnId + ' value: ' + value)
-
-        // We also turn on the flag to not reset the page
-        setSkipPageReset(true)
-        setData(old =>
-        old.map((row, index) => {
-            if (index === rowIndex) {
-            return {
-                ...old[rowIndex],
-                [columnId]: value,
-            }
-            }
-            return row
-        })
-        )
-    }
-
-    // After data chagnes, we turn the flag back off
-    // so that if data actually changes when we're not
-    // editing it, the page is reset
-    useEffect(() => {
-        setSkipPageReset(false)
-    }, [data])
-
-    // columns have to be memoized. 'accessor' matches key/s from the data object
-    //      created in jsonToArray(), below
     const columns = useMemo(
         () => [
             {
-                Header: 'ID',
-                accessor: 'id', // accessor is the "key" in the data
+                Header: "#",
+                accessor: "policyId"
             },
             {
                 Header: 'Customer',
@@ -103,16 +155,17 @@ export function Table(props) {
                     {
                         Header: 'First Name',
                         accessor: 'firstName', 
-                        Cell: EditableCell,
+                        Cell: EditTextField,
                     },
                     {
                         Header: 'Last Name',
                         accessor: 'lastName', 
-                        Cell: EditableCell,
+                        Cell: EditTextField,
                     },
                     {
                         Header: 'Date of Birth',
                         accessor: 'dateOfBirth',
+                        Cell: EditDateField
                     },                    
                 ]
             },
@@ -134,7 +187,7 @@ export function Table(props) {
                     {
                         Header: 'Policy Number',
                         accessor: 'policyNumber',
-                        Cell: EditableCell,
+                        Cell: EditTextField,
                     },
                     {
                         Header: 'Start Date',
@@ -151,9 +204,12 @@ export function Table(props) {
                 ]
             }
         ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         []
       )
 
+
+    // everything below should be in a separate component thing
     const {
         getTableProps,
         getTableBodyProps,
@@ -172,9 +228,16 @@ export function Table(props) {
         state: { pageIndex, pageSize },
       } = useTable({ 
             columns, 
-            data,          // replacing 'data' with another object name, zB 'tableData' causes everything to fail. 
-            autoResetPage: !skipPageReset, // use the skipPageReset option to disable page resetting temporarily
-            updateMyData
+            data,          // replacing 'theData' with another object name, zB 'tableData' causes everything to fail. 
+            // https://react-table.tanstack.com/docs/faq#how-do-i-stop-my-table-state-from-automatically-resetting-when-my-theData-changes
+            autoResetPage: false, // use the false option to disable page resetting temporarily
+            autoResetExpanded: false,
+            autoResetGroupBy: false,
+            autoResetSelectedRows: false,
+            autoResetSortBy: false,
+            autoResetFilters: false,
+            autoResetRowState: false,
+            updateTableData
         }, 
         useSortBy,
         usePagination,
@@ -210,8 +273,7 @@ export function Table(props) {
                     return (
                         <tr {...row.getRowProps()} className="p-4" aria-label="policy-record">
                             {row.cells.map(cell => {
-                                // console.log('cell ', cell)
-                            return <td {...cell.getCellProps()} className="px-4 py-1" aria-label={cell.column.id}>{cell.render('Cell')}</td>
+                                return <td {...cell.getCellProps()} className="px-4 py-1">{cell.render('Cell')}</td>
                             })}
                         </tr>
                     )

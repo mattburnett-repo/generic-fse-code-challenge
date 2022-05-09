@@ -19,17 +19,17 @@ const resolvers = {
         }
     },  
     Mutation: {
-        updateField: (_, {policyId, customerId, firstName, lastName, policyNumber}, { dataSources }) => {
+         updateField: async (_, {policyId, customerId, firstName, lastName, dateOfBirth, policyNumber}, { dataSources }) => {
             if(customerId !== undefined) { // we want to patch a customer record
                 if(firstName !== undefined) {
                     try {
-                        const customer = dataSources.policyAPI.updateCustomerFirstName({customerId, firstName});
+                        const customer = await dataSources.policyAPI.updateCustomerFirstName({customerId, firstName})
                         return {
                             code: 200,
                             success: true,
-                            message: `Successfully updated customer ${customerId} firstName ${firstName}`,
+                            message: `Updated customer ${customerId} firstName ${firstName}`,
                             customer
-                        }
+                        }                            
                     } catch (err) {
                         return {
                             code: err.extensions.response.status,
@@ -45,7 +45,25 @@ const resolvers = {
                         return {
                             code: 200,
                             success: true,
-                            message: `Successfully updated customer ${customerId} lastName ${lastName}`,
+                            message: `Updated customer ${customerId} lastName ${lastName}`,
+                            customer
+                        }
+                    } catch (err) {
+                        return {
+                            code: err.extensions.response.status,
+                            success: false,
+                            message: err.extensions.response.body,
+                            customer: null
+                        };      
+                    }
+                }
+                if(dateOfBirth !== undefined) {
+                    const customer = dataSources.policyAPI.updateCustomerDateOfBirth({customerId, dateOfBirth});
+                    try {
+                        return {
+                            code: 200,
+                            success: true,
+                            message: `Updated customer ${customerId} dateOfBirth ${dateOfBirth}`,
                             customer
                         }
                     } catch (err) {
@@ -67,7 +85,7 @@ const resolvers = {
                         return {
                             code: 200,
                             success: true,
-                            message: `Successfully updated policy ${policyId} firstName ${policyNumber}`,
+                            message: `Updated policy ${policyId} policy number ${policyNumber}`,
                             policy
                         }
                     } catch (err) {

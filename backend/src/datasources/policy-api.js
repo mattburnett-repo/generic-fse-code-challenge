@@ -49,6 +49,10 @@ class PolicyAPI extends RESTDataSource {
     updateCustomerLastName(customer) {
         return this.patch(`customer`, {id: customer.customerId, lastName: customer.lastName});
     }
+    updateCustomerDateOfBirth (customer) {
+        return this.patch(`customer`, {id: customer.customerId, dateOfBirth: customer.dateOfBirth});
+    }
+    
     updatePolicyPolicyNumber(policy) {
         return this.patch(`policy`, {id: policy.policyId, policyNumber: policy.policyNumber});
     }

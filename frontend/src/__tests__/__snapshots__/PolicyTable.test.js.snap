@@ -12,23 +12,7 @@ Array [
         role="row"
       >
         <th
-          aria-label="id_placeholder_0"
-          className="bg-blue-200  border border-black p-4"
-          colSpan={1}
-          role="columnheader"
-          style={
-            Object {
-              "cursor": undefined,
-            }
-          }
-        >
-           
-          <span>
-            
-          </span>
-        </th>
-        <th
-          aria-label="Customer_1"
+          aria-label="Customer_0"
           className="bg-blue-200  border border-black p-4"
           colSpan={3}
           role="columnheader"
@@ -44,7 +28,7 @@ Array [
           </span>
         </th>
         <th
-          aria-label="Policy_4"
+          aria-label="Policy_3"
           className="bg-blue-200  border border-black p-4"
           colSpan={7}
           role="columnheader"
@@ -63,24 +47,6 @@ Array [
       <tr
         role="row"
       >
-        <th
-          aria-label="id"
-          className="bg-blue-200  border border-black p-4"
-          colSpan={1}
-          onClick={[Function]}
-          role="columnheader"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-          title="Toggle SortBy"
-        >
-          ID
-          <span>
-            
-          </span>
-        </th>
         <th
           aria-label="firstName"
           className="bg-blue-200  border border-black p-4"
@@ -274,14 +240,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          1
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -294,7 +252,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -307,35 +264,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1970-01-01
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           Allianz
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Liability
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Active
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -348,21 +300,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           2000-01-01
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2001-01-01
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -375,14 +324,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          2
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -395,7 +336,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -408,35 +348,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1980-02-02
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           AXA
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Household
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Pending
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -449,21 +384,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           2000-02-02
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2002-02-02
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -476,14 +408,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          3
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -496,7 +420,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -509,35 +432,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1990-03-03
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           ERGO Insurance Group
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Health
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Cancelled
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -550,21 +468,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           2000-03-03
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2003-03-03
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -577,14 +492,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          4
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -597,7 +504,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -610,35 +516,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           2001-04-04
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           AXA
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Health
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Cancelled
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -651,21 +552,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           2000-04-04
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2004-04-04
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -678,14 +576,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          5
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -698,7 +588,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -711,35 +600,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           2002-05-05
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           AXA
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Household
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Pending
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -752,21 +636,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           2000-05-05
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2004-05-05
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -779,14 +660,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          6
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -799,7 +672,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -812,35 +684,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           2000-12-14
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           AXA
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Liability
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Pending
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -853,21 +720,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           1974-05-27
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2014-03-22
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -880,14 +744,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          7
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -900,7 +756,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -913,35 +768,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1989-10-29
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           AXA
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Household
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Active
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -954,21 +804,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           1983-02-10
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2022-11-30
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -981,14 +828,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          8
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -1001,7 +840,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -1014,35 +852,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1980-08-11
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           ERGO Insurance Group
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Household
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Active
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -1055,21 +888,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           1970-03-26
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2002-12-11
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -1082,14 +912,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          9
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -1102,7 +924,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -1115,35 +936,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1997-07-09
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           ERGO Insurance Group
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Household
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Pending
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -1156,21 +972,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           1973-12-10
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2022-03-06
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >
@@ -1183,14 +996,6 @@ Array [
         role="row"
       >
         <td
-          aria-label="id"
-          className="px-4 py-1"
-          role="cell"
-        >
-          10
-        </td>
-        <td
-          aria-label="firstName"
           className="px-4 py-1"
           role="cell"
         >
@@ -1203,7 +1008,6 @@ Array [
           />
         </td>
         <td
-          aria-label="lastName"
           className="px-4 py-1"
           role="cell"
         >
@@ -1216,35 +1020,30 @@ Array [
           />
         </td>
         <td
-          aria-label="dateOfBirth"
           className="px-4 py-1"
           role="cell"
         >
           1993-08-12
         </td>
         <td
-          aria-label="provider"
           className="px-4 py-1"
           role="cell"
         >
           AXA
         </td>
         <td
-          aria-label="insuranceType"
           className="px-4 py-1"
           role="cell"
         >
           Liability
         </td>
         <td
-          aria-label="policyStatus"
           className="px-4 py-1"
           role="cell"
         >
           Active
         </td>
         <td
-          aria-label="policyNumber"
           className="px-4 py-1"
           role="cell"
         >
@@ -1257,21 +1056,18 @@ Array [
           />
         </td>
         <td
-          aria-label="startDate"
           className="px-4 py-1"
           role="cell"
         >
           1973-08-20
         </td>
         <td
-          aria-label="endDate"
           className="px-4 py-1"
           role="cell"
         >
           2017-11-30
         </td>
         <td
-          aria-label="createdAt"
           className="px-4 py-1"
           role="cell"
         >

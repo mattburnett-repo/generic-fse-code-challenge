@@ -22,7 +22,7 @@ const typeDefs = gql`
 
   type Mutation {
     "Updates specified fields in a record. Record to update is determined by providing either policyId or customerId. Valid specified fields are firstName / lastName / policyNumber. Use only one specified field at a time."
-    updateField(customerId: Int, firstName: String, lastName: String, policyId: Int, policyNumber: String): updateFieldResponse!
+    updateField(customerId: Int, firstName: String, lastName: String, dateOfBirth: Date, policyId: Int, policyNumber: String): updateFieldResponse!
   }
   type updateFieldResponse {
     "Similar to HTTP status code, represents the status of the mutation"
