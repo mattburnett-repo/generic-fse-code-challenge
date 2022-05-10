@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import { mockPolicyData }  from '../test/mockData/getPolicies'
 
-import { Table } from '../components/table'
+import { Table } from '../features/policyTable'
 
 describe('PolicyTable component tests', () => {
     let policyRecords = null;

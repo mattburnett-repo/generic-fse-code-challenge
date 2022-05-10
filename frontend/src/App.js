@@ -1,5 +1,5 @@
 
-import { Policies } from './components/policies'
+import { Policies } from './features/policy/policies'
 
 function App() {
   return <Policies />

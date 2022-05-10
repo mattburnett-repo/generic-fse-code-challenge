@@ -1,27 +1,34 @@
 
+// entry point for policy data display
+// pulls together all needed parts
+
 import { useState } from 'react'
 import { useQuery } from '@apollo/client';
 
-import { Table } from './table'
-import LoadingMessage from "./spinner/LoadingMessage";
-import ErrorPage from './errorPage';
+import { PolicyTable } from './policyTable'
+import LoadingMessage from "../../components/spinner/LoadingMessage";
+import ErrorPage from '../../components/errorPage';
 
-import { ResultMessageContext } from "./util/resultMessage-context"
+import { ResultMessageContext } from "../../util/resultMessage-context"
 
-import { GET_POLICIES } from '../dataSources/gqlOperations'
+import { GET_POLICIES } from '../../dataSources/gqlOperations'
 
 export const Policies = () => {
     const defaultMessage = 'Click a column header to sort on that column'
+    const swapMessageTextTimeout = 5000
+    
     const [ message, setMessage ] = useState(defaultMessage)
     const { loading, error, data} = useQuery(GET_POLICIES);
 
     if(loading) return <LoadingMessage type="spinner" />;
     if(error) return <ErrorPage error={error} />
 
+    // when an info message is displayed at the top of the panel, wait ...timeout seconds
+    //      before swapping back to defaultMessage.
     const swapMessageText = () => {
         setTimeout(() => {
           setMessage(defaultMessage)
-        }, 5000)
+        }, swapMessageTextTimeout)
     }
 
     return (
@@ -29,7 +36,7 @@ export const Policies = () => {
             <div className="bg-gray-200 my-24 mx-20 px-2 border-2 border-black">
                 <h1 className="text-5xl text-center m-4">Policy Data Records</h1>
                 <h3 className="text-1xl text-center m-4 text-sky-700">{message}</h3> 
-                <Table tableData={data} />
+                <PolicyTable tableData={data} />
             </div>
         </ ResultMessageContext.Provider>
     )
