@@ -1,7 +1,7 @@
 
 
 //  *** PLEASE NOTE ***
-//    'retrieves policies' test is set to 'skip'
+//    'retrieves policies' test should set to 'skip'
 //      this is because it sometimes overloads the database connection and then the test fails. 
 //      Remove '.skip' from the test call to include the test when running this test file
 
@@ -144,7 +144,7 @@ describe('GraphQL backend http tests', () => {
       expect(result).to.have.property('last_name')
       expect(result.last_name).to.contain('lastName 01') 
       expect(result).to.have.property('date_of_birth')
-      expect(result.date_of_birth).to.contain('1969-12-31T23:00:00.000Z') 
+      expect(result.date_of_birth).to.contain('1970-01-14T23:00:00.000Z') 
     })
   })
 
@@ -166,7 +166,12 @@ describe('GraphQL backend http tests', () => {
       expect(result.extensions).to.contain.keys('code')
       expect(result.extensions.code).to.eql('INTERNAL_SERVER_ERROR')
     })
-    it.skip('retrieves policies', async () => {  
+    //  *** PLEASE NOTE ***
+    //    'retrieves policies' test should be set to 'skip'
+    //      this is because it sometimes overloads the database connection and then the test fails. 
+    //      Remove '.skip' from the test call to include the test when running this test file
+    // it.skip('retrieves policies', async () => {  
+    it('retrieves policies', async () => {  
       const response = await request(url)
           .post('/')
           .send({ query: policies }); 
@@ -192,7 +197,7 @@ describe('GraphQL backend http tests', () => {
       expect(result.customer).to.have.property('last_name') 
       expect(result.customer.last_name).to.contain('lastName 01')
       expect(result.customer).to.have.property('date_of_birth') 
-      expect(result.customer.date_of_birth).to.contain('1969-12-31T23:00:00.000Z')
+      expect(result.customer.date_of_birth).to.contain('1970-01-14T23:00:00.000Z')
 
       expect(result).to.have.property('provider')
       expect(result.provider).to.have.property('description') 
