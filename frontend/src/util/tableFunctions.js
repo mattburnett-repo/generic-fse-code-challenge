@@ -96,8 +96,8 @@ export const DateFieldEditDef = (setMessage, swapMessageText, setVars) => {
         }
         
         return (
-            <div>
-                <DatePicker className="w-48 bg-blue-50" onChange={handleOnChange} format='yyyy-MM-dd' value={new Date(initialValue)} calendarAriaLabel={column.id}/>
+            <div data-testid="asdf">
+                <DatePicker className="w-48 bg-blue-50" onChange={handleOnChange} format='yyyy-MM-dd' value={new Date(initialValue)}  calendarAriaLabel={column.id}/>
             </div>
         );
     }

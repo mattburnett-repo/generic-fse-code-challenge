@@ -13,8 +13,8 @@ export default function LoadingMessage(props) {
         case('spinner'): {
             return (
                 <>
-                    <div className='spinner'></div>  
-                    <div className="spinnerText">{message}</div>
+                    <div className='spinner' ></div>  
+                    <div role="presentation" className="spinnerText" aria-label="loading-text">{message}</div>
                 </>
             );
         }
