@@ -35,7 +35,6 @@ npm run dev
 ```
 
 ## Testing
----
 Tests are located in /backend/test. They use Mocha, with the Chai 'expect' module.
 
 The test to pull all policies from the data store ('retrieve policies') is pending / turned off using '.skip'. 
