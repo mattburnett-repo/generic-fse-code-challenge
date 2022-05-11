@@ -1,12 +1,18 @@
-# Backend
 
-This is the backend part of the [Generic Fullstack Engineer code challenge](../Readme.md)
+# Generic FSE Code Challenge: Back End
 
-This code consumes data from a REST API. API doc can be viewed at 
-* The repo for the datastore: https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore
-* The datastore API / documentation: https://feather-api-v1.herokuapp.com/api/v1/api-docs/
+This is the back end part of the [Generic Fullstack Engineer code challenge](../Readme.md)
+
+It uses React to connect to an ApolloGraphQL server. The ApolloGraphQL server connects to a remote REST API datastore.
+
+Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI
+
+* The repo for the [frontend](../frontend/README.md)
+* The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
+* The [datastore API / documentation](https://feather-datastore.herokuapp.com/api/v1/api-docs/)
 
 ## Technology used
+* REST API
 * ApolloGL Server / datasource-rest
 * Mocha / SuperTest / Chai
   
@@ -47,13 +53,8 @@ You can run the tests once, then quit / exit / close server connection
 npm run testOnce
 ```
 
-## Dev Notes
----
-* ApolloGL has no default Date datatype. Here is a fix: 
-  * https://www.apollographql.com/docs/apollo-server/schema/custom-scalars/
-  * Can't figure out how to use this. Need help with this.
-
-## TO DO
----
-* Resolve the date / dateScalar issue
-  * https://stackoverflow.com/questions/59810960/how-can-i-define-date-data-type-in-graphql-schema
+## To Do
+* Authentication
+* More modules (ie. navigation, policy detail, customer detail)
+* Docker deployment
+* More TypeScript
