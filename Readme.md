@@ -1,7 +1,7 @@
 
 # Generic Fullstack Engineer code challenge
 
-This repo is for an ongoing, generic personal project. It contains [frontend](frontend/README.md)  and [backend](backend/Readme.md) code for a generic FSE code challenge. 
+This repo is for an ongoing, generic personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)  and [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) code for a generic FSE code challenge. 
 
 It uses React to connect to an ApolloGraphQL server. The ApolloGraphQL server connects to a remote REST API datastore.
 
