@@ -1,13 +1,13 @@
 
 # Generic FSE Code Challenge: Front End
 
-This is the front end part of the [Generic FSE code challenge](../Readme.md).
+This is the front end part of the [Generic FSE code challenge](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/).
 
 It uses React to connect to an ApolloGraphQL server. The ApolloGraphQL server connects to a remote REST API datastore.
 
 Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI.
 
-* The repo for the [backend](backend/Readme.md)
+* The repo for the [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend)
 * The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
 * The [datastore API / documentation](https://feather-datastore.herokuapp.com/api/v1/api-docs/)
 
