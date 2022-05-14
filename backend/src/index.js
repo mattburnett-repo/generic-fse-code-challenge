@@ -1,10 +1,10 @@
-import { ApolloServer } from "apollo-server";
+const { ApolloServer } =  require("apollo-server");
 
-if(process.env.NODE_ENV !== 'production') {
+if(process.env.NODE_ENV !== 'prod') {
   require('dotenv').config();
 }
 
-const { dateScalar, typeDefs } = require('./schema'); // FIXME: dateScalar
+const { dateScalar, typeDefs } = require('./schema.ts');
 const resolvers = require('./resolvers');
 const PolicyAPI = require('./datasources/policy-api');
 const PORT = process.env.APOLLOQL_PORT || 5000

@@ -1,0 +1,18 @@
+
+# in project root:
+#   docker-compose up -d
+
+# docker run -dp 5000:5000 generic_code_challenge_01_backend
+
+version: "3.8"
+
+services:
+  # frontend:
+  #   build:
+  #     context: frontend
+  #     dockerfile: Dockerfile
+
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
