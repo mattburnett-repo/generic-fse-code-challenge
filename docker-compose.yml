@@ -2,17 +2,29 @@
 # in project root:
 #   docker-compose up -d
 
-# docker run -dp 5000:5000 generic_code_challenge_01_backend
+# version: "3.8"
 
-version: "3.8"
+# why to use 0.0.0.0 as URI in frontend environment section:
+#   https://fossbytes.com/ip-address-0-0-0-0-meaning-default-route-uses/
+#   TLDR it's a mask that allows all ip's on a host (docker internal contianer network, in this case)
+#     you'll see it in the PORTS column of docker ps
+#   not the best solution. Better to get IP of 'backend' container.
 
 services:
-  # frontend:
-  #   build:
-  #     context: frontend
-  #     dockerfile: Dockerfile
-
   backend:
     build:
       context: backend
       dockerfile: Dockerfile
+    environment:
+      DATASTORE_BASE_URL: https://feather-datastore.herokuapp.com/api/v1
+    ports:
+      - 5000:5000
+
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    environment:
+      REACT_APP_APOLLO_URI: http://0.0.0.0:5000
+    ports:
+      - 3000:3000

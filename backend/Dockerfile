@@ -6,8 +6,11 @@
 # Don't use Docker Desktop to build and run. That will make unhappyment. Instead, use these CLI commands:
 # BUILD
 #   docker build -t generic-code-challenge-backend .
-# RUN
+# RUN ALONE
 #   docker run -dp 5000:5000 generic-code-challenge-backend
+# RUN ON NETWORK (after running: docker network create generic-code-challenge)
+#   docker run -dp 5000:5000 --network generic-code-challenge --network-alias backend -e DATASTORE_BASE_URL=https://feather-datastore.herokuapp.com/api/v1 generic-code-challenge-backend
+
 # USE
 #   go to browser and type localhost:5000
 #   you can also click the 'show in browser button' in Docker 
@@ -16,14 +19,12 @@
 
 FROM node:12-alpine
 ENV NODE_ENV=prod
-ENV DATASTORE_BASE_URL=https://feather-datastore.herokuapp.com/api/v1
 ENV APOLLOQL_PORT=5000
 
-# RUN --env-file=.env
 # Adding build tools to make yarn install work on Apple silicon / arm64 machines
 RUN apk add --no-cache python2 g++ make
 
-WORKDIR /backend
+WORKDIR /app
 COPY . .
 
 EXPOSE 5000

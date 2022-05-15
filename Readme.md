@@ -5,7 +5,7 @@ This repo is for an ongoing, generic personal project. It contains [frontend](ht
 
 It uses React to connect to an ApolloGraphQL server. The ApolloGraphQL server connects to a remote REST API datastore.
 
-Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI
+Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI.
 
 * The repo for the [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)
 * The repo for the [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend)
@@ -28,8 +28,7 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
   * Mocha / Supertest / Chai
 
 ## To Do
-* Authentication
+* Authentication / Authorization
 * More modules (ie. navigation, policy detail, customer detail)
-* Docker deployment
-* More TypeScript
+* Retrofit with TypeScript
 
