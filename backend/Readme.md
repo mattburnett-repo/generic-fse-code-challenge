@@ -20,7 +20,6 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
   
 ## You can get started by either installing from the repo or pulling / running the Docker image
 ### Getting started / installing the dependencies from the repo:
----
 ```bash
 npm install
 ```
@@ -36,7 +35,6 @@ npm run dev
 ```
 
 ### Getting started / pulling and running the Docker image
----
 To pull the Docker image:
 ```bash
 docker pull mattburnett01/generic-code-challenge-backend

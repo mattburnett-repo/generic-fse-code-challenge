@@ -24,7 +24,6 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
   
 ## You can get started by either installing from the repo or pulling / running the Docker image
 ### Getting started / installing the dependencies from the repo:
----
 Install the dependencies:
 
 ```bash
@@ -48,7 +47,6 @@ REACT_APP_APOLLO_URI=http://localhost:5000
 ```
 
 ### Getting started / pulling and running the Docker image
----
 You should start the backend container before running the frontend container.  Instructions are [here](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) 
 
 To pull the Docker image:
