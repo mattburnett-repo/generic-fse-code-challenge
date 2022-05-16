@@ -11,6 +11,9 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
 * The [datastore API / documentation](https://feather-datastore.herokuapp.com/api/v1/api-docs/)
 
+* You can also pull and run the [Docker image](https://hub.docker.com/r/mattburnett01/generic-code-challenge-frontend)
+  * You will need a Docker network and the Docker image for the backend. Instructions are [here](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) 
+
 ## Technology used
 * React
 * React-Table
@@ -19,8 +22,9 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * Tailwind
 * React Testing Library
   
-## Getting started
-
+## You can get started by either installing from the repo or pulling / running the Docker image
+### Getting started / installing the dependencies from the repo:
+---
 Install the dependencies:
 
 ```bash
@@ -38,11 +42,28 @@ Tailwind builds can be run in watch mode by
 npm run build:css
 ```
 
-## Environment Variables
 You will need these environment variables: 
 ```bash
-REACT_APP_APOLLO_URI= // url to the ApolloGL server instance goes here
+REACT_APP_APOLLO_URI=http://localhost:5000
 ```
+
+### Getting started / pulling and running the Docker image
+---
+You should start the backend container before running the frontend container.  Instructions are [here](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) 
+
+To pull the Docker image:
+```bash
+docker pull mattburnett01/generic-code-challenge-frontend
+```
+Then create a network (if you haven't already):
+```bash
+docker network create generic-code-challenge
+```
+Then run the container:
+```bash
+docker run -dp 3000:3000 --network generic-code-challenge --network-alias frontend -e REACT_APP_APOLLO_URI=http://0.0.0.0:5000 generic-code-challenge-frontend
+```
+
 ## Testing
 Test/s are located in 
 ```bash

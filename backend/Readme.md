@@ -11,15 +11,16 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
 * The [datastore API / documentation](https://feather-datastore.herokuapp.com/api/v1/api-docs/)
 
+* You can also pull and run the [Docker image](https://hub.docker.com/r/mattburnett01/generic-code-challenge-backend)
+
 ## Technology used
 * REST API
 * ApolloGL Server / datasource-rest
 * Mocha / SuperTest / Chai
   
-## Getting started
-
-Install the dependencies:
-
+## You can get started by either installing from the repo or pulling / running the Docker image
+### Getting started / installing the dependencies from the repo:
+---
 ```bash
 npm install
 ```
@@ -34,6 +35,20 @@ To run the development server:
 npm run dev
 ```
 
+### Getting started / pulling and running the Docker image
+---
+To pull the Docker image:
+```bash
+docker pull mattburnett01/generic-code-challenge-backend
+```
+Then create a network:
+```bash
+docker network create generic-code-challenge
+```
+Then run the container:
+```bash
+docker run -dp 5000:5000 --network generic-code-challenge --network-alias backend -e DATASTORE_BASE_URL=https://feather-datastore.herokuapp.com/api/v1 generic-code-challenge-backend
+```
 ## Testing
 Tests are located in /backend/test. They use Mocha, with the Chai 'expect' module.
 
