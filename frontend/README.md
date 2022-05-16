@@ -59,7 +59,7 @@ docker network create generic-code-challenge
 ```
 Then run the container:
 ```bash
-docker run -dp 3000:3000 --network generic-code-challenge --network-alias frontend -e REACT_APP_APOLLO_URI=http://0.0.0.0:5000 generic-code-challenge-frontend
+docker run -dp 3000:3000 --network generic-code-challenge --network-alias frontend -e REACT_APP_APOLLO_URI=http://localhost:5000 generic-code-challenge-frontend
 ```
 
 ## Testing
