@@ -84,7 +84,6 @@ export const PolicyTableColumns = (EditDateField, EditTextField) => {
                 ]
             }
         ],
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         []
       )
     return columns

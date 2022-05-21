@@ -9,9 +9,25 @@
 // THIS RENDERS TABLE BASED ON PASSED-IN PROPS
 // PASS IN columns / data / updateTableData FROM feature / container
 
- import { useTable, useSortBy, usePagination } from 'react-table'
+// HOW TO DEAL WITH TYPE PROBLEMS THROUGHOUT THE COMPONENT BODY
+//      https://stackoverflow.com/questions/64608974/react-table-pagination-properties-doesnt-exist-on-type-tableinstance
+//      TLDR
+//          in src folder, create types folder
+//          in types folder, create react-table-config.d.ts file
+//          in react-table-config.d.ts file, copy this:
+//              https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-table#example-type-file
 
- export const TableDisplay = (props) => {
+import { FC } from 'react'
+
+import { useTable, useSortBy, usePagination } from 'react-table'
+
+ type TableDisplayProps = {
+    columns: [],
+    data: [],
+    updateTableData: Function
+ }
+
+ export const TableDisplay:FC<TableDisplayProps> = (props) => {
     const { columns, data, updateTableData } = props
 
     const {
@@ -29,11 +45,13 @@
         previousPage,
         setPageSize,
 
+        // @ts-ignore
         state: { pageIndex, pageSize },
       } = useTable({ 
             columns, 
             data,          // replacing 'theData' with another object name, zB 'tableData' causes everything to fail. 
             // https://react-table.tanstack.com/docs/faq#how-do-i-stop-my-table-state-from-automatically-resetting-when-my-theData-changes
+            // @ts-ignore
             autoResetPage: false, // use the false option to disable page resetting temporarily
             autoResetExpanded: false,
             autoResetGroupBy: false,
@@ -56,6 +74,7 @@
                         {headerGroup.headers.map(column => (
                             // column.Header
                             // column.id
+                            // @ts-ignore
                             <th {...column.getHeaderProps(column.getSortByToggleProps())} className="bg-blue-200  border border-black p-4" aria-label={column.id}>
                                 {column.render('Header')}
                                 {/* Add a sort direction indicator */}
@@ -84,7 +103,7 @@
                 })}
             </tbody>
         </table>
-        {/* 
+       { /*  
             Pagination can be built however you'd like. 
             This is just a very basic UI implementation:
         */}

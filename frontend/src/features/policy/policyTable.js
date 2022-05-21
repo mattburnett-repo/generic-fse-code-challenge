@@ -43,7 +43,6 @@ export function PolicyTable(props) {
     useEffect(() => {
         // startup always runs useEffect. On mount it sends updateField with empty 'vars', making needless error.
         if(Object.keys(vars).length !== 0) updateField()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [vars])
 
     // update the 'local' / memoized data / cache

@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 
 import { PolicyTable } from './policyTable'
 import LoadingMessage from "../../components/spinner/LoadingMessage";
-import ErrorPage from '../../components/errorPage';
+import ErrorPage from '../../components/errorPage.js';
 
 import { ResultMessageContext } from "../../util/resultMessage-context"
 
