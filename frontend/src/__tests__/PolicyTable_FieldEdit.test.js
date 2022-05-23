@@ -1,5 +1,5 @@
 
-import {render, screen, waitFor, userEvent, MockedProvider, Policies, mockOperation} from '../test/polityTestConfig'
+import {render, screen, waitFor, userEvent, MockedProvider, Policies, mockOperation} from '../test/policyTestConfig'
 import 'jest-canvas-mock';
 
 describe('it should edit three fields', () => {

@@ -26,6 +26,7 @@
   ],
   "include": [
     "src/components",
-    "src/features/policy"
-  ]
+    "src/features/policy",
+    "**/*.tsx"
+, "src/util/resultMessage-context.ts", "src/util/resultMessage-context.ts"  ]
 }

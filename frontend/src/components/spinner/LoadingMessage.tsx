@@ -2,7 +2,12 @@
 
 import './Loading.css';
 
-export default function LoadingMessage(props) {
+type ComponentProps = {
+    type: string
+    message?: string
+}
+
+export default function LoadingMessage(props: ComponentProps) {
     let { type, message } = props;
 
     if(!message) {
