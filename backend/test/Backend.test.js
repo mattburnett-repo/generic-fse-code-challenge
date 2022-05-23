@@ -5,6 +5,8 @@
 //      this is because it sometimes overloads the database connection and then the test fails. 
 //      Remove '.skip' from the test call to include the test when running this test file
 
+// Datastore API / URL is located in .env file as DATASTORE_BASE_URL
+
 const { ApolloServer, request, expect } = require('./testConfig')
 
 const { typeDefs } = require('../src/schema.ts'); // FIXME: dateScalars in schema.ts 
@@ -17,7 +19,7 @@ const { updateCustomerFirstName, updateCustomerLastName } = require('./testOpera
 // use this for supertest / http / e2e
 // This function will create a new server Apollo Server instance
 //  https://codesandbox.io/s/github/apollographql/docs-examples/tree/main/apollo-server/v3/integration-testing?fontsize=14&hidenavigation=1&theme=dark&file=/src/server.ts:267-809
-const createApolloServer = async (options = { port: 4000 }) => {
+const createApolloServer = async (options = { port: 5000 }) => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
@@ -144,7 +146,7 @@ describe('GraphQL backend http tests', () => {
       expect(result).to.have.property('last_name')
       expect(result.last_name).to.contain('lastName 01') 
       expect(result).to.have.property('date_of_birth')
-      expect(result.date_of_birth).to.contain('1970-01-14T23:00:00.000Z') 
+      expect(result.date_of_birth).to.contain('1969-12-31T23:00:00.000Z') 
     })
   })
 
@@ -197,7 +199,7 @@ describe('GraphQL backend http tests', () => {
       expect(result.customer).to.have.property('last_name') 
       expect(result.customer.last_name).to.contain('lastName 01')
       expect(result.customer).to.have.property('date_of_birth') 
-      expect(result.customer.date_of_birth).to.contain('1970-01-14T23:00:00.000Z')
+      expect(result.customer.date_of_birth).to.contain('1969-12-31T23:00:00.000Z')
 
       expect(result).to.have.property('provider')
       expect(result.provider).to.have.property('description') 
