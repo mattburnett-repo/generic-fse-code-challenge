@@ -11,7 +11,7 @@ import { UPDATE_POLICY_FIELD } from '../../dataSources/gqlOperations'
 import { policy_jsonToArray, PolicyTableColumns } from './policyTableFunctions'
 import { TextFieldEditDef, DateFieldEditDef } from '../../util/tableFunctions'
 
-import { ResultMessageContext } from "../../util/resultMessage-context"
+import { ResultMessageContext } from "../../context/result.message.context"
 
 export function PolicyTable(props) {
     const [data, setData] = useState(() => policy_jsonToArray(props.tableData))
