@@ -1,5 +1,4 @@
 
-
 import { AuthProvider } from './context/auth.context'
 import { Policies } from './features/policy/policies'
 
@@ -18,7 +17,7 @@ const App = () => {
     <AuthProvider userData={user}>
       <BrowserRouter>
         <Switch>
-          {/* <Route path="/policies" component={Policies} /> */}
+          {/* Routes / ProtectedRoutes go here */}
           <ProtectedRoute path="/" component={Policies} />
         </Switch>      
       </BrowserRouter>
