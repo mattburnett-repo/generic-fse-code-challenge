@@ -1,8 +1,7 @@
 module.exports = {
   content: [
     './pages/**/*.{html,js}',
-    './src/components/**/*.{html,js}',
-    './src/**/*.{html,js}',
+    './src/**/*.{html,js,tsx}',
     './public/**/*.{html,js}',
   ],
   theme: {

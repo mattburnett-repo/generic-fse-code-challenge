@@ -14,7 +14,7 @@ import { TextFieldEditDef, DateFieldEditDef } from '../../util/tableFunctions'
 import { ResultMessageContext } from "../../context/result.message.context"
 
 export function PolicyTable(props) {
-    const [data, setData] = useState(() => policy_jsonToArray(props.tableData))
+    const [data, setData] = useState(() => policy_jsonToArray(props.tableData)) // FIXME: this should use data from Apollo cache
     const [vars, setVars] = useState({})  // an object, not a string. zB: {customerId: 1, firstName: 'asdf'}
 
     const { setMessage, swapMessageText } = useContext(ResultMessageContext)

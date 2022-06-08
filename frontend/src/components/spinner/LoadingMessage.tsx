@@ -3,7 +3,7 @@
 import './Loading.css';
 
 type ComponentProps = {
-    type: string
+    type: string,
     message?: string
 }
 
