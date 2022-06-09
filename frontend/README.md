@@ -16,8 +16,10 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 
 ## Technology used
 * React
-* React-Table
-* React-Date-Picker
+  * React-Table
+  * React-Date-Picker
+  * React Router Dom version 5
+    * auth/jwt code depends on version 5
 * Apollo graphQL Client
 * Tailwind
 * React Testing Library

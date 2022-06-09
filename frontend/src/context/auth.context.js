@@ -1,4 +1,5 @@
 
+// https://blog.appseed.us/react-user-authentication-jwt-token/
 import { useContext, createContext, useState } from 'react'
 
 const AuthContext = createContext(null);
