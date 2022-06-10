@@ -1,6 +1,6 @@
 
 import { Login } from '../features/auth/login'
-import { useAuth } from './auth.context'
+import { useAuth } from '../context/auth.context'
 
 import { Route } from "react-router-dom"
 

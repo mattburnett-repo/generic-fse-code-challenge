@@ -32,6 +32,7 @@ export const Policies: FC = () => {
     }
 
     return (
+        // change functions passed in here
         <ResultMessageContext.Provider value={{message, setMessage, swapMessageText}}>  
             <div className="bg-gray-200 my-24 mx-20 px-2 border-2 border-black">
                 <h1 className="text-5xl text-center m-4">Policy Data Records</h1>

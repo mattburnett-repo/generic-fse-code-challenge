@@ -2,7 +2,7 @@
 import { AuthProvider } from './context/auth.context'
 import { Policies } from './features/policy/policies'
 
-import { ProtectedRoute } from './context/ProtectedRoute'
+import { ProtectedRoute } from './components/ProtectedRoute'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // NOTE: THIS IMPLEMENTATION DEPENDS ON REACT ROUTER VERSION 5 

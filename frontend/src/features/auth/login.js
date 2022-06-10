@@ -1,29 +1,18 @@
 
 import {LoginDisplay} from '../../components/auth/LoginDisplay'
 
-export const Login = () => {
-    // code to handle login events here
-    // function handleGoogleClick() {
-    //     alert('google')
-    // }
-    // function handleGitHubClick() {
-    //     alert('github')
-    // }
-    // function handleLoginClick() {
-    //     alert('login')
-    // }
-    // function handleSignUpClick() {
-    //     alert('sign up')
-    // }
+// import { ResultMessageContext } from "../../context/result.message.context"
 
-    // const handlers = () => {
-    //     handleGoogleClick(),
-    //     handleGitHubClick(),
-    //     handleLoginClick(),
-    //     handleSignUpClick()
-    // }
+export const Login = () => {
+
+    // const { setFlashError, setFlashSuccess } = useContext(ResultMessageContext)
+
+    let message = 'message'
 
     return (
-        <LoginDisplay />
+        //  pass in functions via value
+        // <ResultMessageContext.Provider value={{message}} >
+            <LoginDisplay />
+        // </ResultMessageContext.Provider>
     )
 }
