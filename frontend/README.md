@@ -20,6 +20,12 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
   * React-Date-Picker
   * React Router Dom version 5
     * auth/jwt code depends on version 5
+  * Hooks
+    * useState
+    * useEffect
+    * useContext
+    * useRef
+    * forwardRef / useImperativeHandle
 * Apollo graphQL Client
 * Tailwind
 * React Testing Library

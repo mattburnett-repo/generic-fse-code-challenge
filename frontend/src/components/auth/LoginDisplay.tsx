@@ -1,9 +1,7 @@
 
-import { useState, useEffect, useRef } from 'react'
-import FlashMessage from 'react-flash-message'
+import { useRef } from 'react'
 
 import { FlashMessageDisplay } from '../util/FlashMessageDisplay'
-import  AuthApi  from '../../features/auth/authApi'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons'
@@ -11,7 +9,6 @@ import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { handleLoginClick, handleGoogleClick, handleGitHubClick, handleSignUpClick } from '../../features/auth/authFunctions'
 
 export const LoginDisplay = (): JSX.Element => {
-// export const LoginDisplay = () => {
     const flashRef = useRef(null)
 
     return (

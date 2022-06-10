@@ -1,5 +1,5 @@
 
-import {LoginDisplay} from '../../components/auth/LoginDisplay'
+import { LoginDisplay } from '../../components/auth/LoginDisplay'
 
 // import { ResultMessageContext } from "../../context/result.message.context"
 
@@ -7,7 +7,7 @@ export const Login = () => {
 
     // const { setFlashError, setFlashSuccess } = useContext(ResultMessageContext)
 
-    let message = 'message'
+    // let message = 'message'
 
     return (
         //  pass in functions via value

@@ -1,9 +1,11 @@
 
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './context/auth.context'
+
 import { Policies } from './features/policy/policies'
 
 import { ProtectedRoute } from './components/ProtectedRoute'
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 
 // NOTE: THIS IMPLEMENTATION DEPENDS ON REACT ROUTER VERSION 5 
 //    not possible with version 6
@@ -14,14 +16,14 @@ const App = () => {
   user = JSON.parse(user);
 
   return (
-    <AuthProvider userData={user}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider userData={user}>
         <Switch>
           {/* Routes / ProtectedRoutes go here */}
           <ProtectedRoute path="/" component={Policies} />
-        </Switch>      
-      </BrowserRouter>
-    </AuthProvider>
+        </Switch>           
+      </AuthProvider>
+    </BrowserRouter>
   );
 };
 

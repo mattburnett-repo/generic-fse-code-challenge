@@ -1,19 +1,31 @@
 
 import  AuthApi  from './authApi'
+// import { setUser } from '../../context/auth.context'
 
 export const setProfile = (response) => {
-    let user = { ...response.data.user };
-    user.token = response.data.authToken;
-    user = JSON.stringify(user);
-    //setUser is imported from the useAuth React Context
-    setUser(user);
-    //also set the user in local storage
-    localStorage.setItem("generic-fse", user);
-    return history.push("/policies");
-}; 
+    try {
+        console.log('setProfile response', response)
+        // let user = { ...response.data.user };
+        // console.log('setProfile user pre-token', response.data.user)
 
-// set error / success message states here. context should help
-export const handleLoginClick = async (event, {flashRef}) => {
+        let user = {}
+        user.token = response.data.authToken;
+        user = JSON.stringify(user);
+        console.log('setProfile user ', user)
+        // console.log('setProfile user.token ', user.token)
+        // //setUser is imported from the useAuth React Context
+        setUser(user);
+        // //also set the user in local storage
+        localStorage.setItem("generic-fse", user);
+        // return history.push("/policies");         
+    } catch (err) {
+        console.log('setProfile error ', err)
+    }
+}
+
+// flashRef comes from LoginDisplay and links these functions to 
+//      LoginDisplay and FlashMessageDisplay
+export const handleLoginClick = async (event, {flashRef}) => { 
     event.preventDefault();
     
     const username = event.currentTarget.username.value
@@ -31,8 +43,10 @@ export const handleLoginClick = async (event, {flashRef}) => {
             flashRef.current.setErrorMessage(message)
         }
 
-        // return setProfile(response); // lets user in
-        flashRef.current.setSuccessMessage('handleLoginClick success')
+        message = 'Login successful'
+        flashRef.current.setSuccessMessage(message)
+        
+        return setProfile(response); // lets user in
     } catch (err) {  // send these to flash messaging
         if (err.response.status === 400) {      // bad request. probably a missing field
             message = 'Can\'t log in. Probably missing username or password.'
