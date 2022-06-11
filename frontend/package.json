@@ -31,6 +31,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "start:craco": "craco start && postcss src/index.css -o src/style.css",
     "start": "react-scripts start",
     "build": "craco build",
     "build:css": "npx tailwindcss -i src/index.css -o src/style.css --watch",
@@ -53,6 +54,7 @@
     "@types/react": "^18.0.9",
     "@types/react-table": "^7.7.12",
     "dotenv": "^16.0.0",
+    "react-error-overlay": "^6.0.9",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.6.4"
   }

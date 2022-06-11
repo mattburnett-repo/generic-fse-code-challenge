@@ -20,7 +20,7 @@ export const setProfile = (response, { setUser }) => {
         setUser(user); 
         // //also set the user in local storage
         localStorage.setItem("generic-fse", user);
-        location.href = '/policies'
+        location.href = '/dashboard'
     } catch (err) {
         console.log('setProfile error ', err)
     }
@@ -65,7 +65,8 @@ export const handleLoginClick = async (event, {flashRef}, {setUser}) => {
 }
 
 export function handleLogoutClick() {
-    alert('log out')
+    localStorage.clear()
+    location.href = '/'
 }
 export function handleGoogleClick() {
     alert('google')
