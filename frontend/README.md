@@ -41,7 +41,12 @@ Install the dependencies:
 npm install
 ```
 
-And run the development server:
+Start AuthServer
+```bash
+authServer/npm start
+```
+
+And run the development server
 
 ```bash
 npm start
