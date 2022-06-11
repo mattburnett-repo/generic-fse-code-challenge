@@ -6,7 +6,7 @@ This is a simple Node / Express server with no UI. Its purpose is to isolate aut
   * Use it by cloning this repo into the root of your project.
   * The code handles signing up, logging in and logging out. That's it. Right now it uses Passport JS, but in the future it might also use auth0.
 
-It return a JWT upon successful registration / login.
+It returns a JWT upon successful registration / login.
 
 Users can register a new account.
 
