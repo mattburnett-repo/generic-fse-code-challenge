@@ -1,4 +1,6 @@
 
+![repo header](public/main-banner.jpeg?raw=true "Generic FSE Code Challenge")
+
 # Generic Full Stack Engineer Code Challenge
 
 This repo is for an ongoing, generic personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)  and [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) code for a generic FSE code challenge. 
