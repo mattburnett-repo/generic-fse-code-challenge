@@ -1,23 +1,26 @@
 
 import  AuthApi  from './authApi'
-// import { setUser } from '../../context/auth.context'
 
-export const setProfile = (response) => {
+// FIXME: setUser(). 
+//    the whole point of Context is to not prop-drill
+//      but the only way to get 'setUser' into 'setProfile'
+//          is to pass setUser all the way down. This is 
+//          because in this file we have only functions,
+//          and Context only works with functonal components.
+export const setProfile = (response, { setUser }) => {
     try {
-        console.log('setProfile response', response)
-        // let user = { ...response.data.user };
-        // console.log('setProfile user pre-token', response.data.user)
-
         let user = {}
         user.token = response.data.authToken;
         user = JSON.stringify(user);
-        console.log('setProfile user ', user)
-        // console.log('setProfile user.token ', user.token)
-        // //setUser is imported from the useAuth React Context
-        setUser(user);
+
+        //setUser is imported from the useAuth React Context.
+        //       but here we have to take it as an arg/prop
+        //           because this is a function, not a 
+        //           functional component.
+        setUser(user); 
         // //also set the user in local storage
         localStorage.setItem("generic-fse", user);
-        // return history.push("/policies");         
+        location.href = '/policies'
     } catch (err) {
         console.log('setProfile error ', err)
     }
@@ -25,7 +28,8 @@ export const setProfile = (response) => {
 
 // flashRef comes from LoginDisplay and links these functions to 
 //      LoginDisplay and FlashMessageDisplay
-export const handleLoginClick = async (event, {flashRef}) => { 
+// setUser updates user state in auth context, used in setProfile()
+export const handleLoginClick = async (event, {flashRef}, {setUser}) => { 
     event.preventDefault();
     
     const username = event.currentTarget.username.value
@@ -46,7 +50,7 @@ export const handleLoginClick = async (event, {flashRef}) => {
         message = 'Login successful'
         flashRef.current.setSuccessMessage(message)
         
-        return setProfile(response); // lets user in
+        return setProfile(response, {setUser}); // lets user in
     } catch (err) {  // send these to flash messaging
         if (err.response.status === 400) {      // bad request. probably a missing field
             message = 'Can\'t log in. Probably missing username or password.'
@@ -60,6 +64,9 @@ export const handleLoginClick = async (event, {flashRef}) => {
     }
 }
 
+export function handleLogoutClick() {
+    alert('log out')
+}
 export function handleGoogleClick() {
     alert('google')
 }

@@ -2,10 +2,12 @@
 // https://blog.appseed.us/react-user-authentication-jwt-token/
 import { useContext, createContext, useState } from 'react'
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ userData, children }) => {
   let [user, setUser] = useState(userData);
+
+  // console.log('AuthProvider user ', user)
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>

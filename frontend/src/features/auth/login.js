@@ -1,18 +1,23 @@
 
+// import { useState } from 'react'
+
 import { LoginDisplay } from '../../components/auth/LoginDisplay'
 
-// import { ResultMessageContext } from "../../context/result.message.context"
+import { AuthContext, AuthProvider, useAuth } from "../../context/auth.context"
 
 export const Login = () => {
-
+    // let [user, setUser] = useState();
+   
     // const { setFlashError, setFlashSuccess } = useContext(ResultMessageContext)
 
     // let message = 'message'
 
+    // let { useState } = useAuth()
+
     return (
         //  pass in functions via value
-        // <ResultMessageContext.Provider value={{message}} >
+        // <AuthProvider.Consumer value={{user, setUser}} >
             <LoginDisplay />
-        // </ResultMessageContext.Provider>
+        // </AuthProvider.Consumer>
     )
 }

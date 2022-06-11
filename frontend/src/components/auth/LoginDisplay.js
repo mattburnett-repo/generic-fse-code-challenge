@@ -8,8 +8,13 @@ import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 import { handleLoginClick, handleGoogleClick, handleGitHubClick, handleSignUpClick } from '../../features/auth/authFunctions'
 
-export const LoginDisplay = (): JSX.Element => {
+import { useAuth } from '../../context/auth.context'
+
+// export const LoginDisplay = (): JSX.Element => {
+export const LoginDisplay = () => {
     const flashRef = useRef(null)
+
+    let { setUser } = useAuth() // reach into the Context and get state setter. Doesn't work with .tsx / JSX.ELement because initially it's null
 
     return (
         <div className="bg-gray-200 my-24 mx-auto py-5 w-1/4 border-2 border-black">
@@ -18,7 +23,7 @@ export const LoginDisplay = (): JSX.Element => {
             <FlashMessageDisplay ref={flashRef} />
 
             <div className="m-5 p-2 bg-gray-100 border-2 border-blue-200">
-                <form onSubmit={(e) => handleLoginClick(e, {flashRef})}>
+                <form onSubmit={(e) => handleLoginClick(e, {flashRef}, {setUser})}> 
                     <div className="text-center p-2" role="presentation" aria-label="username">
                         <input type='text' name="username" placeholder='username' required />
                     </div>
