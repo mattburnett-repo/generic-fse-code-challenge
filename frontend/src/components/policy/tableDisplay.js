@@ -17,17 +17,18 @@
 //          in react-table-config.d.ts file, copy this:
 //              https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-table#example-type-file
 
-import { FC } from 'react'
+// import { FC } from 'react'
 
 import { useTable, useSortBy, usePagination } from 'react-table'
 
- type TableDisplayProps = {
-    columns: [],
-    data: [],
-    updateTableData: Function
- }
+//  type TableDisplayProps = {
+//     columns: [],
+//     data: [],
+//     updateTableData: Function
+//  }
 
- export const TableDisplay:FC<TableDisplayProps> = (props) => {
+//  export const TableDisplay:FC<TableDisplayProps> = (props) => {
+export const TableDisplay= (props) => {
     const { columns, data, updateTableData } = props
 
     const {

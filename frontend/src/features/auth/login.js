@@ -1,29 +1,23 @@
 
-import {LoginDisplay} from '../../components/auth/LoginDisplay'
+// import { useState } from 'react'
+
+import { LoginDisplay } from '../../components/auth/LoginDisplay'
+
+import { AuthContext, AuthProvider, useAuth } from "../../context/auth.context"
 
 export const Login = () => {
-    // code to handle login events here
-    // function handleGoogleClick() {
-    //     alert('google')
-    // }
-    // function handleGitHubClick() {
-    //     alert('github')
-    // }
-    // function handleLoginClick() {
-    //     alert('login')
-    // }
-    // function handleSignUpClick() {
-    //     alert('sign up')
-    // }
+    // let [user, setUser] = useState();
+   
+    // const { setFlashError, setFlashSuccess } = useContext(ResultMessageContext)
 
-    // const handlers = () => {
-    //     handleGoogleClick(),
-    //     handleGitHubClick(),
-    //     handleLoginClick(),
-    //     handleSignUpClick()
-    // }
+    // let message = 'message'
+
+    // let { useState } = useAuth()
 
     return (
-        <LoginDisplay />
+        //  pass in functions via value
+        // <AuthProvider.Consumer value={{user, setUser}} >
+            <LoginDisplay />
+        // </AuthProvider.Consumer>
     )
 }

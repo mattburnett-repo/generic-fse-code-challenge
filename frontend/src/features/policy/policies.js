@@ -2,7 +2,7 @@
 // entry point for policy data display
 // pulls together all needed parts
 
-import { useState, FC } from 'react'
+import { useState } from 'react'
 import { useQuery } from '@apollo/client';
 
 import { PolicyTable } from './policyTable'
@@ -13,7 +13,7 @@ import { ResultMessageContext } from "../../context/result.message.context"
 
 import { GET_POLICIES } from '../../dataSources/gqlOperations'
 
-export const Policies: FC = () => {
+export const Policies = () => {
     const defaultMessage = 'Click a column header to sort on that column'
     const swapMessageTextTimeout = 5000
     
@@ -32,6 +32,7 @@ export const Policies: FC = () => {
     }
 
     return (
+        // change functions passed in here
         <ResultMessageContext.Provider value={{message, setMessage, swapMessageText}}>  
             <div className="bg-gray-200 my-24 mx-20 px-2 border-2 border-black">
                 <h1 className="text-5xl text-center m-4">Policy Data Records</h1>

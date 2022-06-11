@@ -27,6 +27,9 @@
   "include": [
     "src/components",
     "src/features/policy",
-    "**/*.tsx"
-, "src/util/resultMessage-context.ts", "src/util/resultMessage-context.ts"  ]
+    "src/features/dashboard",
+    "**/*.tsx", 
+    "src/util/resultMessage-context.ts", 
+    "src/util/resultMessage-context.ts"
+, "src/App.js" ]
 }
