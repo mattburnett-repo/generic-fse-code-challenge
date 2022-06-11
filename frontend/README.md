@@ -14,6 +14,8 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * You can also pull and run the [Docker image](https://hub.docker.com/r/mattburnett01/generic-code-challenge-frontend)
   * You will need a Docker network and the Docker image for the backend. Instructions are [here](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) 
 
+* This project uses [AuthServer](https://github.com/mattburnett-repo/authServer) to handle authentication. Authentication data / processing is kept separate from application data.
+
 ## Technology used
 * React
   * React-Table
@@ -29,6 +31,7 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * Apollo graphQL Client
 * Tailwind
 * React Testing Library
+* [AuthServer](https://github.com/mattburnett-repo/authServer)
   
 ## You can get started by either installing from the repo or pulling / running the Docker image
 ### Getting started / installing the dependencies from the repo:
