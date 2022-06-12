@@ -43,7 +43,8 @@ npm install
 
 Start AuthServer
 ```bash
-authServer/npm start
+cd authServer
+npm start
 ```
 
 And run the development server
