@@ -10,8 +10,12 @@ class AuthApi {
     return axios.post(`/auth/basic/login/passport`, data)
   };
 
-  static LoginOauthGoogle = () => {
-    return axios.get('/auth/oauth/google')
+  static GetGithubToken = (code: string) => {
+    return axios.post("https://github.com/login/oauth/access_token", {
+      client_id: process.env.REACT_APP_GITHUB_CLIENT_ID,
+      client_secret: process.env.REACT_APP_GITHUB_CLIENT_SECRET,
+      code: code
+    })
   }
 
   static Logout = async (data: any) => {

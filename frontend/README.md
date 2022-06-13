@@ -14,7 +14,7 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * You can also pull and run the [Docker image](https://hub.docker.com/r/mattburnett01/generic-code-challenge-frontend)
   * You will need a Docker network and the Docker image for the backend. Instructions are [here](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) 
 
-* This project uses [AuthServer](https://github.com/mattburnett-repo/authServer) to handle authentication. Authentication data / processing is kept separate from application data.
+* This project uses [AuthServer](https://github.com/mattburnett-repo/authServer) to handle basic authentication. Authentication data / processing is kept separate from application data.
 
 ## Technology used
 * React
@@ -28,6 +28,7 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
     * useContext
     * useRef
     * forwardRef / useImperativeHandle
+  * @react-oauth/google
 * Apollo graphQL Client
 * Tailwind
 * React Testing Library
@@ -61,6 +62,14 @@ npm run build:css
 You will need these environment variables: 
 ```bash
 REACT_APP_APOLLO_URI=http://localhost:5000
+
+REACT_APP_GOOGLE_CLIENT_ID=get.this.from.console.cloud.google.com
+REACT_APP_GOOGLE_CLIENT_SECRET=get.this.from.console.cloud.google.com
+REACT_APP_GOOGLE_REDIRECT_URL=something.like.http://localhost:4000/auth/google/redirect
+
+REACT_APP_GITHUB_CLIENT_ID=get.this.from.https://github.com/settings/application
+REACT_APP_GITHUB_CLIENT_SECRET=get.this.from.https://github.com/settings/application
+REACT_APP_GITHUB_REDIRECT_URL=something.like./auth/oauth/github/callback
 ```
 
 ### Getting started / pulling and running the Docker image
@@ -91,7 +100,6 @@ npm test
 ```
 
 ## To Do
-* Authentication
 * More modules (ie. navigation, policy detail, customer detail)
 * Docker deployment
 * More TypeScript

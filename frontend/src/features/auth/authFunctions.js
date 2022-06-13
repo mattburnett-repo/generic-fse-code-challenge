@@ -10,7 +10,17 @@ import AuthApi  from './authApi'
 export const setProfile = (response, { setUser }) => {
     try {
         let user = {}
-        user.token = response.data.authToken;
+
+        if(response.data?.authToken) { // basic username / password
+            user.token = response.data.authToken;
+        }
+        if(response.credential) {   // google oauth
+            user.token = response.credential
+        }
+        if(response.code) {         // github oauth
+            user.token = response.code
+        }
+        
         user = JSON.stringify(user);
 
         //setUser is imported from the useAuth React Context.
@@ -65,8 +75,6 @@ export const handleLoginClick = async (event, {flashRef}, {setUser}) => {
 }
 
 export const handleLogoutClick = async(event, {flashRef}, {setUser}) => {
-    // localStorage.clear()
-    // location.href = '/'
     try {
         let response = await AuthApi.Logout()
 
@@ -88,24 +96,23 @@ export const handleLogoutClick = async(event, {flashRef}, {setUser}) => {
     }
 }
 
-export const handleGoogleClick = () => {
-    try {
-        // axios doesn't work for OAuth calls
-        //  https://stackoverflow.com/questions/57051175/how-to-use-axios-to-sign-in-with-oauth
+// google oauth is now handled in LoginDisplay
+// export const handleGoogleClick = () => {
+//     try {
+//         // axios doesn't work for OAuth calls
+//         //  https://stackoverflow.com/questions/57051175/how-to-use-axios-to-sign-in-with-oauth
 
-        window.location = process.env.REACT_APP_AUTH_SERVER + "/auth/oauth/google"        
-    } catch (err) {
-        console.log('ERROR: authFunctions.handleGoogleClick ', err)
-    }
-}
-export function handleGitHubClick() {
-    // axios doesn't work for OAuth calls
-        //  https://stackoverflow.com/questions/57051175/how-to-use-axios-to-sign-in-with-oauth
-    window.location = process.env.REACT_APP_AUTH_SERVER + "/auth/oauth/github"
-}
-export function handleSignUpClick() {
-    alert('sign up')
-}
+//         window.location = process.env.REACT_APP_AUTH_SERVER + "/auth/oauth/google"     
+//     } catch (err) {
+//         console.log('ERROR: authFunctions.handleGoogleClick ', err)
+//     }
+// }
+// export function handleGitHubClick() {
+//     // axios doesn't work for OAuth calls
+//         //  https://stackoverflow.com/questions/57051175/how-to-use-axios-to-sign-in-with-oauth
+//     window.location = process.env.REACT_APP_AUTH_SERVER + "/auth/oauth/github"
+// }
+
 
 export const handleRegisterClick = async (event, {flashRef}, {setUser}) => {
     event.preventDefault()

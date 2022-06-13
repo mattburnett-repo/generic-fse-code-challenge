@@ -9,7 +9,7 @@ It uses React to connect to an ApolloGraphQL server. The ApolloGraphQL server co
 
 Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI.
 
-Authentication is handled by [AuthServer](https://github.com/mattburnett-repo/authServer). Auth is handled separately from application data.
+Basic authentication is handled by [AuthServer](https://github.com/mattburnett-repo/authServer). Auth is handled separately from application data.
 
 * The repo for the [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)
 * The repo for the [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend)
@@ -21,6 +21,7 @@ Authentication is handled by [AuthServer](https://github.com/mattburnett-repo/au
 ## Technology used
 * Authentication
   * [AuthServer](https://github.com/mattburnett-repo/authServer)
+  * @react-oauth/google (in [Frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend))
 * Frontend
   * React
   * React-Table

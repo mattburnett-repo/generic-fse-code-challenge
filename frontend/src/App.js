@@ -2,6 +2,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './context/auth.context'
 
+import { GoogleOAuthProvider } from '@react-oauth/google'
+
 import { RegisterDisplay } from './components/auth/RegisterDisplay'
 import { Policies } from './features/policy/policies'
 import { Dashboard } from "./features/dashboard/dashboard";
@@ -21,11 +23,13 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <AuthProvider userData={user}>
-          <Route path="/register" component={RegisterDisplay} />
-          {/* Routes / ProtectedRoutes go here */}
-          {/* <Route path='/' component={Login} /> */}
-          <ProtectedRoute path="/" component={Dashboard} />
-          {/* <ProtectedRoute path="/" component={Policies} /> */}
+          <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+            <Route path="/register" component={RegisterDisplay} />
+            {/* Routes / ProtectedRoutes go here */}
+            {/* <Route path='/' component={Login} /> */}
+            <ProtectedRoute path="/" component={Dashboard} />
+            {/* <ProtectedRoute path="/" component={Policies} /> */}          
+          </GoogleOAuthProvider>
         </AuthProvider>
       </Switch>           
     </BrowserRouter>
