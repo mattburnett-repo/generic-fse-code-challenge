@@ -18,8 +18,7 @@ module.exports = (app: any) => {
         const currentUser = await User.findOne({ username: req.body.username })
 
         if(currentUser) {
-            await req.flash('error', `User ${currentUser.username} already exists`)
-            res.redirect('/auth/register')
+            res.json({"error": `User ${currentUser.username} already exists`})
         } else {
             try {
                 const user = await User.create({ username: req.body.username, password: req.body.password, source: 'basicLocal' })
@@ -31,13 +30,11 @@ module.exports = (app: any) => {
                         //      this logs new user in, generates a JWT and redirects to the app-surface endpoint
                         res.redirect(307, '/auth/basic/login/passport')
                     } else {
-                        let message = req.flash('error', err)
-                        res.redirect('login')
+                        res.json({"error": err})
                     }
                 })
             } catch (error) {
-                req.flash('error', error)
-                res.redirect('/auth/register')
+                res.json({"error": error})
             }                    
         }
     })
@@ -53,12 +50,11 @@ module.exports = (app: any) => {
         }),
         (req: any, res: any, next: Function) => {
             const authToken = generateJwt(req)
-            // console.log("auth basic login passport", authToken)
             res.json({"authToken": authToken})
         }
     )
 
-    // TODO: here is a path towards sending custom messages back to the client.
+    // TODO: here is a path towards sending custom messages back to the client, via built-in callbacks
     //      For now it's a time sink, so we are moving on, using '/login/passport' above
     //  https://stackoverflow.com/questions/15711127/express-passport-node-js-error-handling#15711502
     // router.post('/login/test', function(req: any, res: any, next: Function) {

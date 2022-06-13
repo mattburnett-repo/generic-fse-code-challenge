@@ -2,19 +2,14 @@
 # Auth Server
 This is a simple Node / Express server with no UI. Its purpose is to isolate authentication / authorization functionality from the rest of a web app.
   * It is based on the authSandbox repo, found [here](https://github.com/mattburnett-repo/authSandbox).
-  * It uses Passport JS's flash messaging functionality, and assumes you have flash message consumption in your app.
   * Use it by cloning this repo into the root of your project.
   * The code handles signing up, logging in and logging out. That's it. Right now it uses Passport JS, but in the future it might also use auth0.
 
 It returns a JWT upon successful registration / login.
 
-Users can register a new account.
+Users can register a new account with a username and password.
 
-Users can log in in two different ways:
-* Basic Authentication (username / password)
-* OAuth2
-  * Google
-  * GitHub
+OAuth is handled in the [Frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend).
 
 A MongoDB / Mongoose database is used to save user info, and to persist authentication / session info. You can use a different database if you want to, but you will need to change code in the routes.
 
@@ -30,9 +25,6 @@ A MongoDB / Mongoose database is used to save user info, and to persist authenti
 * Typescript
 * Passport JS
   * Basic authentication
-  * OAuth2
-    * Google
-    * GitHub
   * JWT
   
 ## Getting Started

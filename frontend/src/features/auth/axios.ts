@@ -4,7 +4,9 @@ import Axios from "axios";
 const axios = Axios.create({
   //   baseURL: process.env.REACT_APP_AUTH_SERVER,
   baseURL: "http://localhost:4500",
-  headers: { "Content-Type": "application/json" },
+  headers: { 
+    "Content-Type": "application/json" 
+  },
 });
 
 axios.interceptors.request.use(

@@ -25,7 +25,7 @@ npm install
 ```
 You will need these environment variables: 
 ```bash
-DATASTORE_BASE_URL=https://feather-api-v1.herokuapp.com/api/v1/
+DATASTORE_BASE_URL=https://generic-fse-datastore.herokuapp.com/api/v1/
 APOLLOQL_PORT=5000
 ```
 To run the development server:
@@ -66,7 +66,6 @@ npm run testOnce
 ```
 
 ## To Do
-* Authentication
 * More modules (ie. navigation, policy detail, customer detail)
 * Docker deployment
 * More TypeScript

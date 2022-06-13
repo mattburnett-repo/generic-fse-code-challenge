@@ -32,7 +32,7 @@ module.exports = (app: any) => {
   app.use(cookieParser())
 
   // session
-  app.set('trust proxy', 1)
+  app.set('trust proxy', false) // false is default
 
   app.use(session({
       secret: process.env.SESSION_SECRET,
