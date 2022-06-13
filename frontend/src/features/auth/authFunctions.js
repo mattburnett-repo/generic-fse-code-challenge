@@ -1,5 +1,5 @@
 
-import  AuthApi  from './authApi'
+import AuthApi  from './authApi'
 
 // FIXME: setUser(). 
 //    the whole point of Context is to not prop-drill
@@ -38,7 +38,7 @@ export const handleLoginClick = async (event, {flashRef}, {setUser}) => {
     let message = ""
 
     try {
-        let response = await AuthApi.Login({
+        let response = await AuthApi.LoginBasic({
             username, password,
         });
 
@@ -64,16 +64,70 @@ export const handleLoginClick = async (event, {flashRef}, {setUser}) => {
     }
 }
 
-export function handleLogoutClick() {
-    localStorage.clear()
-    location.href = '/'
+export const handleLogoutClick = async(event, {flashRef}, {setUser}) => {
+    // localStorage.clear()
+    // location.href = '/'
+    try {
+        let response = await AuthApi.Logout()
+
+        if(response === 'success') {
+            setUser('')
+            location.href = '/'
+
+            // let message = 'You are now logged out.'
+            // console.log('handleLogoutClick ', message)
+            // flashRef.current.setSuccessMessage(message)           
+        } else {
+            message = 'Can\'t log out in handleLogoutClick().'
+            flashRef.current.setErrorMessage(message)
+        }
+    } catch (err) {
+        console.log('Error in handleLogoutClick ', err)
+        // let message = 'Can\'t log out.'
+        // flashRef.current.setErrorMessage(message + ":  " + err.message)
+    }
 }
-export function handleGoogleClick() {
-    alert('google')
+
+export const handleGoogleClick = () => {
+    try {
+        // axios doesn't work for OAuth calls
+        //  https://stackoverflow.com/questions/57051175/how-to-use-axios-to-sign-in-with-oauth
+
+        window.location = process.env.REACT_APP_AUTH_SERVER + "/auth/oauth/google"        
+    } catch (err) {
+        console.log('ERROR: authFunctions.handleGoogleClick ', err)
+    }
 }
 export function handleGitHubClick() {
-    alert('github')
+    // axios doesn't work for OAuth calls
+        //  https://stackoverflow.com/questions/57051175/how-to-use-axios-to-sign-in-with-oauth
+    window.location = process.env.REACT_APP_AUTH_SERVER + "/auth/oauth/github"
 }
 export function handleSignUpClick() {
     alert('sign up')
+}
+
+export const handleRegisterClick = async (event, {flashRef}, {setUser}) => {
+    event.preventDefault()
+
+    const username = event.currentTarget.username.value
+    const password = event.currentTarget.password.value
+    const confirmPassword = event.currentTarget.confirmPassword.value
+
+    if(password !== confirmPassword) {
+        flashRef.current.setErrorMessage('Passwords don\'t match')
+    } else {
+        try {
+            let response = await AuthApi.Register({username, password})
+
+            if(response.data.error) {
+                flashRef.current.setErrorMessage(response.data.error)
+            } 
+            if (response.data.authToken) {
+                return setProfile(response, {setUser}); // lets user in
+            }
+        } catch (err) {
+            flashRef.current.setErrorMessage(err)
+        }
+    }
 }

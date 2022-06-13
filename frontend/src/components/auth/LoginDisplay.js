@@ -1,5 +1,6 @@
 
 import { useRef } from 'react'
+import { Link } from "react-router-dom"
 
 import { FlashMessageDisplay } from '../util/FlashMessageDisplay'
 
@@ -36,7 +37,7 @@ export const LoginDisplay = () => {
                 </form>
             </div>
 
-            <div className="m-5 bg-gray-100 border-2 border-blue-200">
+            {/* <div className="m-5 bg-gray-100 border-2 border-blue-200">
                 <div className="text-center p-2">
                     <div className='p-2'> Or log in with</div>
                     <button type="button" onClick={handleGoogleClick} role="presentation" aria-label="login-with-google" data-bs-toggle="tooltip" title="Log on with Google"> 
@@ -46,15 +47,15 @@ export const LoginDisplay = () => {
                         <FontAwesomeIcon icon={faGithub} className="p-2 mx-5 bg-[#211F1F] text-white hover:bg-[#9CDAF1] active:bg-[#7DBBE6]"/>
                     </ button>
                 </div>
-            </div>
+            </div> */}
 
             <div className="m-5 bg-gray-100 border-2 border-blue-200">
                 <div className="text-center p-2"role="presentation" aria-label="signup">
                     <div className="py-2">Don't have an account?</div>
                     <div className="text-center p-2">
-                        <button type="button" onClick={handleSignUpClick} className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4">
-                            Sign Up
-                        </button>                    
+                        {/* <button type="button" onClick={handleSignUpClick} className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4"> */}
+                        <Link to='/register' className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4">Sign Up</Link>
+                        {/* </button> */}
                     </div>
                 </div>
             </div>

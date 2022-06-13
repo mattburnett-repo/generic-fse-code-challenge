@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './context/auth.context'
 
+import { RegisterDisplay } from './components/auth/RegisterDisplay'
 import { Policies } from './features/policy/policies'
 import { Dashboard } from "./features/dashboard/dashboard";
 
@@ -20,6 +21,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <AuthProvider userData={user}>
+          <Route path="/register" component={RegisterDisplay} />
           {/* Routes / ProtectedRoutes go here */}
           {/* <Route path='/' component={Login} /> */}
           <ProtectedRoute path="/" component={Dashboard} />

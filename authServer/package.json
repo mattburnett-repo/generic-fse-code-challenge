@@ -1,5 +1,5 @@
 {
-  "name": "Auth Server",
+  "name": "Generic FSE Auth Server",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
