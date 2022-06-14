@@ -13,7 +13,7 @@ import { Admin } from '../admin/admin'
 
 export const Dashboard = () => {
     return (
-        <div className="bg-gray-200 my-24 mx-20 px-2 border-2 border-black">
+        <div className="bg-gray-200 my-5 mx-20 px-2 border-2 border-black">
             <NavBar />
             
             <div name="dashboard-container">

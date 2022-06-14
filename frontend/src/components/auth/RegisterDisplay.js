@@ -31,7 +31,7 @@ export const RegisterDisplay = () => {
                         <input type='text' name="confirmPassword" placeholder='confirm password' required />
                     </div>
                     <div className="text-center p-2">
-                        <button type="submit" name="register-button" className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4">Register</button>
+                        <button type="submit" name="register-button" className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded">Register</button>
                     </div>                       
                 </form>
             </div>
@@ -40,7 +40,7 @@ export const RegisterDisplay = () => {
                 <div className="text-center p-2"role="presentation" aria-label="signup">
                     <div className="py-2">Already have an account?</div>
                     <div className="text-center p-2">
-                        <Link to='/' className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4">Log In</Link>                   
+                        <Link to='/' className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded">Log In</Link>                   
                     </div>
                 </div>
             </div>
