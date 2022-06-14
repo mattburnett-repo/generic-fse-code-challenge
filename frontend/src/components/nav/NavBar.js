@@ -12,7 +12,7 @@ export const NavBar = () => {
     const { setUser } = useAuth()
 
     return (
-        <div className="shadow bg-gray-200">
+        <div className="bg-gray-200">
             <div className="container mx-auto px-4  ">
                 <div className="flex items-center justify-between">
                     <div>
@@ -21,8 +21,8 @@ export const NavBar = () => {
 
                     <div className="hidden sm:flex sm:items-center ">
                         <div>
-                        <h1 className="text-5xl text-center m-4">Generic FSE Code Challenge Dashboard</h1>
-                        <FlashMessageDisplay ref={flashRef} />       
+                            <h1 className="text-5xl text-center m-4">Generic FSE Code Challenge Dashboard</h1>
+                            <FlashMessageDisplay ref={flashRef} />       
                         </div>
                     </div>
 

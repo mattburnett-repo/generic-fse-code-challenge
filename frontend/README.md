@@ -30,6 +30,7 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
     * forwardRef / useImperativeHandle
   * @react-oauth/google
 * Apollo graphQL Client
+* Axios
 * Tailwind
 * React Testing Library
 * [AuthServer](https://github.com/mattburnett-repo/authServer)
