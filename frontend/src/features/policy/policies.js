@@ -34,8 +34,8 @@ export const Policies = () => {
     return (
         // change functions passed in here
         <ResultMessageContext.Provider value={{message, setMessage, swapMessageText}}>  
-            <div className="bg-gray-200 my-24 mx-20 px-2 border-2 border-black">
-                <h1 className="text-5xl text-center m-4">Policy Data Records</h1>
+            <div className="bg-gray-100 my-2 px-2 border-2 border-black">
+                <h1 className="text-3xl text-center m-4">Policy Data Records</h1>
                 <h3 className="text-1xl text-center m-4 text-sky-700">{message}</h3> 
                 <PolicyTable tableData={data} />
             </div>

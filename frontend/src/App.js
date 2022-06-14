@@ -25,17 +25,12 @@ const App = () => {
         <AuthProvider userData={user}>
           <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
             <Route path="/register" component={RegisterDisplay} />
-            {/* Routes / ProtectedRoutes go here */}
-            {/* <Route path='/' component={Login} /> */}
-
             <ProtectedRoute path="/" component={Dashboard} />
-
-            {/* <ProtectedRoute path="/" component={Policies} /> */}          
           </GoogleOAuthProvider>
         </AuthProvider>
       </Switch>           
     </BrowserRouter>
-  );
-};
+  )
+}
 
 export default App; 
