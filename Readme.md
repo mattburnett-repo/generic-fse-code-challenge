@@ -56,6 +56,7 @@ docker-compose down
 ```
 
 ## To Do
+* Browse / Search
 * More modules (ie customer detail, admin)
 * Retrofit with TypeScript
-* Deploy Docker containers
+* Update and deploy Docker containers

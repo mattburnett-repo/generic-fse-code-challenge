@@ -102,6 +102,7 @@ npm test
 
 ## To Do
 * More modules (ie. navigation, policy detail, customer detail)
+* Consolidate Tailwind className entries into custom CSS 
 * Docker deployment
 * More TypeScript
 * Better testing of date-picker component integration

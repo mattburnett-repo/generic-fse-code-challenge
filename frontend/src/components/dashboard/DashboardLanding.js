@@ -11,7 +11,7 @@ import adminIcon from '../../images/admin_01.png'
 export const DashboardLanding = () => {
     return (
         <>
-            <div className="flex justify-around text-center border-2 my-5 p-5 bg-white border-black mx-auto">
+            <div className="flex justify-around text-center border-2 my-2 p-5 bg-white border-black mx-auto">
                 <div className="p-10 border-2 border-red-300 rounded-lg">
                     <Link to="/customers">
                         <img src={customerIcon} alt="customer image here" className="w-96 h-96" /> 

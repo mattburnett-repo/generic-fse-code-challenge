@@ -38,8 +38,9 @@
     "start": "react-scripts start",
     "build": "craco build",
     "build:css": "npx tailwindcss -i src/index.css -o src/style.css --watch",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:all": "react-scripts test",
+    "test:policy": "react-scripts test src/__tests__/policyTable",
+    "test:customers": "react-scripts test src/__tests__/customers"
   },
   "browserslist": {
     "production": [

@@ -6,16 +6,23 @@ import TestRenderer from 'react-test-renderer';
 import 'jest-canvas-mock';
 
 import { MockedProvider } from '@apollo/client/testing'
-import { GET_POLICIES } from '../dataSources/gqlOperations'
-import { mockPolicyData }  from './mockData/getPolicies'
+import { GET_POLICIES, GET_CUSTOMERS } from '../dataSources/gqlOperations'
+import { mockPolicyData, mockCustomerData }  from './mockData/getPolicies'
 
 import { Policies } from '../features/policy/policies'
+import { Customers } from '../features/customer/customers'
 
-const mockOperation = {      
+const mockPolicyOperation = {      
     request: {
         query: GET_POLICIES,
     },
     result: mockPolicyData
+}
+const mockCustomerOperation = {      
+    request: {
+        query: GET_CUSTOMERS,
+    },
+    result: mockCustomerData
 }
 
 module.exports = {
@@ -31,5 +38,6 @@ module.exports = {
     GET_POLICIES,
     mockPolicyData,
     Policies,
-    mockOperation
+    mockPolicyOperation,
+    mockCustomerOperation
 }
