@@ -21,21 +21,16 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Switch>
-        <AuthProvider userData={user}>
-          <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+      <AuthProvider userData={user}>
+        <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+          <Switch>
             <Route path="/register" component={RegisterDisplay} />
-            {/* Routes / ProtectedRoutes go here */}
-            {/* <Route path='/' component={Login} /> */}
-
-            <ProtectedRoute path="/" component={Dashboard} />
-
-            {/* <ProtectedRoute path="/" component={Policies} /> */}          
-          </GoogleOAuthProvider>
-        </AuthProvider>
-      </Switch>           
+            <ProtectedRoute path="/" component={Dashboard} />              
+          </Switch>
+        </GoogleOAuthProvider>
+      </AuthProvider>          
     </BrowserRouter>
-  );
-};
+  )
+}
 
 export default App; 

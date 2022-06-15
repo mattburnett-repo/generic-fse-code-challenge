@@ -1,7 +1,7 @@
 
 // https://github.com/testing-library/jest-dom
 
-import {renderer, MockedProvider, Policies, mockOperation} from '../test/policyTestConfig'
+import {renderer, MockedProvider, Policies, mockOperation} from '../../test/genericcFseTestConfig'
 import 'jest-canvas-mock';
 
 describe('PolicyTable snapshot', () => {

@@ -1,5 +1,5 @@
 
-import {render, screen, waitFor, MockedProvider, Policies, mockOperation} from '../test/policyTestConfig'
+import {render, screen, waitFor, MockedProvider, Policies, mockOperation} from '../../test/genericcFseTestConfig'
 import 'jest-canvas-mock';
 
 describe('PolicyTable component basic render tests', () => {

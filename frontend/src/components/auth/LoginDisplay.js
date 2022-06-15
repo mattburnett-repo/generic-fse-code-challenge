@@ -35,7 +35,7 @@ export const LoginDisplay = () => {
                         <input type='text' name="password" placeholder='password' required />
                     </div>
                     <div className="text-center p-2">
-                        <button type="submit" name="login-button" className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4">Log In</button>
+                        <button type="submit" name="login-button" className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded">Log In</button>
                     </div>                       
                 </form>
             </div>
@@ -87,7 +87,7 @@ export const LoginDisplay = () => {
                     <div className="py-2">Don't have an account?</div>
                     <div className="text-center p-2">
                         {/* <button type="button" onClick={handleSignUpClick} className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4"> */}
-                        <Link to='/register' className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4">Sign Up</Link>
+                        <Link to='/register' className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded">Sign Up</Link>
                         {/* </button> */}
                     </div>
                 </div>
