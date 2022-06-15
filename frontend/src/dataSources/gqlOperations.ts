@@ -73,3 +73,14 @@ export const UPDATE_POLICY_FIELD = gql`
         }
     }
 `
+
+export const GET_CUSTOMERS = gql`
+    query getCustomers {
+        customers {
+        id
+        first_name
+        last_name
+        date_of_birth
+        }
+    }
+`

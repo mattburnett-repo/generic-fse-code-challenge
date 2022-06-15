@@ -1,13 +1,13 @@
 
 // https://github.com/testing-library/jest-dom
 
-import {renderer, MockedProvider, Policies, mockOperation} from '../../test/genericcFseTestConfig'
+import {renderer, MockedProvider, Policies, mockPolicyOperation} from '../../test/genericFseTestConfig'
 import 'jest-canvas-mock';
 
 describe('PolicyTable snapshot', () => {
     it('creates a snapshot', () => {
         const tree = renderer.create(
-            <MockedProvider mocks={[mockOperation]} addTypename={false}>
+            <MockedProvider mocks={[mockPolicyOperation]} addTypename={false}>
                 <Policies />
             </MockedProvider>
         )

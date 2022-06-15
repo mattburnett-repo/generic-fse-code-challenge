@@ -1,5 +1,5 @@
 
-import {render, screen, waitFor, MockedProvider, Policies, mockOperation} from '../../test/genericcFseTestConfig'
+import {render, screen, waitFor, MockedProvider, Policies, mockPolicyOperation} from '../../test/genericFseTestConfig'
 import 'jest-canvas-mock';
 
 describe('PolicyTable component basic render tests', () => {
@@ -8,7 +8,7 @@ describe('PolicyTable component basic render tests', () => {
 
     beforeEach(async () => {
         render(
-            <MockedProvider mocks={[mockOperation]} addTypename={false}>
+            <MockedProvider mocks={[mockPolicyOperation]} addTypename={false}>
                 <Policies />
             </MockedProvider>
         )

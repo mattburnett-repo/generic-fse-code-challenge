@@ -1,5 +1,5 @@
 
-import {render, screen, waitFor, userEvent, MockedProvider, Policies, mockOperation} from '../../test/genericcFseTestConfig'
+import {render, screen, waitFor, userEvent, MockedProvider, Policies, mockPolicyOperation} from '../../test/genericFseTestConfig'
 import 'jest-canvas-mock';
 
 describe('PolicyTable component pagination tests', () => {
@@ -7,7 +7,7 @@ describe('PolicyTable component pagination tests', () => {
 
     beforeEach(async () => {
         render(
-            <MockedProvider mocks={[mockOperation]} addTypename={false}>
+            <MockedProvider mocks={[mockPolicyOperation]} addTypename={false}>
                 <Policies />
             </MockedProvider>
         )

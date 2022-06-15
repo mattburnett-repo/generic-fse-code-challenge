@@ -7,7 +7,8 @@ import 'jest-canvas-mock';
 
 import { MockedProvider } from '@apollo/client/testing'
 import { GET_POLICIES, GET_CUSTOMERS } from '../dataSources/gqlOperations'
-import { mockPolicyData, mockCustomerData }  from './mockData/getPolicies'
+import { mockPolicyData }  from './mockData/getPolicies'
+import { mockCustomerData } from './mockData/getCustomers'
 
 import { Policies } from '../features/policy/policies'
 import { Customers } from '../features/customer/customers'
