@@ -28,9 +28,8 @@ export const TextFieldEditDef = (setVars, {flashRef}) => {
         const onBlur = (e) => {
             if(hasChanged(initialValue, e.target.value)) {
                 if(isEmpty(e.target.value)) {
-                    flashRef.current.setErrorMessage(`${column.id} can not be blank`)
-                    let el = document.getElementsByName(e.target.name)[0]
-                    el.focus();
+                    flashRef.current.setErrorMessage(`${column.id} can\'t be blank`)
+                    e.target.focus()
                 } else {
                     updateTableData(row.index, column.id, value)
 

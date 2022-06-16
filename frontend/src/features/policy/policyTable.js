@@ -9,7 +9,7 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_POLICY_FIELD } from '../../dataSources/gqlOperations'
 
 import { policy_jsonToArray, PolicyTableColumns } from './policyTableFunctions'
-import { TextFieldEditDef, DateFieldEditDef } from '../../util/tableFunctions'
+import { TextFieldEditDef, DateFieldEditDef } from '../../components/tableDisplay/tableFunctions'
 
 import { ResultMessageContext } from "../../context/result.message.context"
 

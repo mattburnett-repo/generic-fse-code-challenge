@@ -29,7 +29,7 @@ import { useTable, useSortBy, usePagination } from 'react-table'
 //  }
 
 //  export const TableDisplay:FC<TableDisplayProps> = (props) => {
-export const TableDisplay= (props) => {
+export const TableDisplay = (props) => {
     const { columns, data, updateTableData } = props
 
     const {

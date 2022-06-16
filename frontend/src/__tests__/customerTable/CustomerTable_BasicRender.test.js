@@ -27,7 +27,8 @@ describe('Customers component basic render tests', () => {
         await waitFor(() => {
             screen.getByRole('table', {name: /data-table/i})
             screen.getByRole('columnheader', {name: /firstName/i})
-            screen.getByRole('columnheader', {name: /lastName/})              
+            screen.getByRole('columnheader', {name: /lastName/})      
+            screen.getByRole('columnheader', {name: /dateOfBirth/})          
         })
     })
     it('should show 10 records', async () => {

@@ -1,7 +1,7 @@
 
 // 'container' for customer table display
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 import { TableDisplay } from '../tableDisplay/tableDisplay';
 
@@ -9,7 +9,7 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_CUSTOMER_FIELD } from '../../dataSources/gqlOperations'
 
 import { customer_jsonToArray, CustomerTableColumns } from '../../features/customer/customerTableFunctions'
-import { TextFieldEditDef, DateFieldEditDef } from '../../util/tableFunctions'
+import { TextFieldEditDef, DateFieldEditDef } from '../tableDisplay/tableFunctions'
 
 // FIXME: TS for props
 export function CustomerTable(props) {
