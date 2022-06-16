@@ -9,6 +9,7 @@ import { PolicyTable } from './policyTable'
 import LoadingMessage from "../../components/spinner/LoadingMessage";
 import ErrorPage from '../../components/errorPage.js';
 
+// FIXME: replace with flashRef, et al
 import { ResultMessageContext } from "../../context/result.message.context"
 
 import { GET_POLICIES } from '../../dataSources/gqlOperations'

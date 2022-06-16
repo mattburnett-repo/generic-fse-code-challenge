@@ -3,7 +3,7 @@ import { within, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 import TestRenderer from 'react-test-renderer';
-import 'jest-canvas-mock';
+// import 'jest-canvas-mock';
 
 import { MockedProvider } from '@apollo/client/testing'
 import { GET_POLICIES, GET_CUSTOMERS } from '../dataSources/gqlOperations'
@@ -39,6 +39,7 @@ module.exports = {
     GET_POLICIES,
     mockPolicyData,
     Policies,
+    Customers,
     mockPolicyOperation,
     mockCustomerOperation
 }

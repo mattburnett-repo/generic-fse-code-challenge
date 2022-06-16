@@ -12,8 +12,8 @@ const isEmpty = (theField) => {
     return (theField.length === 0) ? true : false
 }
 
-export const TextFieldEditDef = (setMessage, swapMessageText, setVars) => {
-
+// export const TextFieldEditDef = (setMessage, swapMessageText, setVars) => {
+export const TextFieldEditDef = (setVars, {flashRef}) => {
     const EditTextField = ({
         row,
         value: initialValue, 
@@ -28,10 +28,9 @@ export const TextFieldEditDef = (setMessage, swapMessageText, setVars) => {
         const onBlur = (e) => {
             if(hasChanged(initialValue, e.target.value)) {
                 if(isEmpty(e.target.value)) {
-                    setMessage(`${column.id} can not be blank`)
+                    flashRef.current.setErrorMessage(`${column.id} can not be blank`)
                     let el = document.getElementsByName(e.target.name)[0]
                     el.focus();
-                    swapMessageText()
                 } else {
                     updateTableData(row.index, column.id, value)
 
@@ -68,7 +67,8 @@ export const TextFieldEditDef = (setMessage, swapMessageText, setVars) => {
     return EditTextField
 }
 
-export const DateFieldEditDef = (setMessage, swapMessageText, setVars) => {
+// export const DateFieldEditDef = (setMessage, swapMessageText, setVars) => {
+    export const DateFieldEditDef = (setVars) => {
     const EditDateField = ({
         row,
         value: initialValue, 

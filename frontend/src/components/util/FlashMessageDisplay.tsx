@@ -5,6 +5,8 @@ import FlashMessage from 'react-flash-message'
 export const FlashMessageDisplay = forwardRef((props, ref): JSX.Element => {
     const [ flashError, setFlashError] = useState('')
     const [ flashSuccess, setFlashSuccess ] = useState('')
+    const [ flashInfo, setFlashInfo ] = useState('')
+
     const flashDuration = 5000
 
     // forwardRef, useImperativeHandle this lets us call / set state from parent component/s useRef
@@ -14,26 +16,38 @@ export const FlashMessageDisplay = forwardRef((props, ref): JSX.Element => {
         },
         setSuccessMessage(message: string) {
             setFlashSuccess(message)
+        },
+        setInfoMessage(message: string) {
+            setFlashInfo(message)
         }
     }))
 
     useEffect(() => {
         setTimeout(() => {setFlashError('')}, flashDuration)
         setTimeout(() => {setFlashSuccess('')}, flashDuration)
+        setTimeout(() => {setFlashInfo('')}, flashDuration)
     }, [flashError, flashSuccess])
 
     return (
         <>
-            {flashError != '' &&
-                <FlashMessage duration={flashDuration} persistOnHover={true}>
-                    <p className="m-5 p-2 bg-red-200 border-red-900 border-2 text-center text-red-700" >{flashError}</p>
-                </FlashMessage>   
-            }
-            {flashSuccess != '' &&
-                <FlashMessage duration={flashDuration} persistOnHover={true}>
-                    <p className="m-5 p-2 bg-green-200 border-green-900 border-2 text-center text-green-700" >{flashSuccess}</p>
-                </FlashMessage>       
-            }         
+            <div className='mb-2 text-center'>
+                {flashError != '' &&
+                    <FlashMessage duration={flashDuration} persistOnHover={true}>
+                        <p className="text-red-700">{flashError}</p>
+                    </FlashMessage>   
+                }
+                {flashSuccess != '' &&
+                    <FlashMessage duration={flashDuration} persistOnHover={true}>
+                        <p className="text-green-700">{flashSuccess}</p>
+                    </FlashMessage>       
+                }  
+                {flashInfo != '' &&
+                    <FlashMessage duration={flashDuration} persistOnHover={true}>
+                        <p className="text-blue-500">{flashInfo}</p>
+                    </FlashMessage>       
+                }                    
+            </div>
+     
         </>
     )
 })

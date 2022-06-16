@@ -19,6 +19,7 @@
 
 // import { FC } from 'react'
 
+// FIXME: should only reference this from one location, not copy into every component folder
 import { useTable, useSortBy, usePagination } from 'react-table'
 
 //  type TableDisplayProps = {
@@ -68,7 +69,7 @@ export const TableDisplay= (props) => {
 
     return (
         <>
-        <table {...getTableProps()} className="border border-black mx-auto" role="table" aria-label="policy-table">
+        <table {...getTableProps()} className="border border-black mx-auto" role="table" aria-label="data-table">
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
@@ -91,11 +92,11 @@ export const TableDisplay= (props) => {
                     </tr>
                 ))}
             </thead>
-            <tbody {...getTableBodyProps()} className="bg-white" aria-label="policy-records">
+            <tbody {...getTableBodyProps()} className="bg-white" aria-label="data-records">
                 {page.map((row, i) => {
                     prepareRow(row)
                     return (
-                        <tr {...row.getRowProps()} className="p-4" aria-label="policy-record">
+                        <tr {...row.getRowProps()} className="p-4" aria-label="data-record">
                             {row.cells.map(cell => {
                                 return <td {...cell.getCellProps()} className="px-4 py-1">{cell.render('Cell')}</td>
                             })}

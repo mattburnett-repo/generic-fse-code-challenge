@@ -9,8 +9,6 @@ import LoginGithub from 'react-login-github'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-// import AuthApi  from '../../features/auth/authApi'
-
 import { FlashMessageDisplay } from '../util/FlashMessageDisplay'
 import { handleLoginClick, setProfile } from '../../features/auth/authFunctions'
 

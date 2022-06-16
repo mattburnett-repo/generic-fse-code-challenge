@@ -1,15 +1,15 @@
 
-import {render, screen, waitFor, MockedProvider, Policies, mockPolicyOperation} from '../../test/genericFseTestConfig'
+import {render, screen, waitFor, MockedProvider, Customers, mockCustomerOperation} from '../../test/genericFseTestConfig'
 import 'jest-canvas-mock';
 
-describe('PolicyTable component basic render tests', () => {
-    let policyRecords = null;
+describe('Customers component basic render tests', () => {
+    let customerRecords = null;
     let result = null
 
     beforeEach(async () => {
         render(
-            <MockedProvider mocks={[mockPolicyOperation]} addTypename={false}>
-                <Policies />
+            <MockedProvider mocks={[mockCustomerOperation]} addTypename={false}>
+                <Customers />
             </MockedProvider>
         )
     })
@@ -17,23 +17,23 @@ describe('PolicyTable component basic render tests', () => {
     it('should render with a ... loading message', () => {
         result = screen.getByRole('presentation', {name: /loading-text/i})
         expect(result).toHaveTextContent('... loading')
-    })
+    }) 
     it('should wait for render to complete', async () => {
         await waitFor(() => {
             result = screen.getByRole('table', {name: /data-table/i})
         })
     })
-    it('should render the policy table', async () => {
+    it('should render the customer table', async () => {
         await waitFor(() => {
             screen.getByRole('table', {name: /data-table/i})
-            screen.getByRole('columnheader', {name: /Customer/i})
-            screen.getByRole('columnheader', {name: /Policy/})              
+            screen.getByRole('columnheader', {name: /firstName/i})
+            screen.getByRole('columnheader', {name: /lastName/})              
         })
     })
     it('should show 10 records', async () => {
         await waitFor(() => {
-            policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)            
+            customerRecords = screen.getAllByRole('row', {name: /^data-record$/i})
+            expect(customerRecords.length).toBe(10)           
         })
-    })        
+    })  
 })

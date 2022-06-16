@@ -3,7 +3,7 @@
 
 import { useState, useEffect, useContext } from 'react'
 
-import { TableDisplay } from '../../components/policy/tableDisplay';
+import { TableDisplay } from '../../components/tableDisplay/tableDisplay';
 
 import { useMutation } from '@apollo/client';
 import { UPDATE_POLICY_FIELD } from '../../dataSources/gqlOperations'

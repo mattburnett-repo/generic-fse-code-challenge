@@ -25,11 +25,12 @@
     "node_modules"
   ],
   "include": [
-    "src/components",
-    "src/features/policy",
-    "src/features/dashboard",
-    "**/*.tsx", 
-    "src/util/resultMessage-context.ts", 
-    "src/util/resultMessage-context.ts"
-, "src/App.js" ]
+      "src/components",
+      // "src/features/policy",
+      // "src/features/dashboard",
+      "**/*.tsx", 
+      "src/util/resultMessage-context.ts", 
+      // "src/components/util/FlashMessageDisplay.tsx",
+      "src/App.js" 
+  ]
 }
