@@ -84,4 +84,18 @@ export const GET_CUSTOMERS = gql`
         }
     }
 `
-// export const UPDATE_CUSTOMER_FIELD = gql``
+export const UPDATE_CUSTOMER_FIELD = gql`
+    mutation UpdateCustomer($customerId: Int, $firstName: String, $lastName: String, $dateOfBirth: Date) {
+        updateField(customerId: $customerId, firstName: $firstName, lastName: $lastName, dateOfBirth: $dateOfBirth) {
+            code
+            success
+            message
+            customer {
+                id
+                first_name
+                last_name
+                date_of_birth
+            }
+        }
+    }
+`

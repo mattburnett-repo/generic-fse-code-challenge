@@ -33,12 +33,12 @@ export const FlashMessageDisplay = forwardRef((props, ref): JSX.Element => {
             <div className='mb-2 text-center'>
                 {flashError != '' &&
                     <FlashMessage duration={flashDuration} persistOnHover={true}>
-                        <p className="text-red-700" role="status" aria-label='flash-error-display' >{flashError}</p>
+                        <p className="text-red-500" role="status" aria-label='flash-error-display' >{flashError}</p>
                     </FlashMessage>   
                 }
                 {flashSuccess != '' &&
                     <FlashMessage duration={flashDuration} persistOnHover={true}>
-                        <p className="text-green-700" role="status" aria-label='flash-success-display' >{flashSuccess}</p>
+                        <p className="text-green-500" role="status" aria-label='flash-success-display' >{flashSuccess}</p>
                     </FlashMessage>       
                 }  
                 {flashInfo != '' &&

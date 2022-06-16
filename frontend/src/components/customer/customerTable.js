@@ -1,7 +1,7 @@
 
 // 'container' for customer table display
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import { TableDisplay } from '../tableDisplay/tableDisplay';
 
@@ -23,21 +23,21 @@ export function CustomerTable(props) {
 
     const columns = CustomerTableColumns(EditDateField, EditTextField)
 
-    // const [ updateField ] = useMutation(UPDATE_CUSTOMER_FIELD, {
-    //     variables: vars,            
-    //     isLoading: loading => {
-    //         setMessage(loading.message)
-    //         swapMessageText()
-    //     },
-    //     onError: error => {    
-    //         setMessage(error.message)
-    //         console.log('Error ' , error)
-    //     },
-    //     onCompleted: data => {  
-    //         setMessage(data.updateField.message)
-    //         swapMessageText()
-    //     }
-    // });
+    const [ updateField ] = useMutation(UPDATE_CUSTOMER_FIELD, {
+        variables: vars,            
+        isLoading: loading => {
+            console.log('customerTable updateField isLoading: ', loading)
+            flashRef.current.setInfoMessage(loading.message)
+        },
+        onError: error => {    
+            console.log('customerTable updateField onError: ', error)
+            flashRef.current.setErrorMessage(error.message)
+        },
+        onCompleted: data => {  
+            console.log('customerTable updateField onCompleted: ', data.updateField.message)
+            flashRef.current.setSuccessMessage(data.updateField.message)
+        }
+    })
 
     useEffect(() => {
         // startup always runs useEffect. On mount it sends updateField with empty 'vars', making needless error.

@@ -11,8 +11,6 @@ import { UPDATE_POLICY_FIELD } from '../../dataSources/gqlOperations'
 import { policy_jsonToArray, PolicyTableColumns } from '../../features/policy/policyTableFunctions'
 import { TextFieldEditDef, DateFieldEditDef } from '../../components/tableDisplay/tableFunctions'
 
-import { ResultMessageContext } from "../../context/result.message.context"
-
 export function PolicyTable(props) {
     const flashRef = props.flashRef
 
@@ -27,16 +25,13 @@ export function PolicyTable(props) {
     const [ updateField ] = useMutation(UPDATE_POLICY_FIELD, {
         variables: vars,            
         isLoading: loading => {
-            setMessage(loading.message)
-            swapMessageText()
+            flashRef.current.setInfoMessage(loading.message)
         },
         onError: error => {    
-            setMessage(error.message)
-            console.log('Error ' , error)
+            flashRef.current.setErrorMessage(error.message)
         },
         onCompleted: data => {  
-            setMessage(data.updateField.message)
-            swapMessageText()
+            flashRef.current.setSuccessMessage(data.updateField.message)
         }
     });
 
