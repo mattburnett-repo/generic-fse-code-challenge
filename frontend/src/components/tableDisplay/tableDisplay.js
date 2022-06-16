@@ -110,16 +110,16 @@ export const TableDisplay = (props) => {
             This is just a very basic UI implementation:
         */}
         <div className="text-center m-4" role="navigation" aria-label="pagination">
-            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} className="hover:bg-blue-50 px-4" aria-label="pagination-start">
+            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} className="hover:bg-blue-100 px-4" aria-label="pagination-start">
             {'<<'}
             </button>{' '}
-            <button onClick={() => previousPage()} disabled={!canPreviousPage} className="hover:bg-blue-50 px-2" aria-label='pagination-back'>
+            <button onClick={() => previousPage()} disabled={!canPreviousPage} className="hover:bg-blue-100 px-2" aria-label='pagination-back'>
             {'<'}
             </button>{' '}
-            <button onClick={() => nextPage()} disabled={!canNextPage} className="hover:bg-blue-50 px-2" aria-label="pagination-forward">
+            <button onClick={() => nextPage()} disabled={!canNextPage} className="hover:bg-blue-100 px-2" aria-label="pagination-forward">
             {'>'}
             </button>{' '}
-            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} className="hover:bg-blue-50 px-4" aria-label="pagination-end">
+            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} className="hover:bg-blue-100 px-4" aria-label="pagination-end">
             {'>>'}
             </button>{' '}
             <span role="presentation" aria-label="page-indicator">
@@ -141,7 +141,7 @@ export const TableDisplay = (props) => {
                         const page = e.target.value ? Number(e.target.value) - 1 : 0
                         gotoPage(page)
                     }}
-                    className="w-100 border border-black"
+                    className="w-10 border border-black"
                     aria-label="pagination-goto-page-number"
                 />
             </span>{' '}

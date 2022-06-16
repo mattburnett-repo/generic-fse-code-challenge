@@ -23,8 +23,8 @@ export const Customers = () => {
 
     return (
         <div className="bg-gray-100 my-2 px-2 border-2 border-black text-center">
-            <h1 className="text-3xl mt-4">Customer Records</h1>
-            <h2 className="mb-4 text-blue-500">Click a column header to sort on that column</ h2>
+            <h1 className="text-3xl m-4">Customer Records</h1>
+            <h2 className="m-4 text-blue-500">Click a column header to sort on that column</ h2>
             <h3 className="text-1xl text-center m-4" role="status" aria-label="flash-message-display">
                 <FlashMessageDisplay ref={flashRef} />    
             </h3> 

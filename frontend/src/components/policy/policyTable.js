@@ -1,26 +1,26 @@
 
 // 'container' for policy table display
 
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 
 import { TableDisplay } from '../../components/tableDisplay/tableDisplay';
 
 import { useMutation } from '@apollo/client';
 import { UPDATE_POLICY_FIELD } from '../../dataSources/gqlOperations'
 
-import { policy_jsonToArray, PolicyTableColumns } from './policyTableFunctions'
+import { policy_jsonToArray, PolicyTableColumns } from '../../features/policy/policyTableFunctions'
 import { TextFieldEditDef, DateFieldEditDef } from '../../components/tableDisplay/tableFunctions'
 
 import { ResultMessageContext } from "../../context/result.message.context"
 
 export function PolicyTable(props) {
+    const flashRef = props.flashRef
+
     const [data, setData] = useState(() => policy_jsonToArray(props.tableData)) // FIXME: this should use data from Apollo cache
     const [vars, setVars] = useState({})  // an object, not a string. zB: {customerId: 1, firstName: 'asdf'}
 
-    const { setMessage, swapMessageText } = useContext(ResultMessageContext)
-
-    const EditTextField = TextFieldEditDef(setMessage, swapMessageText, setVars)
-    const EditDateField = DateFieldEditDef(setMessage, swapMessageText, setVars)
+    const EditTextField = TextFieldEditDef(setVars, {flashRef})
+    const EditDateField = DateFieldEditDef(setVars)
 
     const columns = PolicyTableColumns(EditDateField, EditTextField)
 

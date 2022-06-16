@@ -35,17 +35,17 @@ export const PolicyTableColumns = (EditDateField, EditTextField) => {
                     {
                         Header: 'First Name',
                         accessor: 'firstName', 
-                        Cell: EditTextField,
+                        // Cell: EditTextField,
                     },
                     {
                         Header: 'Last Name',
                         accessor: 'lastName', 
-                        Cell: EditTextField,
+                        // Cell: EditTextField,
                     },
                     {
                         Header: 'Date of Birth',
                         accessor: 'dateOfBirth',
-                        Cell: EditDateField
+                        // Cell: EditDateField
                     },                    
                 ]
             },

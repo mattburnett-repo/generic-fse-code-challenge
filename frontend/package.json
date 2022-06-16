@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "Generic FSE Frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
