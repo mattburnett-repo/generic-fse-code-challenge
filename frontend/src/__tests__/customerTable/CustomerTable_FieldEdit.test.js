@@ -17,17 +17,18 @@ describe('it should edit three fields', () => {
 
     it('starts with default render', async () => {
         await waitFor(() => {
-            customerRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(customerRecords[0].textContent).toBe('1-0-0')                 
+            customerRecords = screen.getAllByRole('row', {name: /^data-record$/i})                
         })
+        expect(customerRecords[0].textContent).toBe('1-0-0') 
     })
 
     it('should handle empty first name value', async () => {
         await waitFor(() => {
             theCells = screen.getAllByRole('textbox', {name: /firstName/i})
-            theVal = theCells[0]
-            expect(theVal).toHaveValue('firstName 01')
         })
+
+        theVal = theCells[0]
+        expect(theVal).toHaveValue('firstName 01')
 
         userEvent.clear(theVal)
         expect(theVal).toHaveValue('')
@@ -38,23 +39,24 @@ describe('it should edit three fields', () => {
     })
     it('should enter text into first name', async () => {  
         await waitFor(() => {
-            theCells = screen.getAllByRole('textbox', {name: /firstName/i});
-            theVal = theCells[0];
-            expect(theVal).toHaveValue('firstName 01')
-
-            userEvent.clear(theVal);
-            expect(theVal).toHaveValue('')
-            userEvent.type(theVal, 'test first name');
-            expect(theVal).toHaveValue('test first name')                
+            theCells = screen.getAllByRole('textbox', {name: /firstName/i});              
         })
+        theVal = theCells[0];
+        expect(theVal).toHaveValue('firstName 01')
+
+        userEvent.clear(theVal);
+        expect(theVal).toHaveValue('')
+        userEvent.type(theVal, 'test first name');
+        expect(theVal).toHaveValue('test first name')  
     })  
     it('should handle empty last name value', async () => {
         await waitFor(() => {
             theCells = screen.getAllByRole('textbox', {name: /lastName/i})
-            theVal = theCells[0]
-            expect(theVal).toHaveValue('lastName 01')
         })
 
+        theVal = theCells[0]
+        expect(theVal).toHaveValue('lastName 01')
+        
         userEvent.clear(theVal)
         expect(theVal).toHaveValue('')
 
@@ -64,15 +66,16 @@ describe('it should edit three fields', () => {
     })
     it('should enter text into last name', async () => {
         await waitFor(() => {
-            theCells = screen.getAllByRole('textbox', {name: /lastName/i});
-            theVal = theCells[0];
-            expect(theVal).toHaveValue('lastName 01')
-
-            userEvent.clear(theVal);
-            expect(theVal).toHaveValue('')
-            userEvent.type(theVal, "test last name");
-            expect(theVal).toHaveValue('test last name')               
+            theCells = screen.getAllByRole('textbox', {name: /lastName/i});            
         })
+
+        theVal = theCells[0];
+        expect(theVal).toHaveValue('lastName 01')
+
+        userEvent.clear(theVal);
+        expect(theVal).toHaveValue('')
+        userEvent.type(theVal, "test last name");
+        expect(theVal).toHaveValue('test last name')   
     }) 
         // https://stackoverflow.com/questions/61949443/how-to-test-ant-design-date-picker-using-testing-library-react#62804579
     // https://github.com/wojtekmaj/react-date-picker#user-guide

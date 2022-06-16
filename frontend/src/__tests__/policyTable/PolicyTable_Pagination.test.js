@@ -17,35 +17,38 @@ describe('PolicyTable component pagination tests', () => {
 
     it('starts with default render', async () => {
         await waitFor(() => {
-            policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
-        
-            pageIndicator = screen.getByRole('presentation', {name: /page-indicator/i});
-            expect(pageIndicator.textContent).toBe('Page 1 of 101 ')              
+            policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})           
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
+    
+        pageIndicator = screen.getByRole('presentation', {name: /page-indicator/i});
+        expect(pageIndicator.textContent).toBe('Page 1 of 101 ')   
     })    
     it('goes forward one page', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
-
-            userEvent.click(screen.getByRole('button', {name: /^pagination-forward$/i}));
-            pageIndicator = screen.getByRole('presentation', {name: /page-indicator/i});
-
-            policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords[0].textContent).toBe('11LexiKling1978-12-13T23:00:00.000ZERGO Insurance GroupHouseholdPending1981-03-192021-12-302022-04-02')  
-        
-            expect(pageIndicator.textContent).toBe('Page 2 of 101 ')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
+
+        userEvent.click(screen.getByRole('button', {name: /^pagination-forward$/i}));
+        pageIndicator = screen.getByRole('presentation', {name: /page-indicator/i});
+
+        policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
+        expect(policyRecords[0].textContent).toBe('11LexiKling1978-12-13T23:00:00.000ZERGO Insurance GroupHouseholdPending1981-03-192021-12-302022-04-02')  
+    
+        expect(pageIndicator.textContent).toBe('Page 2 of 101 ')
     })
     it('goes to the end of the record set', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.click(screen.getByRole('button', {name: /^pagination-end$/i}));
         pageIndicator = screen.getByRole('presentation', {name: /page-indicator/i});
@@ -59,9 +62,10 @@ describe('PolicyTable component pagination tests', () => {
     it('goes back one page', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.click(screen.getByRole('button', {name: /^pagination-end$/i}));
         userEvent.click(screen.getByRole('button', {name: /^pagination-back$/i}));
@@ -75,9 +79,10 @@ describe('PolicyTable component pagination tests', () => {
     it('goes back to the beginning', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.click(screen.getByRole('button', {name: /^pagination-end$/i}))
         policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
@@ -95,9 +100,10 @@ describe('PolicyTable component pagination tests', () => {
     it('goes to page 101', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         gotoPageNumber = screen.getByRole('spinbutton', {name: /pagination-goto-page-number/i});
         userEvent.clear(gotoPageNumber);
@@ -113,9 +119,10 @@ describe('PolicyTable component pagination tests', () => {
     it('goes back to page 1', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         gotoPageNumber = screen.getByRole('spinbutton', {name: /pagination-goto-page-number/i});
         userEvent.clear(gotoPageNumber);
@@ -143,9 +150,10 @@ describe('PolicyTable component pagination tests', () => {
     it('changes page size to 20', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.selectOptions(screen.getByRole('combobox'), screen.getByRole('option', { name: 'Show 20' }))
         expect(screen.getByRole('option', { name: 'Show 20' }).selected).toBe(true)
@@ -160,9 +168,10 @@ describe('PolicyTable component pagination tests', () => {
     it('changes page size to 30', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.selectOptions(screen.getByRole('combobox'), screen.getByRole('option', { name: 'Show 30' }))
         expect(screen.getByRole('option', { name: 'Show 30' }).selected).toBe(true)
@@ -177,9 +186,10 @@ describe('PolicyTable component pagination tests', () => {
     it('changes page size to 40', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.selectOptions(screen.getByRole('combobox'), screen.getByRole('option', { name: 'Show 40' }))
         expect(screen.getByRole('option', { name: 'Show 40' }).selected).toBe(true)
@@ -194,9 +204,10 @@ describe('PolicyTable component pagination tests', () => {
     it('changes page size to 50', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.selectOptions(screen.getByRole('combobox'), screen.getByRole('option', { name: 'Show 50' }))
         expect(screen.getByRole('option', { name: 'Show 50' }).selected).toBe(true)
@@ -211,9 +222,10 @@ describe('PolicyTable component pagination tests', () => {
     it('changes page size back to 10', async () => {
         await waitFor(() => {
             policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords.length).toBe(10)
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
         })
+
+        expect(policyRecords.length).toBe(10)
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')
 
         userEvent.selectOptions(screen.getByRole('combobox'), screen.getByRole('option', { name: 'Show 50' }))
         expect(screen.getByRole('option', { name: 'Show 50' }).selected).toBe(true)

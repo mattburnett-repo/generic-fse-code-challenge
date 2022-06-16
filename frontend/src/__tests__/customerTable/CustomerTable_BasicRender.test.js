@@ -20,21 +20,21 @@ describe('Customers component basic render tests', () => {
     }) 
     it('should wait for render to complete', async () => {
         await waitFor(() => {
-            result = screen.getByRole('table', {name: /data-table/i})
+            screen.getByRole('table', {name: /data-table/i})
         })
     })
     it('should render the customer table', async () => {
         await waitFor(() => {
-            screen.getByRole('table', {name: /data-table/i})
-            screen.getByRole('columnheader', {name: /firstName/i})
-            screen.getByRole('columnheader', {name: /lastName/})      
-            screen.getByRole('columnheader', {name: /dateOfBirth/})          
+            screen.getByRole('table', {name: /data-table/i})        
         })
+        screen.getByRole('columnheader', {name: /firstName/i})
+        screen.getByRole('columnheader', {name: /lastName/})      
+        screen.getByRole('columnheader', {name: /dateOfBirth/})    
     })
     it('should show 10 records', async () => {
         await waitFor(() => {
-            customerRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(customerRecords.length).toBe(10)           
+            customerRecords = screen.getAllByRole('row', {name: /^data-record$/i})       
         })
+        expect(customerRecords.length).toBe(10)    
     })  
 })

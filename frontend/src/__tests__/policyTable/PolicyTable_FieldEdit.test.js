@@ -4,7 +4,6 @@ import 'jest-canvas-mock';
 import { clearScreenDown } from 'readline';
 
 describe('it should edit one field', () => {
-    let policyRecords = null;
     let theCells = null;
     let theVal = null;
 
@@ -17,18 +16,20 @@ describe('it should edit one field', () => {
     })
 
     it('starts with default render', async () => {
+        let policyRecords = null
         await waitFor(() => {
-            policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})
-            expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02')                 
+            policyRecords = screen.getAllByRole('row', {name: /^data-record$/i})                
         })
+        expect(policyRecords[0].textContent).toBe('1firstName 01lastName 011970-01-14T23:00:00.000ZAllianzLiabilityActive2000-01-012001-01-012022-04-02') 
     })    
 
     it('should handle empty policy number value', async () => {
         await waitFor(() => {
             theCells = screen.getAllByRole('textbox', {name: /policyNumber/i})
-            theVal = theCells[0]
-            expect(theVal).toHaveValue('ALLaaa111')
         })
+
+        theVal = theCells[0]
+        expect(theVal).toHaveValue('ALLaaa111')
 
         userEvent.clear(theVal)
         expect(theVal).toHaveValue('')
@@ -39,14 +40,15 @@ describe('it should edit one field', () => {
     })
     it('should enter text into policy number', async () => {
         await waitFor(() => {
-            theCells = screen.getAllByRole('textbox', {name: /policyNumber/i});
-            theVal = theCells[0];
-            expect(theVal).toHaveValue('ALLaaa111')
-
-            userEvent.clear(theVal);
-            expect(theVal).toHaveValue('')
-            userEvent.type(theVal, "BBBbbbbb2222");
-            expect(theVal).toHaveValue('BBBbbbbb2222')               
+            theCells = screen.getAllByRole('textbox', {name: /policyNumber/i});           
         })
+        
+        theVal = theCells[0];
+        expect(theVal).toHaveValue('ALLaaa111')
+
+        userEvent.clear(theVal);
+        expect(theVal).toHaveValue('')
+        userEvent.type(theVal, "BBBbbbbb2222");
+        expect(theVal).toHaveValue('BBBbbbbb2222')    
     }) 
 }); // end edit
