@@ -12,6 +12,7 @@ import { mockCustomerData } from './mockData/getCustomers'
 
 import { Policies } from '../features/policy/policies'
 import { Customers } from '../features/customer/customers'
+import { Admin } from '../features/admin/admin'
 
 const mockPolicyOperation = {      
     request: {
@@ -40,6 +41,7 @@ module.exports = {
     mockPolicyData,
     Policies,
     Customers,
+    Admin,
     mockPolicyOperation,
     mockCustomerOperation
 }

@@ -40,7 +40,8 @@
     "build:css": "npx tailwindcss -i src/index.css -o src/style.css --watch",
     "test": "react-scripts test",
     "test:policy": "react-scripts test src/__tests__/policyTable",
-    "test:customer": "react-scripts test src/__tests__/customerTable"
+    "test:customer": "react-scripts test src/__tests__/customerTable",
+    "test:admin": "react-scripts test src/__tests__/admin"
   },
   "browserslist": {
     "production": [

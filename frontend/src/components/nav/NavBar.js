@@ -38,21 +38,18 @@ export const NavBar = () => {
                 </div>
             </div>
             <div className="flex justify-around text-center border-2 my-1 p-2 bg-white border-black mx-auto">
-                <div className="p-2 border-2 border-red-300 bg-red-50 w-36 hover:bg-red-300 active:bg-red-200 rounded">
+                <div className="p-2 border-2 border-orange-300 bg-orange-50 w-36 hover:bg-orange-300 active:bg-orange-200 rounded">
                     <Link to="/customers">
-                        {/* <img src="./favicon.ico" alt="customer image here" className="w-6 h-6" /> */}
                         <p>Customers</p>                    
                     </Link>
                 </div>
                 <div className="p-2 border-2 border-green-300 bg-green-50 w-36 hover:bg-green-300 active:bg-green-200rounded">
                     <Link to="/policies">
-                        {/* <img src="./favicon.ico" alt="policy image here" className="w-6 h-6" /> */}
                         <p>Policies</p>
                     </Link>
                 </div>
                 <div className="p-2 border-2 border-blue-300 bg-blue-50 w-36 hover:bg-blue-300 active:bg-blue-200 rounded">
                     <Link to="/admin">
-                        {/* <img src="./favicon.ico" alt="admin image here" className="w-6 h-6" /> */}
                         <p>Admin</p>
                     </Link>
                 </div>
