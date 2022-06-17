@@ -19,32 +19,32 @@ export const LoginDisplay = () => {
     let { setUser } = useAuth() // reach into the Context and get state setter. Doesn't work with .tsx / JSX.ELement because initially it's null
 
     return (
-        <div className="bg-gray-200 my-24 mx-auto py-5 w-1/4 border-2 border-black">
-            <div className="text-4xl text-center m-4">Generic FSE Code Challenge</div>
+        <div className="auth-container">
+            <div className="auth-title">Generic FSE Code Challenge</div>
 
             <FlashMessageDisplay ref={flashRef} />
 
-            <div className="m-5 p-2 bg-gray-100 border-2 border-blue-200">
+            <div className="auth-panel">
                 <form onSubmit={(e) => handleLoginClick(e, {flashRef}, {setUser})}> 
-                    <div className="text-center p-2" role="presentation" aria-label="username">
+                    <div className="auth-input" role="presentation" aria-label="username">
                         <input type='text' name="username" placeholder='username' required />
                     </div>
-                    <div className="text-center p-2" role="presentation" aria-label="password">
+                    <div className="auth-input" role="presentation" aria-label="password">
                         <input type='text' name="password" placeholder='password' required />
                     </div>
-                    <div className="text-center p-2">
-                        <button type="submit" name="login-button" className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded">Log In</button>
+                    <div className="auth-input">
+                        <button type="submit" name="login-button" className="btn-auth">Log In</button>
                     </div>                       
                 </form>
             </div>
 
-            <div className="m-5 bg-gray-100 border-2 border-blue-200">
-                <div className="text-center p-2">
-                    <div className='p-2'> Or log in with</div>
+            <div className="auth-panel">
+                <div className="auth-input">
+                    <div className='p-2'>Or log in with</div>
                     <div className="flex flex-col justify-center items-center">
                         <GoogleLogin
                             onSuccess={response => {
-                                console.log(response);
+                                // console.log(response);
                                 // generate JWT here?
                                 setProfile(response, {setUser}) // this is not a jwt auth token...
                             }}
@@ -80,13 +80,11 @@ export const LoginDisplay = () => {
                 </div>
             </div>
 
-            <div className="m-5 bg-gray-100 border-2 border-blue-200">
-                <div className="text-center p-2"role="presentation" aria-label="signup">
+            <div className="auth-panel">
+                <div className="auth-input"role="presentation" aria-label="signup">
                     <div className="py-2">Don't have an account?</div>
-                    <div className="text-center p-2">
-                        {/* <button type="button" onClick={handleSignUpClick} className="bg-blue-200 hover:bg-blue-400 active:bg-blue-600 px-4"> */}
-                        <Link to='/register' className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded">Sign Up</Link>
-                        {/* </button> */}
+                    <div className="auth-input">
+                        <Link to='/register' className="btn-auth">Sign Up</Link>
                     </div>
                 </div>
             </div>

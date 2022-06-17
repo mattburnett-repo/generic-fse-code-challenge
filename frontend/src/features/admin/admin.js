@@ -7,10 +7,10 @@ export const Admin = () => {
     const flashRef = useRef()
 
     return (
-        <div className="bg-gray-100 my-2 px-2 border-2 border-black text-center">
-            <h1 className="text-3xl m-4">Admin</h1>
-            <h2 className="m-4 text-blue-500">Click an option</ h2>
-            <h3 className="text-1xl text-center m-4" role="status" aria-label="flash-message-display">
+        <div className="module-container">
+            <h1 className="module-title">Admin</h1>
+            <h2 className="module-message">Click an option</ h2>
+            <h3 className="flash-message-container" role="status" aria-label="flash-message-display">
                 <FlashMessageDisplay ref={flashRef} />    
             </h3> 
             <AdminDisplay flashRef={flashRef} />
