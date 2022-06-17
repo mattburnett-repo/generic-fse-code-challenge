@@ -7,9 +7,9 @@ export const FlashMessageDisplay = forwardRef((props, ref): JSX.Element => {
     const [ flashSuccess, setFlashSuccess ] = useState('')
     const [ flashInfo, setFlashInfo ] = useState('')
 
-    const flashDuration = 5000
+    const flashDuration = 10000
 
-    // forwardRef, useImperativeHandle this lets us call / set state from parent component/s useRef
+    // forwardRef, useImperativeHandle lets us call / set state from parent component/s useRef
     useImperativeHandle(ref, () => ({
         setErrorMessage(message: string) {
             setFlashError(message)
@@ -26,7 +26,7 @@ export const FlashMessageDisplay = forwardRef((props, ref): JSX.Element => {
         setTimeout(() => {setFlashError('')}, flashDuration)
         setTimeout(() => {setFlashSuccess('')}, flashDuration)
         setTimeout(() => {setFlashInfo('')}, flashDuration)
-    }, [flashError, flashSuccess])
+    }, [flashError, flashSuccess, flashInfo])
 
     return (
         <>

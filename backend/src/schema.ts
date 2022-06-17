@@ -21,18 +21,31 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    "Updates specified fields in a record. Record to update is determined by providing either policyId or customerId. Valid specified fields are firstName / lastName / policyNumber. Use only one specified field at a time."
-    updateField(customerId: Int, firstName: String, lastName: String, dateOfBirth: Date, policyId: Int, policyNumber: String): updateFieldResponse!
+    "Update fields in policy datastore."
+    updatePolicy(policyId: Int, policyNumber: String): updatePolicyResponse!
   }
-  type updateFieldResponse {
+  type updatePolicyResponse {
     "Similar to HTTP status code, represents the status of the mutation"
     code: Int!
     "Indicates whether the mutation was successful"
     success: Boolean!
     "Human-readable message for the UI"
     message: String!
-    "Newly updated policy after a successful mutation"
-    policy: Policy
+    "Newly updated customer after a successful mutation"
+    policy: Policy!
+  }
+
+  type Mutation {
+    "Update fields in customers datasource."
+    updateCustomer(customerId: Int, firstName: String, lastName: String, dateOfBirth: Date): updateCustomerResponse!
+  }
+  type updateCustomerResponse {
+    "Similar to HTTP status code, represents the status of the mutation"
+    code: Int!
+    "Indicates whether the mutation was successful"
+    success: Boolean!
+    "Human-readable message for the UI"
+    message: String!
     "Newly updated customer after a successful mutation"
     customer: Customer
   }

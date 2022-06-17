@@ -32,9 +32,9 @@ export const GET_POLICIES = gql`
     }
 `
 
-export const UPDATE_POLICY_FIELD = gql`
-    mutation UpdateField($customerId: Int, $firstName: String, $lastName: String, $dateOfBirth: Date, $policyId: Int, $policyNumber: String) {
-        updateField(customerId: $customerId, firstName: $firstName, lastName: $lastName, dateOfBirth: $dateOfBirth, policyId: $policyId, policyNumber: $policyNumber) {
+export const UPDATE_POLICY = gql`
+    mutation UpdatePolicy($policyId: Int, $policyNumber: String) {
+        updatePolicy(policyId: $policyId, policyNumber: $policyNumber) {
             code
             success
             message
@@ -64,12 +64,6 @@ export const UPDATE_POLICY_FIELD = gql`
                 end_date
                 created_at
             }
-            customer {
-                id
-                first_name
-                last_name
-                date_of_birth
-            }
         }
     }
 `
@@ -84,9 +78,9 @@ export const GET_CUSTOMERS = gql`
         }
     }
 `
-export const UPDATE_CUSTOMER_FIELD = gql`
+export const UPDATE_CUSTOMER = gql`
     mutation UpdateCustomer($customerId: Int, $firstName: String, $lastName: String, $dateOfBirth: Date) {
-        updateField(customerId: $customerId, firstName: $firstName, lastName: $lastName, dateOfBirth: $dateOfBirth) {
+        updateCustomer(customerId: $customerId, firstName: $firstName, lastName: $lastName, dateOfBirth: $dateOfBirth) {
             code
             success
             message

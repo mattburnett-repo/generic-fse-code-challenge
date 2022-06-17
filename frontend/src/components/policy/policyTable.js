@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { TableDisplay } from '../../components/tableDisplay/tableDisplay';
 
 import { useMutation } from '@apollo/client';
-import { UPDATE_POLICY_FIELD } from '../../dataSources/gqlOperations'
+import { UPDATE_POLICY } from '../../dataSources/gqlOperations'
 
 import { policy_jsonToArray, PolicyTableColumns } from '../../features/policy/policyTableFunctions'
 import { TextFieldEditDef, DateFieldEditDef } from '../../components/tableDisplay/tableFunctions'
@@ -22,22 +22,22 @@ export function PolicyTable(props) {
 
     const columns = PolicyTableColumns(EditDateField, EditTextField)
 
-    const [ updateField ] = useMutation(UPDATE_POLICY_FIELD, {
+    const [ updatePolicy ] = useMutation(UPDATE_POLICY, {
         variables: vars,            
         isLoading: loading => {
             flashRef.current.setInfoMessage(loading.message)
         },
         onError: error => {    
-            flashRef.current.setErrorMessage(error.message)
+            flashRef.current.setErrorMessage(error.extensions.response.body)
         },
         onCompleted: data => {  
-            flashRef.current.setSuccessMessage(data.updateField.message)
+            flashRef.current.setSuccessMessage(data.updatePolicy.message)
         }
     });
 
     useEffect(() => {
         // startup always runs useEffect. On mount it sends updateField with empty 'vars', making needless error.
-        if(Object.keys(vars).length !== 0) updateField()
+        if(Object.keys(vars).length !== 0) updatePolicy()
     }, [vars])
 
     // update the 'local' / memoized data / cache
