@@ -25,9 +25,7 @@ export const Customers = () => {
         <div className="module-container">
             <h1 className="module-title">Customer Records</h1>
             <h2 className="module-message">Click a column header to sort on that column</ h2>
-            <h3 className="flash-message-container" role="status" aria-label="flash-message-display">
-                <FlashMessageDisplay ref={flashRef} />    
-            </h3> 
+            <FlashMessageDisplay ref={flashRef} />    
             <CustomerTable tableData={data} flashRef={flashRef} />
         </div>
     )

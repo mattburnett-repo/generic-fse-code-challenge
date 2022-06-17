@@ -5,6 +5,9 @@ import renderer from 'react-test-renderer';
 import TestRenderer from 'react-test-renderer';
 // import 'jest-canvas-mock';
 
+import {createMemoryHistory} from 'history'
+import {Router} from 'react-router-dom'
+
 import { MockedProvider } from '@apollo/client/testing'
 import { GET_POLICIES, GET_CUSTOMERS } from '../dataSources/gqlOperations'
 import { mockPolicyData }  from './mockData/getPolicies'
@@ -35,6 +38,8 @@ module.exports = {
     userEvent,
     renderer,
     TestRenderer,
+    createMemoryHistory,
+    Router,
     // how to export jest-canvas-mock
     MockedProvider,
     GET_POLICIES,

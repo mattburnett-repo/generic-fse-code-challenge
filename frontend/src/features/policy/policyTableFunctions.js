@@ -10,7 +10,7 @@ export const policy_jsonToArray = (theData) => {
     theData?.policies?.forEach((policy) => {
         theArray.push({
             policyId: policy.id, customerId: policy.customer.id, firstName: policy.customer.first_name, lastName: policy.customer.last_name, 
-            dateOfBirth: policy.customer.date_of_birth,
+            dateOfBirth: format(new Date(policy.customer.date_of_birth), 'yyyy-MM-dd'),
             provider: policy.provider.description, insuranceType: policy.insuranceType.description,
             policyStatus: policy.status.description, policyNumber: policy.policy_number, 
             startDate: format(new Date(policy.start_date), 'yyyy-MM-dd'), 

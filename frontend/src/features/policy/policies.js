@@ -25,9 +25,7 @@ export const Policies = () => {
         <div className="module-container">
             <h1 className="module-title">Policy Records</h1>
             <h2 className="module-message">Click a column header to sort on that column</ h2>
-            <h3 className="flash-message-container">
-                <FlashMessageDisplay ref={flashRef} />    
-            </h3>  
+            <FlashMessageDisplay ref={flashRef} />    
             <PolicyTable tableData={data} flashRef={flashRef} />
         </div>
     )
