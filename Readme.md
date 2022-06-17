@@ -3,9 +3,9 @@
 
 # Generic Full Stack Engineer Code Challenge
 
-This repo is for an ongoing, generic personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)  and [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) code for a generic FSE code challenge. 
+This repo is for an ongoing personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)  and [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) code for a generic FSE code challenge. 
 
-It uses React to connect to an ApolloGraphQL server. The ApolloGraphQL server connects to a remote REST API datastore.
+It uses React (Frontend) to connect to an ApolloGraphQL server (Backend). The ApolloGraphQL server connects to a [remote REST API datastore](https://generic-fse-datastore.herokuapp.com/api/v1/api-docs/).
 
 Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI.
 
@@ -27,6 +27,7 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
   * React
   * React-Table
   * React-Date-Picker
+  * react-flash-message
   * Apollo graphQL Client
   * Tailwind CSS
   * Jest / React Testing Library
@@ -57,6 +58,6 @@ docker-compose down
 
 ## To Do
 * Browse / Search
-* More modules (ie customer detail, admin)
+* More modules (ie admin, ???)
 * Retrofit with TypeScript
 * Update and deploy Docker containers
