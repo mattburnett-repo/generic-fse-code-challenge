@@ -4,10 +4,10 @@ import { Switch, Route } from 'react-router-dom'
 
 import { FlashMessageDisplay } from '../../components/util/FlashMessageDisplay'
 
-import { EditUsers } from '../admin/edit/editUsers'
-import { EditProviders } from '../admin/edit/editProviders'
-import { EditInsuranceTypes } from '../admin/edit/editInsuranceTypes'
-import { EditPolicyStatuses } from '../admin/edit/editPolicyStatuses'
+import { EditUsers } from './edit/editUsers'
+import { EditProviders } from './edit/editProviders'
+import { EditInsuranceTypes } from './edit/editInsuranceTypes'
+import { EditPolicyStatuses } from './edit/editPolicyStatuses'
 import  { AdminDisplay } from '../../components/admin/AdminDisplay'
 
 export const Admin = () => {

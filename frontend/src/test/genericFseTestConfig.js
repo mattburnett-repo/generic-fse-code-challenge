@@ -3,6 +3,7 @@ import { within, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 import TestRenderer from 'react-test-renderer';
+import { fail } from 'assert';
 // import 'jest-canvas-mock';
 
 import {createMemoryHistory} from 'history'
@@ -16,6 +17,8 @@ import { mockCustomerData } from './mockData/getCustomers'
 import { Policies } from '../features/policy/policies'
 import { Customers } from '../features/customer/customers'
 import { Admin } from '../features/admin/admin'
+
+import { EditUsers } from '../features/admin/edit/editUsers'
 
 const mockPolicyOperation = {      
     request: {
@@ -38,6 +41,7 @@ module.exports = {
     userEvent,
     renderer,
     TestRenderer,
+    fail,
     createMemoryHistory,
     Router,
     // how to export jest-canvas-mock
@@ -47,6 +51,7 @@ module.exports = {
     Policies,
     Customers,
     Admin,
+    EditUsers,
     mockPolicyOperation,
     mockCustomerOperation
 }

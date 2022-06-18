@@ -46,4 +46,8 @@
   .flash-message-container{
     @apply text-2xl text-center m-4;
   }
+
+  .admin-edit-container{
+    @apply  mx-auto py-5 w-1/4 border-2 border-black my-3 mb-5 bg-white;
+  }
 }
