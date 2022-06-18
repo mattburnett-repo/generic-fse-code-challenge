@@ -1,11 +1,21 @@
 
-import { BackToAdminButton } from '../../../components/admin/edit/BackToAdminButton'
+import { useRef } from 'react'
+import { useQuery } from '@apollo/client';
+
+import { EditInsuranceTypesDisplay } from '../../../components/admin/edit/EditInsuranceTypesDisplay';
+
+import LoadingMessage from "../../../components/spinner/LoadingMessage";
+import ErrorPage from '../../../components/errorPage.js';
+
+import { GET_INSURANCE_TYPES } from '../../../dataSources/gqlOperations'
 
 export const EditInsuranceTypes = () => {
-    return (
-        <div className="admin-edit-container" role="presentation" aria-label="edit-insurance-types-panel">
-            <h1>Edit Insurance Types</h1>
-            <BackToAdminButton />
-        </div>
-    )
+    const flashRef = useRef()
+
+    const {loading, error, data} = useQuery(GET_INSURANCE_TYPES);
+
+    if(loading) return <LoadingMessage type="spinner" />;
+    if(error) return <ErrorPage error={error} />
+    
+    return  <EditInsuranceTypesDisplay tableData={data}/>
 }

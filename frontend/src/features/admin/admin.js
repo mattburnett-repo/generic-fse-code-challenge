@@ -8,7 +8,7 @@ import { EditUsers } from './edit/editUsers'
 import { EditProviders } from './edit/editProviders'
 import { EditInsuranceTypes } from './edit/editInsuranceTypes'
 import { EditPolicyStatuses } from './edit/editPolicyStatuses'
-import  { AdminDisplay } from '../../components/admin/AdminDisplay'
+import { AdminDisplay } from '../../components/admin/AdminDisplay'
 
 export const Admin = () => {
     const flashRef = useRef()

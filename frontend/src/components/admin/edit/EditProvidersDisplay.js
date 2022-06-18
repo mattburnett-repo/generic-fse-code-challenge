@@ -4,26 +4,19 @@ import { useState, useEffect, useRef } from 'react'
 import { TableDisplay } from '../../tableDisplay/tableDisplay'
 import { BackToAdminButton } from './BackToAdminButton'
 
-import { editUsers_jsonToArray, EditUsersTableColumns } from '../../../features/admin/edit/editUsersFunctions'
+import { editProviders_jsonToArray, EditProvidersTableColumns } from '../../../features/admin/edit/editProvidersFunctions'
 import { TextFieldEditDef, DateFieldEditDef } from '../../tableDisplay/tableFunctions'
 
-export const EditUsersDisplay = (props) => {
+export const EditProvidersDisplay = (props) => {
     const flashRef = useRef()
 
-    // const [data, setData] = useState(() => editUsers_jsonToArray(props.tableData)) // FIXME:
-    const data = editUsers_jsonToArray(props.tableData)
-
-    // const [data, setData] = useState([]) 
+    const [data, setData] = useState(() => editProviders_jsonToArray(props.tableData)) // FIXME:
     const [vars, setVars] = useState({})  // an object, not a string. zB: {customerId: 1, firstName: 'asdf'}
-
-    // useEffect(() => {
-    //     setData(editUsers_jsonToArray(props.tableData))
-    // }, [])
 
     const EditTextField = TextFieldEditDef(setVars, {flashRef})
     const EditDateField = DateFieldEditDef(setVars)
 
-    const columns = EditUsersTableColumns(EditDateField, EditTextField)
+    const columns = EditProvidersTableColumns(EditDateField, EditTextField)
 
     // update the 'local' / memoized data / cache
     // TODO: this should be in tableFunctions.js. Figure out how to make setData() available
@@ -42,8 +35,8 @@ export const EditUsersDisplay = (props) => {
     }
 
     return (
-        <div className="admin-edit-container w-1/2" role="presentation" aria-label="edit-users-panel">
-            <h1>Edit Users</h1>
+        <div className="admin-edit-container w-1/2" role="presentation" aria-label="edit-providers-panel">
+            <h1>Edit Providers</h1>
             <TableDisplay columns={columns} data={data} updateTableData={updateTableData} />
             <BackToAdminButton />
         </div>

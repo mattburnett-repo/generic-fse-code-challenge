@@ -26,6 +26,8 @@ module.exports = (app: any) => {
   }
   app.use(cors(corsOptions))
 
+  // app.use(cors())
+
   // body parser. to handle POST requests
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json())

@@ -18,6 +18,10 @@ class AuthApi {
     })
   }
 
+  static GetUsers = () => {
+    return axios.get('/auth/user')
+  }
+
   static Logout = async (data: any) => {
     try {
       localStorage.clear()

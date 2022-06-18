@@ -21,5 +21,5 @@ const server = new ApolloServer({
 
 // The `listen` method launches a web server.
 server.listen(PORT).then(({ url }) => {
-  console.log(`GraphQL Server ready at ${url}`);
+  console.log(`Generic FSE / GraphQL Server ready at ${url}`);
 });

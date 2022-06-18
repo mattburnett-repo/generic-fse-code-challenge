@@ -13,6 +13,7 @@ const { ApolloServer, request, expect } = require('./testConfig')
 const { typeDefs } = require('../src/schema.ts'); // FIXME: dateScalars in schema.ts 
 const resolvers = require('../src/resolvers');
 const PolicyAPI = require('../src/datasources/policy-api');
+const UserAPI = require('../src/datasources/user-api')
 
 const { insuranceTypes, policyStatuses, providers, policies, customers, updatePolicyPolicyNumber } = require('./testOperations')
 const { updateCustomerFirstName, updateCustomerLastName } = require('./testOperations')
