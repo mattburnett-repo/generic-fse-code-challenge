@@ -773,7 +773,7 @@ video {
   margin-right: auto;
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
-  width: 25%;
+  width: 50%;
   border-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -877,6 +877,12 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .flex-col {

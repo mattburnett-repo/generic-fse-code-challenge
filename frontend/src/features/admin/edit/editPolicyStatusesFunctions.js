@@ -27,7 +27,7 @@ export const EditPolicyStatusesTableColumns = (EditDateField, EditTextField) => 
                     {
                         Header: 'Description',
                         accessor: 'description',
-                        Cell: EditTextField
+                        // Cell: EditTextField
                     },                    
                 ]
             }

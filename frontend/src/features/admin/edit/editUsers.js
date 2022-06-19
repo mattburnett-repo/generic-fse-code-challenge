@@ -1,8 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 
-import { mockUserData } from '../../../test/mockData/getUsers'
-
 import axios from '../../auth/authApi'
 
 import { EditUsersDisplay } from '../../../components/admin/edit/EditUsersDisplay'
@@ -17,13 +15,11 @@ export const EditUsers = () => {
 
             if(result.status === 200) {
                 await setUserData(result)
-                // flashRef.current.setSuccessMessage('We found users')
             } else {
                 console.log('ERROR: EditUsers GetUsers ', result.statusText)
             }
         } catch (err) {
             console.log('ERROR: EditUsers loadUsers ', err)
-            // flashRef.current.setErrorMessage(err)
         }       
     }
 
@@ -32,5 +28,4 @@ export const EditUsers = () => {
     }, [])
 
     return <EditUsersDisplay tableData={userData}/>
-    // return <EditUsersDisplay tableData={mockUserData}/>
 }

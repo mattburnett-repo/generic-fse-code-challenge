@@ -37,7 +37,7 @@ export const EditUsersDisplay = (props) => {
     }
 
     return (
-        <div className="admin-edit-container w-1/2" role="presentation" aria-label="edit-users-panel">
+        <div className="admin-edit-container" role="presentation" aria-label="edit-users-panel">
             <TableDisplay columns={columns} data={data} updateTableData={updateTableData} />
             <BackToAdminButton />
         </div>

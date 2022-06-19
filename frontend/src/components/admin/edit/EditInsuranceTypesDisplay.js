@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 
 import { TableDisplay } from '../../tableDisplay/tableDisplay'
 import { BackToAdminButton } from './BackToAdminButton'
@@ -36,7 +36,7 @@ export const EditInsuranceTypesDisplay = (props) => {
     }
 
     return (
-        <div className="admin-edit-container w-1/2" role="presentation" aria-label="edit-insurance-types-panel">
+        <div className="admin-edit-container" role="presentation" aria-label="edit-insurance-types-panel">
             <TableDisplay columns={columns} data={data} updateTableData={updateTableData} />
             <BackToAdminButton />
         </div>

@@ -37,7 +37,7 @@ describe('Admin component basic render / nav tests', () => {
         userEvent.click(result)
         screen.getByRole('presentation', {name: /admin-options-panel/i})  
     })
-    it('it should click to and render the Edit Insurance Types panel, then return to Admin panel', async () => {
+    it('it should click to and render the Edit Insurance Types panel, then return to Admin panel', () => {
         render ( 
             <MockedProvider mocks={[mockInsuranceTypesOperation]} addTypename={false}>
                 <Router history={createMemoryHistory()}>

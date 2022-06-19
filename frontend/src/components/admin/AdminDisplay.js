@@ -9,28 +9,28 @@ export const AdminDisplay = (props) => {
             <div className="pt-4">
                 <div className="btn-admin">
                     <Link to="/admin/edit-users" aria-label="admin-options-users" >
-                        Create / Edit Users
+                        Show Users
                     </Link>                  
                 </div>
             </div>
             <div className='pt-4'>
                 <div className="btn-admin">
                     <Link to="/admin/edit-insurance-types" aria-label="admin-options-insurance-types">
-                        Create / Edit Insurance Types
+                        Show Insurance Types
                     </Link>
                 </div>
             </div>
             <div className='pt-4'>
                 <div className="btn-admin">
                     <Link to="/admin/edit-providers" aria-label="admin-options-providers">
-                        Create / Edit Providers
+                        Show Providers
                     </Link> 
                 </div>
             </div>      
             <div className='py-4'>
                 <div className="btn-admin">
                     <Link to="/admin/edit-policy-statuses" aria-label="admin-options-policy-statuses">
-                        Create / Edit Policy Statuses
+                        Show Policy Statuses
                     </Link>
                 </div>
             </div>    

@@ -28,12 +28,12 @@ export const EditProvidersTableColumns = (EditDateField, EditTextField) => {
                     {
                         Header: 'Prefix Code',
                         accessor: 'prefixCode',
-                        Cell: EditTextField
+                        // Cell: EditTextField
                     },   
                     {
                         Header: 'Description',
                         accessor: 'description',
-                        Cell: EditTextField
+                        // Cell: EditTextField
                     },                    
                 ]
             }

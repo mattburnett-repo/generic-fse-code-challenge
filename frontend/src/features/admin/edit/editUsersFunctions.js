@@ -30,17 +30,17 @@ export const EditUsersTableColumns = (EditDateField, EditTextField) => {
                     {
                         Header: 'User Name',
                         accessor: 'userName', 
-                        Cell: EditTextField,
+                        // Cell: EditTextField,
                     },
-                    {
-                        Header: 'Password',
-                        accessor: 'password', 
-                        Cell: EditTextField, 
-                    },
+                    // {
+                    //     Header: 'Password',
+                    //     accessor: 'password', 
+                    //     // Cell: EditTextField, 
+                    // },
                     {
                         Header: 'Access Level',
                         accessor: 'accessLevel',
-                        Cell: EditTextField
+                        // Cell: EditTextField
                     },                    
                 ]
             }

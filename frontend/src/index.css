@@ -48,6 +48,6 @@
   }
 
   .admin-edit-container{
-    @apply  mx-auto py-5 w-1/4 border-2 border-black my-3 mb-5 bg-white;
+    @apply  mx-auto py-5 w-1/2 border-2 border-black my-3 mb-5 bg-white;
   }
 }

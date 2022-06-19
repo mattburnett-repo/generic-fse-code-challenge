@@ -28,7 +28,7 @@ export const EditInsuranceTypesTableColumns = (EditDateField, EditTextField) => 
                     {
                         Header: 'Description',
                         accessor: 'description',
-                        Cell: EditTextField
+                        // Cell: EditTextField
                     },                    
                 ]
             }

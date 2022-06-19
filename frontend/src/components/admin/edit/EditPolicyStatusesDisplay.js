@@ -37,7 +37,7 @@ export const EditPolicyStatusesDisplay = (props) => {
     }
 
     return (
-        <div className="admin-edit-container w-1/2" role="presentation" aria-label="edit-policy-statuses-panel">
+        <div className="admin-edit-container" role="presentation" aria-label="edit-policy-statuses-panel">
             <TableDisplay columns={columns} data={data} updateTableData={updateTableData} />
             <BackToAdminButton />
         </div>
