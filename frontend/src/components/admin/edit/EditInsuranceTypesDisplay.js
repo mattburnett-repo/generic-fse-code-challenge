@@ -42,7 +42,6 @@ export const EditInsuranceTypesDisplay = (props) => {
 
     return (
         <div className="admin-edit-container w-1/2" role="presentation" aria-label="edit-insurance-types-panel">
-            <h1>Edit Insurance Types</h1>
             <TableDisplay columns={columns} data={data} updateTableData={updateTableData} />
             <BackToAdminButton />
         </div>

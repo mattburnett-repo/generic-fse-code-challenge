@@ -28,7 +28,8 @@ describe('Edit Policy Status component tests', () => {
             await waitFor(() => {
                 screen.getByRole('table', {name: /data-table/i})        
             })
-            screen.getByRole('columnheader', {name: /policyStatus/i})   
+            screen.getAllByRole('columnheader', {name: /id/i}) 
+            screen.getAllByRole('columnheader', {name: /description/i})    
         })
         it('should show more than zero records', async () => {
             await waitFor(() => {

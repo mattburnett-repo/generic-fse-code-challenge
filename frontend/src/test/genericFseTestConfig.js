@@ -1,5 +1,5 @@
 
-import { within, render, screen, waitFor } from '@testing-library/react';
+import { within, render, screen, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 import TestRenderer from 'react-test-renderer';
@@ -67,6 +67,7 @@ module.exports = {
     render,
     screen,
     waitFor,
+    act,
     userEvent,
     renderer,
     TestRenderer,

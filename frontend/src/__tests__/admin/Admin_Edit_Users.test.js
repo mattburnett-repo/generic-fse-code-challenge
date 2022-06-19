@@ -3,7 +3,6 @@ import {render, screen, userEvent, waitFor, fail, createMemoryHistory, Router, m
 import 'jest-canvas-mock';
 
 import { EditUsersDisplay } from '../../components/admin/edit/editUsersDisplay'
-// import { EditUsers } from '../../features/admin/edit/editUsers'
 
 describe('Edit User component tests', () => {
     let result = null
@@ -33,11 +32,10 @@ describe('Edit User component tests', () => {
             await waitFor(() => {
                 result = screen.getAllByRole('row', {name: /^data-record$/})       
             })
-            // console.log('result.length ', result.length)
             expect(result.length).toBeGreaterThan(0)    
         })  
     })
-    // FIXME: sort this out after we get the other admin modules working
+    // TODO: finish these out in all tests / components
     describe.skip('Edit tests', () => {
         it('should edit username', () => {})
         it('should edit password', () => {})

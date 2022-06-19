@@ -1,28 +1,16 @@
 
-import {render, screen, userEvent, createMemoryHistory, Router, Admin} from '../../test/genericFseTestConfig'
+import {render, screen, userEvent, waitFor, act, createMemoryHistory, Router, Admin, MockedProvider, mockInsuranceTypesOperation, mockProvidersOperation, mockPolicyStatusesOperation} from '../../test/genericFseTestConfig'
 import 'jest-canvas-mock';
 
 describe('Admin component basic render / nav tests', () => {
     let result = null
 
-    // beforeEach(async () => {
-    //     render(
-    //         <MockedProvider mocks={[mockAdminOperation]} addTypename={false}>
-    //             <Admin />
-    //         </MockedProvider>
-    //     )
-    // })
-
-    //  https://testing-library.com/docs/example-react-router/
-    beforeEach(() => { 
+    it('should render the admin options panel', () => {
         render ( 
             <Router history={createMemoryHistory()}>
                  <Admin /> 
             </Router>
         )
-    }) 
-
-    it('should render the admin options panel', () => {
         screen.getByRole('presentation', {name: /admin-options-panel/i})        
 
         result = screen.getAllByRole('link')
@@ -36,6 +24,11 @@ describe('Admin component basic render / nav tests', () => {
     })
 
     it('it should click to and render the Edit Users panel, then return to Admin panel', () => {
+        render ( 
+            <Router history={createMemoryHistory()}>
+                 <Admin /> 
+            </Router>
+        )
         result = screen.getAllByRole('link', {name: /admin-options-users/i})[0]
         userEvent.click(result)
         screen.getAllByRole('presentation', {name: /edit-users-panel/i})
@@ -44,31 +37,64 @@ describe('Admin component basic render / nav tests', () => {
         userEvent.click(result)
         screen.getByRole('presentation', {name: /admin-options-panel/i})  
     })
-    it('it should click to and render the Edit Insurance Types panel, then return to Admin panel', () => {
-        result = screen.getAllByRole('link', {name: /admin-options-insurance-types/i})[0]
-        userEvent.click(result)
-        screen.getAllByRole('presentation', {name: /edit-insurance-types-panel/i})
+    it('it should click to and render the Edit Insurance Types panel, then return to Admin panel', async () => {
+        render ( 
+            <MockedProvider mocks={[mockInsuranceTypesOperation]} addTypename={false}>
+                <Router history={createMemoryHistory()}>
+                    <Admin /> 
+                </Router>
+            </MockedProvider>
+        )     
 
-        result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
-        userEvent.click(result)
-        screen.getByRole('presentation', {name: /admin-options-panel/i})  
+        result = screen.getAllByRole('link', {name: /admin-options-insurance-types/i})[0]
+
+        waitFor(() => {
+            userEvent.click(result)
+            screen.getAllByRole('presentation', {name: /edit-insurance-types-panel/i})
+
+            result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
+            userEvent.click(result)
+            screen.getByRole('presentation', {name: /admin-options-panel/i})  
+        })
     })
     it('it should click to and render the Edit Providers panel, then return to Admin panel', () => {
+        render ( 
+            <MockedProvider mocks={[mockProvidersOperation]} addTypename={false}>
+                <Router history={createMemoryHistory()}>
+                    <Admin /> 
+                </Router>
+            </MockedProvider>
+        ) 
+ 
         result = screen.getAllByRole('link', {name: /admin-options-providers/i})[0]
-        userEvent.click(result)
-        screen.getAllByRole('presentation', {name: /edit-providers-panel/i})
 
-        result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
-        userEvent.click(result)
-        screen.getByRole('presentation', {name: /admin-options-panel/i})  
+        waitFor(() => {
+            userEvent.click(result)
+            screen.getAllByRole('presentation', {name: /edit-providers-panel/i})
+
+            result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
+            userEvent.click(result)
+            screen.getByRole('presentation', {name: /admin-options-panel/i})              
+        })
     })
     it('it should click to and render the Edit Policy Statuses panel, then return to Admin panel', () => {
-        result = screen.getAllByRole('link', {name: /admin-options-policy-statuses/i})[0]
-        userEvent.click(result)
-        screen.getAllByRole('presentation', {name: /edit-policy-statuses-panel/i})
+        render ( 
+            <MockedProvider mocks={[mockPolicyStatusesOperation]} addTypename={false}>
+                <Router history={createMemoryHistory()}>
+                    <Admin /> 
+                </Router>
+            </MockedProvider>
+        )  
 
-        result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
-        userEvent.click(result)
-        screen.getByRole('presentation', {name: /admin-options-panel/i})  
+        result = screen.getAllByRole('link', {name: /admin-options-policy-statuses/i})[0]
+        
+        waitFor(() => {
+            userEvent.click(result)
+            screen.getAllByRole('presentation', {name: /edit-policy-statuses-panel/i})
+
+            result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
+            userEvent.click(result)
+            screen.getByRole('presentation', {name: /admin-options-panel/i})              
+        })
     })
 })

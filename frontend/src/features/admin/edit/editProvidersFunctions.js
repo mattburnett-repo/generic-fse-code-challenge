@@ -21,7 +21,7 @@ export const EditProvidersTableColumns = (EditDateField, EditTextField) => {
     const columns = useMemo(() => 
         [
             {
-                Header: 'Providers',
+                Header: 'Create / Edit Providers',
                 columns: [
                     {
                         Header: "ID",
