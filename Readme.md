@@ -57,7 +57,10 @@ docker-compose down
 ```
 
 ## To Do
+* Expire the auth token / localStorage / cookie / session / ...
+  * Combine with 'Remember Me' functionality
 * Browse / Search
+* Column sort doesn't completely work
 * More modules (ie admin, ???)
 * Retrofit with TypeScript
 * Update and deploy Docker containers

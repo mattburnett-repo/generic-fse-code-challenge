@@ -32,27 +32,24 @@ export const NavBar = () => {
                             </div>
                         </div>
                         <div className="hidden sm:flex sm:items-center">
-                            <button type="button" className="px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded" onClick={(e) => handleLogoutClick(e, {flashRef}, {setUser})}>Log Out</button>
+                            <button type="button" className="btn-auth" onClick={(e) => handleLogoutClick(e, {flashRef}, {setUser})}>Log Out</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="flex justify-around text-center border-2 my-1 p-2 bg-white border-black mx-auto">
-                <div className="p-2 border-2 border-red-300 bg-red-50 w-36 hover:bg-red-300 active:bg-red-200 rounded">
+                <div className="btn-customers-nav">
                     <Link to="/customers">
-                        {/* <img src="./favicon.ico" alt="customer image here" className="w-6 h-6" /> */}
                         <p>Customers</p>                    
                     </Link>
                 </div>
-                <div className="p-2 border-2 border-green-300 bg-green-50 w-36 hover:bg-green-300 active:bg-green-200rounded">
+                <div className="btn-policies-nav">
                     <Link to="/policies">
-                        {/* <img src="./favicon.ico" alt="policy image here" className="w-6 h-6" /> */}
                         <p>Policies</p>
                     </Link>
                 </div>
-                <div className="p-2 border-2 border-blue-300 bg-blue-50 w-36 hover:bg-blue-300 active:bg-blue-200 rounded">
+                <div className="btn-admin-nav">
                     <Link to="/admin">
-                        {/* <img src="./favicon.ico" alt="admin image here" className="w-6 h-6" /> */}
                         <p>Admin</p>
                     </Link>
                 </div>

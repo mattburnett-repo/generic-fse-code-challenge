@@ -93,3 +93,31 @@ export const UPDATE_CUSTOMER = gql`
         }
     }
 `
+
+export const GET_INSURANCE_TYPES = gql`
+    query getInsuranceTypes {
+        insuranceTypes {
+            id
+            description
+        }
+    }
+`
+
+export const GET_POLICY_STATUSES = gql`
+    query getPolicyStatuses {
+        policyStatuses {
+            id
+            description
+        }
+    }
+`
+
+export const GET_PROVIDERS = gql`
+    query getProviders {
+        providers {
+            id
+            prefix_code
+            description
+        }
+    }
+`

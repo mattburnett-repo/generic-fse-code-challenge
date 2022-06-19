@@ -1,13 +1,34 @@
 
-import adminIcon from '../../images/admin_01.png'
+import { useRef } from 'react'
+import { Switch, Route } from 'react-router-dom'
+
+import { FlashMessageDisplay } from '../../components/util/FlashMessageDisplay'
+
+import { EditUsers } from './edit/editUsers'
+import { EditProviders } from './edit/editProviders'
+import { EditInsuranceTypes } from './edit/editInsuranceTypes'
+import { EditPolicyStatuses } from './edit/editPolicyStatuses'
+import { AdminDisplay } from '../../components/admin/AdminDisplay'
 
 export const Admin = () => {
+    const flashRef = useRef()
+
     return (
-        <div className="flex justify-around text-center border-2 my-5 p-5 bg-white border-black mx-auto">
-            <div className="p-10 border-2 border-blue-300 rounded-lg">
-                <img src={adminIcon} alt="customer image here" className="w-96 h-96" /> 
-                <p className='pt-20 text-3xl'>Admin</p>                    
-            </div>            
+        <div className="module-container">
+            <h1 className="module-title">Admin</h1>
+            <h2 className="module-message">Click an option</ h2>
+            <FlashMessageDisplay ref={flashRef} />   
+            <div name="dashboard-container">
+                <Switch>
+                    <Route path="/admin/edit-users" component={EditUsers} />
+                    <Route path="/admin/edit-providers" component={EditProviders} />
+                    <Route path="/admin/edit-insurance-types" component={EditInsuranceTypes} />
+                    <Route path="/admin/edit-policy-statuses" component={EditPolicyStatuses} />
+                    {/* need to pass flashRef? <AdminDisplay flashRef={flashRef} /> */}
+                    {/* path is relative to what? */}
+                    <Route path="/" component={AdminDisplay} />               
+                </Switch>                
+            </div> 
         </div>
     )
 }

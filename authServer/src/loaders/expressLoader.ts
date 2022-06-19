@@ -5,7 +5,6 @@ var bodyParser = require("body-parser")
 var cookieParser = require('cookie-parser')
 var session = require('express-session')
 
-
 // https://www.npmjs.com/package/express-flash-message
 const { flash } = require('express-flash-message')
 const path = require('path')
@@ -25,6 +24,8 @@ module.exports = (app: any) => {
     origin: process.env.CLIENT_URL
   }
   app.use(cors(corsOptions))
+
+  // app.use(cors())
 
   // body parser. to handle POST requests
   app.use(bodyParser.urlencoded({ extended: false }));
@@ -61,6 +62,6 @@ module.exports = (app: any) => {
     })
   )
 
-  app.use(flash())
+  // app.use(flash())
 
 } // end module.exports

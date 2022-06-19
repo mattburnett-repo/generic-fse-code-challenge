@@ -22,12 +22,10 @@ export const Policies = () => {
     if(error) return <ErrorPage error={error} />
 
     return (
-        <div className="bg-gray-100 my-2 px-2 border-2 border-black text-center">
-            <h1 className="text-3xl text-center m-4">Policy Records</h1>
-            <h2 className="m-4 text-blue-500">Click a column header to sort on that column</ h2>
-            <h3 className="text-1xl text-center m-4">
-                <FlashMessageDisplay ref={flashRef} />    
-            </h3>  
+        <div className="module-container">
+            <h1 className="module-title">Policy Records</h1>
+            <h2 className="module-message">Click a column header to sort on that column</ h2>
+            <FlashMessageDisplay ref={flashRef} />    
             <PolicyTable tableData={data} flashRef={flashRef} />
         </div>
     )

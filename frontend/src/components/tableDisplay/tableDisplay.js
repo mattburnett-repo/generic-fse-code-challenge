@@ -109,56 +109,59 @@ export const TableDisplay = (props) => {
             Pagination can be built however you'd like. 
             This is just a very basic UI implementation:
         */}
-        <div className="text-center m-4" role="navigation" aria-label="pagination">
-            <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} className="hover:bg-blue-100 px-4" aria-label="pagination-start">
-            {'<<'}
-            </button>{' '}
-            <button onClick={() => previousPage()} disabled={!canPreviousPage} className="hover:bg-blue-100 px-2" aria-label='pagination-back'>
-            {'<'}
-            </button>{' '}
-            <button onClick={() => nextPage()} disabled={!canNextPage} className="hover:bg-blue-100 px-2" aria-label="pagination-forward">
-            {'>'}
-            </button>{' '}
-            <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} className="hover:bg-blue-100 px-4" aria-label="pagination-end">
-            {'>>'}
-            </button>{' '}
-            <span role="presentation" aria-label="page-indicator">
-                Page{' '}
-                <strong>
-                    {pageIndex + 1} of {pageOptions.length}
-                </strong>{' '}
-            </span>
-            <span className="p-2">
-                | 
-            </span>
-            <span className="p-2" aria-label="pagination-goto-page">
-               Go to page:{' '}
-                {/* input shows up in DOM as 'spinbutton' */}
-                <input 
-                    type="number"
-                    defaultValue={pageIndex + 1}
+
+        {data.length>= 10 && 
+            <div className="text-center m-4" role="navigation" aria-label="pagination">
+                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage} className="hover:bg-blue-100 px-4" aria-label="pagination-start">
+                {'<<'}
+                </button>{' '}
+                <button onClick={() => previousPage()} disabled={!canPreviousPage} className="hover:bg-blue-100 px-2" aria-label='pagination-back'>
+                {'<'}
+                </button>{' '}
+                <button onClick={() => nextPage()} disabled={!canNextPage} className="hover:bg-blue-100 px-2" aria-label="pagination-forward">
+                {'>'}
+                </button>{' '}
+                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} className="hover:bg-blue-100 px-4" aria-label="pagination-end">
+                {'>>'}
+                </button>{' '}
+                <span role="presentation" aria-label="page-indicator">
+                    Page{' '}
+                    <strong>
+                        {pageIndex + 1} of {pageOptions.length}
+                    </strong>{' '}
+                </span>
+                <span className="p-2">
+                    | 
+                </span>
+                <span className="p-2" aria-label="pagination-goto-page">
+                    Go to page:{' '}
+                    {/* input shows up in DOM as 'spinbutton' */}
+                    <input 
+                        type="number"
+                        defaultValue={pageIndex + 1}
+                        onChange={e => {
+                            const page = e.target.value ? Number(e.target.value) - 1 : 0
+                            gotoPage(page)
+                        }}
+                        className="w-10 border border-black"
+                        aria-label="pagination-goto-page-number"
+                    />
+                </span>{' '}
+                <select
+                    value={pageSize}
                     onChange={e => {
-                        const page = e.target.value ? Number(e.target.value) - 1 : 0
-                        gotoPage(page)
-                    }}
-                    className="w-10 border border-black"
-                    aria-label="pagination-goto-page-number"
-                />
-            </span>{' '}
-            <select
-                value={pageSize}
-                onChange={e => {
-                    setPageSize(Number(e.target.value))
-                }}  className="px-2 border border-black"
-                aria-label="pagination-page-size"
-                > 
-                    {[10, 20, 30, 40, 50].map(pageSize => (
-                        <option key={pageSize} value={pageSize}>
-                        Show {pageSize}
-                        </option>
-                    ))}
-            </select>
-        </div>
+                        setPageSize(Number(e.target.value))
+                    }}  className="px-2 border border-black"
+                    aria-label="pagination-page-size"
+                    > 
+                        {[10, 20, 30, 40, 50].map(pageSize => (
+                            <option key={pageSize} value={pageSize}>
+                            Show {pageSize}
+                            </option>
+                        ))}
+                </select>
+            </div>      
+        }      
         </>
     )
 }

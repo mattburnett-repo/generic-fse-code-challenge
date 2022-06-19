@@ -234,9 +234,9 @@ describe('GraphQL backend http tests', () => {
 
       expect(response.body).to.have.property('data')
       expect(response.body.data).to.not.be.null
-      expect(response.body.data).to.have.property('updateField')
+      expect(response.body.data).to.have.property('updatePolicy')
 
-      const result = response.body.data.updateField
+      const result = response.body.data.updatePolicy
       expect(result).to.include.keys('code', 'success', 'message', 'policy')
       expect(result.code).to.eql(200)
       expect(result.success).to.be.true
@@ -250,9 +250,9 @@ describe('GraphQL backend http tests', () => {
 
       expect(response.body).to.have.property('data')
       expect(response.body.data).to.not.be.null
-      expect(response.body.data).to.have.property('updateField')
+      expect(response.body.data).to.have.property('updatePolicy')
 
-      const result = response.body.data.updateField
+      const result = response.body.data.updatePolicy
       expect(result).to.include.keys('code', 'success', 'message', 'policy')
       expect(result.code).to.eql(200)
       expect(result.success).to.be.true
@@ -283,9 +283,9 @@ describe('GraphQL backend http tests', () => {
 
       expect(response.body).to.have.property('data')
       expect(response.body.data).to.not.be.null
-      expect(response.body.data).to.have.property('updateField')
+      expect(response.body.data).to.have.property('updateCustomer')
 
-      const result = response.body.data.updateField
+      const result = response.body.data.updateCustomer
       expect(result).to.include.keys('code', 'success', 'message', 'customer') 
       expect(result.code).to.eql(200)
       expect(result.success).to.be.true
@@ -299,9 +299,9 @@ describe('GraphQL backend http tests', () => {
 
       expect(response.body).to.have.property('data')
       expect(response.body.data).to.not.be.null
-      expect(response.body.data).to.have.property('updateField')
+      expect(response.body.data).to.have.property('updateCustomer')
 
-      const result = response.body.data.updateField
+      const result = response.body.data.updateCustomer
       expect(result).to.include.keys('code', 'success', 'message', 'customer') 
       expect(result.code).to.eql(200)
       expect(result.success).to.be.true
@@ -315,9 +315,9 @@ describe('GraphQL backend http tests', () => {
 
       expect(response.body).to.have.property('data')
       expect(response.body.data).to.not.be.null
-      expect(response.body.data).to.have.property('updateField')
+      expect(response.body.data).to.have.property('updateCustomer')
 
-      const result = response.body.data.updateField
+      const result = response.body.data.updateCustomer
       expect(result).to.include.keys('code', 'success', 'message', 'customer') 
       expect(result.code).to.eql(200)
       expect(result.success).to.be.true
@@ -331,9 +331,9 @@ describe('GraphQL backend http tests', () => {
 
       expect(response.body).to.have.property('data')
       expect(response.body.data).to.not.be.null
-      expect(response.body.data).to.have.property('updateField')
+      expect(response.body.data).to.have.property('updateCustomer')
 
-      const result = response.body.data.updateField
+      const result = response.body.data.updateCustomer
       expect(result).to.include.keys('code', 'success', 'message', 'customer') 
       expect(result.code).to.eql(200)
       expect(result.success).to.be.true

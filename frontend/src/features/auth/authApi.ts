@@ -18,6 +18,12 @@ class AuthApi {
     })
   }
 
+  static GetUsers = (authToken: string) => {
+    return axios.get('/auth/user',
+      {'headers': { 'Authorization': `Bearer  ${authToken}`}}
+    )
+  }
+
   static Logout = async (data: any) => {
     try {
       localStorage.clear()

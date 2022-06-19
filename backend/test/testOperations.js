@@ -67,7 +67,7 @@ const policies =
 
 const updatePolicyPolicyNumber = 
     `mutation UpdatePolicyPolicyNumber($policyId: Int, $policyNumber: String) {
-        updateField(policyId: $policyId, policyNumber: $policyNumber) {
+        updatePolicy(policyId: $policyId, policyNumber: $policyNumber) {
           code
           success
           message
@@ -80,7 +80,7 @@ const updatePolicyPolicyNumber =
 
 const updateCustomerFirstName = 
     `mutation UpdateCustomerFirstName($customerId: Int, $firstName: String) {
-        updateField(customerId: $customerId, firstName: $firstName) {
+        updateCustomer(customerId: $customerId, firstName: $firstName) {
           code
           success
           message
@@ -93,7 +93,7 @@ const updateCustomerFirstName =
 
 const updateCustomerLastName =
     `mutation UpdateCustomerLastName($customerId: Int, $lastName: String) {
-        updateField(customerId: $customerId, lastName: $lastName) {
+        updateCustomer(customerId: $customerId, lastName: $lastName) {
           code
           success
           message
