@@ -38,13 +38,13 @@ describe('Edit Policy Status component tests', () => {
             expect(result.length).toBeGreaterThan(0)    
         })  
     })
-    describe.skip('Edit tests', () => {
-        it('should edit policy status', () => {})
-    })
-    describe.skip('Create tests', () => {
-        it('should create new policy status', () => {})
-    })
-    describe.skip('Delete / deactivate tests', () => {
-        it('should deactivate / delete policy status', () => {})
-    })
+    // describe.skip('Edit tests', () => {
+    //     it('should edit policy status', () => {})
+    // })
+    // describe.skip('Create tests', () => {
+    //     it('should create new policy status', () => {})
+    // })
+    // describe.skip('Delete / deactivate tests', () => {
+    //     it('should deactivate / delete policy status', () => {})
+    // })
 })

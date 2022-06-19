@@ -40,13 +40,13 @@ describe('Edit Providers component tests', () => {
             expect(result.length).toBeGreaterThan(0)    
         })  
     })
-    describe.skip('Edit tests', () => {
-        it('should edit provider name', () => {})
-    })
-    describe.skip('Create tests', () => {
-        it('should create new provider', () => {})
-    })
-    describe.skip('Delete / deactivate tests', () => {
-        it('should deactivate / delete provider', () => {})
-    })
+    // describe.skip('Edit tests', () => {
+    //     it('should edit provider name', () => {})
+    // })
+    // describe.skip('Create tests', () => {
+    //     it('should create new provider', () => {})
+    // })
+    // describe.skip('Delete / deactivate tests', () => {
+    //     it('should deactivate / delete provider', () => {})
+    // })
 })

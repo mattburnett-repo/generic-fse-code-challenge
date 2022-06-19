@@ -39,13 +39,13 @@ describe('Edit Insurance Types component tests', () => {
             expect(result.length).toBeGreaterThan(0)    
         })  
     })
-    describe.skip('Edit tests', () => {
-        it('should edit insurance type', () => {})
-    })
-    describe.skip('Create tests', () => {
-        it('should create new insurance type', () => {})
-    })
-    describe.skip('Delete / deactivate tests', () => {
-        it('should deactivate / delete insurance type', () => {})
-    })
+    // describe.skip('Edit tests', () => {
+    //     it('should edit insurance type', () => {})
+    // })
+    // describe.skip('Create tests', () => {
+    //     it('should create new insurance type', () => {})
+    // })
+    // describe.skip('Delete / deactivate tests', () => {
+    //     it('should deactivate / delete insurance type', () => {})
+    // })
 })

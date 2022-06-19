@@ -36,15 +36,15 @@ describe('Edit User component tests', () => {
         })  
     })
     // TODO: finish these out in all tests / components
-    describe.skip('Edit tests', () => {
-        it('should edit username', () => {})
-        it('should edit password', () => {})
-        it('should edit accessLevel', () => {})
-    })
-    describe.skip('Create tests', () => {
-        it('should create new user', () => {})
-    })
-    describe.skip('Delete / deactivate tests', () => {
-        it('should deactivate / delete user', () => {})
-    })
+    // describe.skip('Edit tests', () => {
+    //     it('should edit username', () => {})
+    //     it('should edit password', () => {})
+    //     it('should edit accessLevel', () => {})
+    // })
+    // describe.skip('Create tests', () => {
+    //     it('should create new user', () => {})
+    // })
+    // describe.skip('Delete / deactivate tests', () => {
+    //     it('should deactivate / delete user', () => {})
+    // })
 })
