@@ -13,12 +13,7 @@ export const EditPolicyStatusesDisplay = (props) => {
 
     const [data, setData] = useState(() => editPolicyStatuses_jsonToArray(props.tableData)) // FIXME:
 
-    // const [data, setData] = useState([]) 
     const [vars, setVars] = useState({})  // an object, not a string. zB: {customerId: 1, firstName: 'asdf'}
-
-    // useEffect(() => {
-    //     setData(editUsers_jsonToArray(props.tableData))
-    // }, [])
 
     const EditTextField = TextFieldEditDef(setVars, {flashRef})
     const EditDateField = DateFieldEditDef(setVars)

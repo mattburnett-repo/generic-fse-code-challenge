@@ -6,8 +6,6 @@ import { useMemo } from "react"
 export const editProviders_jsonToArray = (theData) => {    
     let theArray = []
 
-    // FIXME: not sure that .data. is right. Look at source data
-    // theData?.data.users?.forEach((user) => {
     theData?.providers?.forEach((provider) => {
         theArray.push({
             id: provider.id, prefixCode: provider.prefix_code, description: provider.description

@@ -9,9 +9,8 @@ export const editUsers_jsonToArray = (theData) => {
     // theData?.data.users?.forEach((user) => {
     theData?.data?.users?.forEach((user) => {
         theArray.push({
-            // userId: user._id, userName: user?.username, password: user?.password, 
-            // accessLevel: user.accessLevel
-            userId: user._id, accessLevel: user.accessLevel
+            userId: user._id, userName: user?.username, password: user?.password, 
+            accessLevel: user.accessLevel
         })
     })
 
@@ -28,16 +27,16 @@ export const EditUsersTableColumns = (EditDateField, EditTextField) => {
                         Header: "User ID",
                         accessor: "userId"
                     },
-                    // {
-                    //     Header: 'User Name',
-                    //     accessor: 'userName', 
-                    //     Cell: EditTextField,
-                    // },
-                    // {
-                    //     Header: 'Password',
-                    //     accessor: 'password', 
-                    //     Cell: EditTextField, 
-                    // },
+                    {
+                        Header: 'User Name',
+                        accessor: 'userName', 
+                        Cell: EditTextField,
+                    },
+                    {
+                        Header: 'Password',
+                        accessor: 'password', 
+                        Cell: EditTextField, 
+                    },
                     {
                         Header: 'Access Level',
                         accessor: 'accessLevel',
