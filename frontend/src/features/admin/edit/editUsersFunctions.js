@@ -21,7 +21,7 @@ export const EditUsersTableColumns = (EditDateField, EditTextField) => {
     const columns = useMemo(() => 
         [
             {
-                Header: 'Create / Edit Users',
+                Header: 'Users',
                 columns: [
                     {
                         Header: "User ID",

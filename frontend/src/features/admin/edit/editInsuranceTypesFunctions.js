@@ -19,7 +19,7 @@ export const EditInsuranceTypesTableColumns = (EditDateField, EditTextField) => 
     const columns = useMemo(() => 
         [
             {
-                Header: 'Create / Edit Insurance Types',
+                Header: 'Insurance Types',
                 columns: [
                     {
                         Header: "ID",

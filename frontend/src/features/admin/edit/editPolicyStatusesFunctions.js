@@ -18,7 +18,7 @@ export const EditPolicyStatusesTableColumns = (EditDateField, EditTextField) => 
     const columns = useMemo(() => 
         [
             {
-                Header: 'Create / Edit Policy Statuses',
+                Header: 'Policy Statuses',
                 columns: [
                     {
                         Header: "ID",

@@ -78,4 +78,4 @@ Once everything is installed and running, you can send your app's auth-related r
 * Dockerize / Deploy
   * Netlify, et al.
   * Microservice / AWS
-  * NPM package
+  * NPM package?

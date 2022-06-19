@@ -19,7 +19,7 @@ export const EditProvidersTableColumns = (EditDateField, EditTextField) => {
     const columns = useMemo(() => 
         [
             {
-                Header: 'Create / Edit Providers',
+                Header: 'Providers',
                 columns: [
                     {
                         Header: "ID",
