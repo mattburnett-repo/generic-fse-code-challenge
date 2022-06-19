@@ -1,4 +1,27 @@
 
+// NOTE:
+//      this loader exports functions, which return strategies / passport.use() statments
+//      in router files, import the function/s, then call the function/s,
+//          then use the strategy in passport.authenticate() as usual
+//      zB:
+//          var passport = require("passport")
+//          var { jwtAuthHeader }  = require('../loaders/passportLoader')
+// 
+//          module.exports = (app: any) => {
+//              jwtAuthHeader()
+// 
+//              router.VERB('...',
+//                  passport.authenticate('jwtAuthHeader', {
+//                      session: false
+//                  }),
+//                  async (req: any, res: any) => {
+//                      do stuff
+//                  }      
+// 
+//          look at userRoutes.ts router.get('/') for an example
+
+// TOSO: https://www.npmjs.com/package/connect-ensure-login
+
 var passport = require("passport")
 var LocalStrategy = require("passport-local").Strategy
 var GoogleStrategy = require('passport-google-oauth20').Strategy
@@ -28,8 +51,7 @@ const initializePassport = (app) => {
     })
 }
 
-
-const basicLocal = () => {
+const useBasicLocal = () => {
     passport.use(
         'basicLocal',
         new LocalStrategy(
@@ -50,7 +72,7 @@ const basicLocal = () => {
     )
 }
 
-const oauthGoogle = () => {
+const useOauthGoogle = () => {
     passport.use(
         'oauthGoogle',
         new GoogleStrategy(
@@ -78,7 +100,7 @@ const oauthGoogle = () => {
     )
 } 
 
-const oauthGithub = () => {
+const useOauthGithub = () => {
     passport.use(
         'oauthGithub',
         new GitHubStrategy(    
@@ -103,7 +125,7 @@ const oauthGithub = () => {
     )
 }
 
-const jwtCookie = () => {
+const useJwtCookie = () => {
     passport.use(
         'jwtCookie',
         new JwtStrategy(
@@ -130,7 +152,7 @@ const jwtCookie = () => {
     )
 }
 
-const jwtAuthHeader = () => {
+const useJwtAuthHeader = () => {
     passport.use(
         'jwtAuthHeader',
         new JwtStrategy(
@@ -140,7 +162,9 @@ const jwtAuthHeader = () => {
                 secretOrKey: process.env.JWT_TOKEN_SECRET
             },
             async (jwt_payload, done) => {
-                User.findOne({username: jwt_payload.username}, function(err, user) {
+                // FIXME: should look at _id, not username?
+                User.findOne({username: jwt_payload.username}, 
+                    function(err, user) {
                         if (err) return done(err, false) 
 
                         if (user) {
@@ -164,10 +188,10 @@ function isAuthenticated(req, res, next) {
 
 module.exports = {
     initializePassport,
-    basicLocal,
-    oauthGoogle,
-    oauthGithub,
-    jwtCookie,
-    jwtAuthHeader,
+    useBasicLocal,
+    useOauthGoogle,
+    useOauthGithub,
+    useJwtCookie,
+    useJwtAuthHeader,
     isAuthenticated
 }

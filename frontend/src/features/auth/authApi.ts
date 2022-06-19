@@ -18,8 +18,10 @@ class AuthApi {
     })
   }
 
-  static GetUsers = () => {
-    return axios.get('/auth/user')
+  static GetUsers = (authToken: string) => {
+    return axios.get('/auth/user',
+      {'headers': { 'Authorization': `Bearer  ${authToken}`}}
+    )
   }
 
   static Logout = async (data: any) => {

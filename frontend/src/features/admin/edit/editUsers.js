@@ -11,7 +11,8 @@ export const EditUsers = () => {
 
     const loadUsers = async () => {
         try {
-            let result = await axios.GetUsers() // FIXME: memoize result
+            const authToken = JSON.parse(localStorage.getItem('generic-fse')).token
+            let result = await axios.GetUsers(authToken) // FIXME: memoize result
 
             if(result.status === 200) {
                 await setUserData(result)
@@ -20,6 +21,7 @@ export const EditUsers = () => {
             }
         } catch (err) {
             console.log('ERROR: EditUsers loadUsers ', err)
+            //  flashRef.current.setErrorMessage(err.statusText)
         }       
     }
 

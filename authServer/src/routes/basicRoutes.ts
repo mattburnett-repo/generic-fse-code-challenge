@@ -4,12 +4,13 @@ var router = require('express').Router()
 var User = require('../../db/model/user.model')
 
 var passport = require("passport")
-var { basicLocal }  = require('../loaders/passportLoader')
+var { useBasicLocal }  = require('../loaders/passportLoader')
+
 var jwt = require('jsonwebtoken')
 var { generateJwt } = require('../util/functions')
 
 module.exports = (app: any) => {
-    basicLocal()
+    useBasicLocal()
 
     app.use('/auth/basic', router)
 

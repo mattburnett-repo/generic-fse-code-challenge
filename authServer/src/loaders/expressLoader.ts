@@ -5,7 +5,6 @@ var bodyParser = require("body-parser")
 var cookieParser = require('cookie-parser')
 var session = require('express-session')
 
-
 // https://www.npmjs.com/package/express-flash-message
 const { flash } = require('express-flash-message')
 const path = require('path')
@@ -63,6 +62,6 @@ module.exports = (app: any) => {
     })
   )
 
-  app.use(flash())
+  // app.use(flash())
 
 } // end module.exports

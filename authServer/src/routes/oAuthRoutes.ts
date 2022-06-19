@@ -3,14 +3,14 @@ var express = require('express');
 var router = express.Router();
 
 var passport = require("passport")
-var { oauthGoogle, oauthGithub } = require('../loaders/passportLoader')
+var { useOauthGoogle, useOauthGithub } = require('../loaders/passportLoader')
 var jwt = require('jsonwebtoken')
 
 var { generateJwt } = require('../util/functions')
 
 module.exports = (app: any) => {
-    oauthGoogle()
-    oauthGithub()
+    useOauthGoogle()
+    useOauthGithub()
 
     app.use('/auth/oauth', router)
 

@@ -2,6 +2,13 @@
 import {render, screen, userEvent, waitFor, act, createMemoryHistory, Router, Admin, MockedProvider, mockInsuranceTypesOperation, mockProvidersOperation, mockPolicyStatusesOperation} from '../../test/genericFseTestConfig'
 import 'jest-canvas-mock';
 
+// import jwt from 'jsonwebtoken'
+// jest.mock('jsonwebtoken')
+// jest.mock('jsonwebtoken', () => ({
+//     ...jest.requireActual('jsonwebtoken'), // import and retain the original functionalities
+//     verify: jest.fn().mockReturnValue({ username: 'qwer' }), // overwrite verify
+//     }));
+
 describe('Admin component basic render / nav tests', () => {
     let result = null
 
@@ -29,13 +36,20 @@ describe('Admin component basic render / nav tests', () => {
                  <Admin /> 
             </Router>
         )
-        result = screen.getAllByRole('link', {name: /admin-options-users/i})[0]
-        userEvent.click(result)
-        screen.getAllByRole('presentation', {name: /edit-users-panel/i})
 
-        result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
-        userEvent.click(result)
-        screen.getByRole('presentation', {name: /admin-options-panel/i})  
+        // generate a jwt and add it to auth header
+        // include auth header in render / request
+        //      I have no idea how to do this, or if it's even the right thing to do.
+        result = screen.getAllByRole('link', {name: /admin-options-users/i})[0]
+        
+        // waitFor(() => {
+            userEvent.click(result)
+            screen.getAllByRole('presentation', {name: /edit-users-panel/i})
+
+            result = screen.getAllByRole('navigation', {name: /back-to-admin/i})[0]
+            userEvent.click(result)
+            screen.getByRole('presentation', {name: /admin-options-panel/i})            
+        // })
     })
     it('it should click to and render the Edit Insurance Types panel, then return to Admin panel', () => {
         render ( 
