@@ -20,9 +20,9 @@ export const NavBar = () => {
             <div className="bg-gray-200">
                 <div className="container mx-auto py-2">
                     <div className="flex items-center justify-between">
-                        <div className='border-2 border-black rounded  hover:drop-shadow-2xl hover:translate-y-1'>
+                        <div>
                             <Link to="/dashboard">
-                                <img src={appIcon} alt="ladder icon" className="w-16 h-16"/>
+                                <img src={appIcon} alt="ladder icon" className='app-icon hover:drop-shadow-2xl hover:translate-y-1'/>
                             </ Link>
                         </div>
                         <div className="hidden sm:flex sm:items-center ">

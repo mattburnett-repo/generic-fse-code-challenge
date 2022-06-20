@@ -6,9 +6,10 @@ import { GoogleLogin } from '@react-oauth/google'
 import { useAuth } from '../../context/auth.context'
 
 import LoginGithub from 'react-login-github'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
+import { AppIcon} from './AppIcon'
 import { FlashMessageDisplay } from '../util/FlashMessageDisplay'
 import { handleLoginClick, setProfile } from '../../features/auth/authFunctions'
 
@@ -20,6 +21,7 @@ export const LoginDisplay = () => {
 
     return (
         <div className="auth-container">
+            <AppIcon />
             <div className="auth-title">Generic FSE Code Challenge</div>
 
             <FlashMessageDisplay ref={flashRef} />
@@ -66,7 +68,7 @@ export const LoginDisplay = () => {
                                 flashRef.current.setErrorMessage('Github OAuth login failed.')
                             }}
                             buttonText="Sign on with Github"
-                            className="py-1 px-8  my-2 bg-[#7DBBE6] text-white hover:bg-[#9CDAF1] active:bg-[#7DBBE6]"
+                            className="py-1 px-8  my-2 bg-[#9CDAF1] text-white hover:bg-[#7DBBE6] active:bg-[#9CDAF1]"
                         />
 
                         {/* <FontAwesomeIcon icon={faGithub} className="p-2 mx-5 bg-[#211F1F] text-white hover:bg-[#9CDAF1] active:bg-[#7DBBE6]" >

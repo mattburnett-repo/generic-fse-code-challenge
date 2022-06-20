@@ -2,6 +2,7 @@
 import { useRef } from 'react'
 import { Link } from "react-router-dom"
 
+import { AppIcon } from './AppIcon'
 import { FlashMessageDisplay } from '../util/FlashMessageDisplay'
 import { handleRegisterClick } from '../../features/auth/authFunctions'
 
@@ -15,6 +16,7 @@ export const RegisterDisplay = () => {
 
     return (
         <div className="auth-container">
+            <AppIcon />
             <div className="auth-title">Generic FSE Code Challenge</div>
 
             <FlashMessageDisplay ref={flashRef} />
