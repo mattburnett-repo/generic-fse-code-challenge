@@ -5,16 +5,16 @@
 
 @layer components {
   .btn-admin{
-    @apply p-2 mx-auto border-2 border-blue-300 bg-blue-100 w-72 hover:bg-blue-300 active:bg-blue-400 rounded;
+    @apply p-2 mx-auto border-2 border-blue-300 bg-blue-100 w-72 hover:bg-blue-300 active:bg-blue-200 rounded;
   }
   .btn-admin-nav{
-    @apply p-2 border-2 border-blue-300 bg-blue-100 w-36 hover:bg-blue-300 active:bg-blue-400 rounded;
+    @apply p-2 border-2 border-blue-300 bg-blue-100 w-36 hover:bg-blue-300 active:bg-blue-200 rounded;
   }
   .btn-customers-nav{
-    @apply p-2 border-2 border-orange-300 bg-orange-50 w-36 hover:bg-orange-300 active:bg-orange-200 rounded;
+    @apply p-2 border-2 border-orange-300 bg-orange-100 w-36 hover:bg-orange-300 active:bg-orange-200 rounded;
   }
   .btn-policies-nav{
-    @apply p-2 border-2 border-green-300 bg-green-50 w-36 hover:bg-green-300 active:bg-green-200 rounded;
+    @apply p-2 border-2 border-green-300 bg-green-100 w-36 hover:bg-green-300 active:bg-green-200 rounded;
   }
   
   .auth-container{
@@ -30,7 +30,20 @@
     @apply m-5 p-2 bg-gray-100 border-2 border-blue-200
   }
   .btn-auth{
-    @apply px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-300 active:bg-gray-400 rounded;
+    @apply px-4 p-2 border-2 border-gray-300 bg-gray-100 w-36 hover:bg-gray-400 active:bg-gray-200 rounded;
+  }
+
+  .dashboard {
+    @apply flex justify-around text-center border-2 my-2 p-5 bg-white border-black mx-auto
+  }
+  .dashboard .module-img-container{
+    @apply p-10 border-2 rounded-lg
+  }
+  .dashboard .module-img-container .button{
+    @apply w-96 h-96 hover:-translate-y-4 hover:drop-shadow-2xl
+  }
+  .dashboard .module-img-container .text{
+    @apply pt-20 text-4xl
   }
 
   .module-container{

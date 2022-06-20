@@ -11,23 +11,23 @@ import adminIcon from '../../images/admin_01.png'
 export const DashboardLanding = () => {
     return (
         <>
-            <div className="flex justify-around text-center border-2 my-2 p-5 bg-white border-black mx-auto">
-                <div className="p-10 border-2 border-orange-300 rounded-lg">
+            <div className="dashboard">
+                <div className="module-img-container border-orange-300 ">
                     <Link to="/customers">
-                        <img src={customerIcon} alt="customer image here" className="w-96 h-96" /> 
-                        <p className='pt-20 text-3xl'>Customers</p>                    
+                        <img src={customerIcon} alt="customer image here" className="button" /> 
+                        <p className='text'>Customers</p>                    
                     </Link>
                 </div>
-                <div className="p-10  border-2 border-green-300 rounded-lg">
+                <div className="module-img-container border-green-300">
                     <Link to="/policies">
-                        <img src={policyIcon} alt="policy image here" className="w-96 h-96" />
-                        <p className='pt-20 text-3xl'>Policies</p>
+                        <img src={policyIcon} alt="policy image here" className="button" />
+                        <p className='text'>Policies</p>
                     </Link>
                 </div>
-                <div className="p-10 border-2 border-blue-300 rounded-lg">
+                <div className="module-img-container  border-blue-300">
                     <Link to="/admin">
-                        <img src={adminIcon} alt="admin image here" className="w-96 h-96" />
-                        <p className='pt-20 text-3xl'>Admin</p>
+                        <img src={adminIcon} alt="admin image here" className="button" />
+                        <p className='text'>Admin</p>
                     </Link>
                 </div>
             </div>        

@@ -57,8 +57,17 @@ docker-compose down
 ```
 
 ## To Do
+* Create sample.env files
+* Logging
+* Docker deployment
 * Expire the auth token / localStorage ...
   * Combine with 'Remember Me' functionality
 * Browse / SearchName 01
 * Retrofit with TypeScript
-* Update and deploy Docker containers
+* Refinements to jwt authorization
+  * Add authLevel to token
+  * Check authLevel within the app, for module-level access
+* Investigate / resolve data caching
+  * React Table keeps a memoized copy of the data
+  * Apollo QL keeps a cache of data?
+    * use the Apollo QL version
