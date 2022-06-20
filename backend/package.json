@@ -1,5 +1,5 @@
 {
-  "name": "Generic FSE Backend / GraphQL Server",
+  "name": "generic-fse-backend",
   "version": "0.1.0",
   "description": "A simple admin panel backend",
   "main": "src/index.js",
