@@ -1,30 +1,33 @@
 
 # in project root:
 #   docker-compose up -d
+#   clear && docker ps
+#   docker-compose stop
 
-# version: "3.8"
-
-# why to use 0.0.0.0 as URI in frontend environment section:
-#   https://fossbytes.com/ip-address-0-0-0-0-meaning-default-route-uses/
-#   TLDR it's a mask that allows all ip's on a host (docker internal contianer network, in this case)
-#     you'll see it in the PORTS column of docker ps
-#   not the best solution. Better to get IP of 'backend' container.
+version: "3.8"
 
 services:
   backend:
     build:
       context: backend
       dockerfile: Dockerfile
-    environment:
-      DATASTORE_BASE_URL: https://feather-datastore.herokuapp.com/api/v1
+    env_file: 
+      - backend/.env
     ports:
       - 5000:5000
-
+  authserver:
+    build: 
+      context: authserver
+      dockerfile: Dockerfile
+    env_file: 
+      - authServer/.env
+    ports:
+      - 4500:4500
   frontend:
     build:
       context: frontend
       dockerfile: Dockerfile
-    environment:
-      REACT_APP_APOLLO_URI: http://localhost:5000
+    env_file: 
+      - frontend/.env
     ports:
       - 3000:3000
