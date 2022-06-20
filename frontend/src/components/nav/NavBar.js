@@ -18,9 +18,9 @@ export const NavBar = () => {
     return (
         <>
             <div className="bg-gray-200">
-                <div className="container mx-auto">
+                <div className="container mx-auto py-2">
                     <div className="flex items-center justify-between">
-                        <div className='border-2 border-black rounded'>
+                        <div className='border-2 border-black rounded  hover:drop-shadow-2xl hover:translate-y-1'>
                             <Link to="/dashboard">
                                 <img src={appIcon} alt="ladder icon" className="w-16 h-16"/>
                             </ Link>
@@ -37,7 +37,7 @@ export const NavBar = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-around text-center border-2 my-1 p-2 bg-white border-black mx-auto">
+            <div className="flex justify-around text-center border-2 p-2 bg-white border-black mx-auto">
                 <div className="btn-customers-nav">
                     <Link to="/customers">
                         <p>Customers</p>                    

@@ -1,8 +1,6 @@
 
 import { Link } from 'react-router-dom'
 
-import ladderIcon from '../../images/ladderIcon_01.png'
-
 // https://www.iconfinder.com/icons/2292229/chat_communication_conversation_customer_support_happy_support_teamspeak_icon
 import customerIcon from '../../images/customer_01.png'
 import policyIcon from '../../images/policy_01.png'
