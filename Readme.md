@@ -41,7 +41,8 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
 * Instructions are provided in the README files for [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend), [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) and [AuthServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer) repos
   
 ### Docker containers
-* Clone the repo
+* Clone the repo and create the .env files
+  
 * You can run Docker containers for the frontend, the backend and the authServer. Instructions are in the respective README.md files
 * You can also try a docker-compose build from the project root directory:
   ```bash
