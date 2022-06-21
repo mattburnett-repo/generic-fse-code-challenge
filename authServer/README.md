@@ -27,34 +27,21 @@ A MongoDB / Mongoose database is used to save user info, and to persist authenti
   * Basic authentication
   * JWT
   
-## Getting Started
+## Getting Started / Installing from the repo
 After downloading / cloning the repo
 ```bash
 npm install
 ```
-You will need environment vars
-```bash
-AUTH_PORT=something.like.4500
-SESSION_SECRET=put.your.session.secret.string.here
-MONGO_CONNECTION_STRING=put.your.mongo.connection.string.here (eg: mongodb://localhost:27017)
-AUTH_DATABASE_NAME=typcially.this.should.be.your.apps.name authService
-COOKIE_MAX_AGE=in.total.milliseconds (eg: 1200000 = 20 mins.)
+You will need environment vars. There is a [.sample-env file](./.sample-env) in the root of this repo you can use to get started.
 
-GOOGLE_CLIENT_ID=get.this.from.console.cloud.google.com
-GOOGLE_CLIENT_SECRET=get.this.from.console.cloud.google.com
-GOOGLE_REDIRECT_URL=something.like.http://localhost:4000/auth/google/redirect
-
-GITHUB_CLIENT_ID=get.this.from.https://github.com/settings/application
-GITHUB_CLIENT_SECRET=get.this.from.https://github.com/settings/application
-GITHUB_REDIRECT_URL=something.like./auth/oauth/github/callback
-
-JWT_TOKEN_SECRET=you.can.use.node.REPL.then.require('crypto').randomBytes(64).toString('hex') to make this
-```
 Run the server
 ```bash
 npm start
 ```
 Once everything is installed and running, you can send your app's auth-related requests to this server.
+
+## Getting Started / Docker
+A Docker container of this repo can be found [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-authserver). It has instructions for use.
 
 ## Options
 * Basic Local

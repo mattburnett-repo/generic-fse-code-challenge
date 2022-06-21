@@ -18,35 +18,21 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * ApolloGL Server / datasource-rest
 * Mocha / SuperTest / Chai
   
-## You can get started by either installing from the repo or pulling / running the Docker image
-### Getting started / installing the dependencies from the repo:
+## Getting Started / Installing from the repo
 ```bash
 npm install
 ```
-You will need these environment variables: 
-```bash
-DATASTORE_BASE_URL=https://generic-fse-datastore.herokuapp.com/api/v1/
-APOLLOQL_PORT=5000
-```
+You will need environment vars. There is a [.sample-env file](./.sample-env) in the root of this repo you can use to get started.
+
 To run the development server:
 
 ```bash
 npm run dev
 ```
 
-### Getting started / pulling and running the Docker image
-To pull the Docker image:
-```bash
-docker pull mattburnett01/generic-code-challenge-backend
-```
-Then create a network:
-```bash
-docker network create generic-code-challenge
-```
-Then run the container:
-```bash
-docker run -dp 5000:5000 --network generic-code-challenge --network-alias backend -e DATASTORE_BASE_URL=https://feather-datastore.herokuapp.com/api/v1 generic-code-challenge-backend
-```
+## Getting Started / Docker
+A Docker container of this repo can be found [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-backend). It has instructions for use.
+
 ## Testing
 Tests are located in /backend/test. They use Mocha, with the Chai 'expect' module.
 
@@ -66,6 +52,4 @@ npm run testOnce
 ```
 
 ## To Do
-* More modules (ie. navigation, policy detail, customer detail)
-* Docker deployment
 * More TypeScript

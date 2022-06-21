@@ -4,17 +4,12 @@
 #   clear && docker ps
 #   docker-compose stop
 
+# clear && docker-compose up -d && clear && docker ps
+# clear && docker-compose stop
+
 version: "3.8"
 
 services:
-  backend:
-    build:
-      context: backend
-      dockerfile: Dockerfile
-    env_file: 
-      - backend/.env
-    ports:
-      - 5000:5000
   authserver:
     build: 
       context: authserver
@@ -23,6 +18,14 @@ services:
       - authServer/.env
     ports:
       - 4500:4500
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    env_file: 
+      - backend/.env
+    ports:
+      - 5000:5000
   frontend:
     build:
       context: frontend

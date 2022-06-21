@@ -35,8 +35,7 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 * React Testing Library
 * [AuthServer](https://github.com/mattburnett-repo/authServer)
   
-## You can get started by either installing from the repo or pulling / running the Docker image
-### Getting started / installing the dependencies from the repo:
+## Getting Started / Installing from the repo
 Install the dependencies:
 
 ```bash
@@ -48,10 +47,15 @@ Start AuthServer
 cd authServer
 npm start
 ```
-
-And run the development server
+Start Backend
+```bash
+cd backend
+npm start
+```
+Start Frontend
 
 ```bash
+cd frontend
 npm start
 ```
 
@@ -59,35 +63,14 @@ Tailwind builds can be run in watch mode by
 ```bash
 npm run build:css
 ```
+You will need environment vars. There is a [.sample-env file](./.sample-env) in the root of this repo you can use to get started.
 
-You will need these environment variables: 
-```bash
-REACT_APP_APOLLO_URI=http://localhost:5000
+## Getting Started / Docker
+A Docker container of this repo can be found [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-frontend). It has instructions for use.
 
-REACT_APP_GOOGLE_CLIENT_ID=get.this.from.console.cloud.google.com
-REACT_APP_GOOGLE_CLIENT_SECRET=get.this.from.console.cloud.google.com
-REACT_APP_GOOGLE_REDIRECT_URL=something.like.http://localhost:4000/auth/google/redirect
+You should start the authServer container before running the frontend container. Instructions are [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-authserver)
 
-REACT_APP_GITHUB_CLIENT_ID=get.this.from.https://github.com/settings/application
-REACT_APP_GITHUB_CLIENT_SECRET=get.this.from.https://github.com/settings/application
-REACT_APP_GITHUB_REDIRECT_URL=something.like./auth/oauth/github/callback
-```
-
-### Getting started / pulling and running the Docker image
-You should start the backend container before running the frontend container.  Instructions are [here](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) 
-
-To pull the Docker image:
-```bash
-docker pull mattburnett01/generic-code-challenge-frontend
-```
-Then create a network (if you haven't already):
-```bash
-docker network create generic-code-challenge
-```
-Then run the container:
-```bash
-docker run -dp 3000:3000 --network generic-code-challenge --network-alias frontend -e REACT_APP_APOLLO_URI=http://localhost:5000 generic-code-challenge-frontend
-```
+You should start the backend container before running the frontend container.  Instructions are [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-backend)
 
 ## Testing
 Test/s are located in 
@@ -100,9 +83,21 @@ Test/s can be run by
 npm test
 ```
 
+Tests of only the Admin module
+```bash
+npm run test:admin
+```
+
+Tests of only the Customers module
+```bash
+npm run test:customer
+```
+
+Test of only the Policy module
+```bash
+npm run test:policy
+```
+
 ## To Do
-* More modules (ie. navigation, policy detail, customer detail)
-* Consolidate Tailwind className entries into custom CSS 
-* Docker deployment
 * More TypeScript
 * Better testing of date-picker component integration

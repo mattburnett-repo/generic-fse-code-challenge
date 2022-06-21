@@ -1,0 +1,3 @@
+
+DATASTORE_BASE_URL=https://generic-fse-datastore.herokuapp.com/api/v1/
+APOLLOQL_PORT=5000
