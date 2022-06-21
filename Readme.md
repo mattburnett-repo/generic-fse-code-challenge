@@ -60,6 +60,8 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
   ```
 
 ## To Do
+* Deploy
+  * Netlify / AWS / Digital Ocean / et al
 * Logging
 * Expire the auth token / localStorage ...
   * Combine with 'Remember Me' functionality
