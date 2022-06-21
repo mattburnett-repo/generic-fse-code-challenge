@@ -3,7 +3,7 @@
 
 # Generic Full Stack Engineer Code Challenge
 
-This repo is for an ongoing personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)  and [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) code for a generic FSE code challenge. 
+This repo is for an ongoing personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend), [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) and [authServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer)  code for a generic FSE code challenge. 
 
 It uses React (Frontend) to connect to an ApolloGraphQL server (Backend). The ApolloGraphQL server connects to a [remote REST API datastore](https://generic-fse-datastore.herokuapp.com/api/v1/api-docs/).
 
@@ -15,7 +15,7 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
 * The repo for the [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend)
 * The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
 * The [datastore API / documentation](https://generic-fse-datastore.herokuapp.com/api/v1/api-docs/)
-* Docker containers for the frontend and backend are available [here](https://hub.docker.com/u/mattburnett01)
+* Docker containers for the frontend, backend and authServer are available [here](https://hub.docker.com/u/mattburnett01)
 * The repo for [AuthServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer)
   
 ## Technology used
@@ -38,7 +38,7 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
 ## Getting Started 
 
 ### Installation from the repos
-* Instructions are provided in the Readme files for [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend), [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend), and [AuthServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer) repos
+* Instructions are provided in the README files for [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend), [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) and [AuthServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer) repos
   
 ### Docker containers
 * You can run Docker containers for the frontend, the backend and the authServer. Instructions are in the respective README.md files
@@ -51,10 +51,11 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
   localhost:3000/
   ```
   in a browser window
-* Stop the Docker containers with:
-```bash
-docker-compose down
-```
+  
+  Stop the Docker containers with:
+  ```bash
+  docker-compose down
+  ```
 
 ## To Do
 * Logging
