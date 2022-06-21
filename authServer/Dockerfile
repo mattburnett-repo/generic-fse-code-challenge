@@ -19,7 +19,7 @@
 #   tag
 #       docker tag generic-fse-authservere:latest mattburnett01/generic-fse-authserver:latest
 #   push
-#        docker push mattburnett01/generic-fse-authserver:latest
+#       docker push mattburnett01/generic-fse-authserver:latest
 
 FROM node:12-alpine
 

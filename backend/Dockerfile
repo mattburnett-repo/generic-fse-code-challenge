@@ -20,7 +20,7 @@
 #   tag
 #       docker tag generic-fse-backend:latest mattburnett01/generic-fse-backend:latest
 #   push
-#        docker push mattburnett01/generic-fse-backend:latest
+#       docker push mattburnett01/generic-fse-backend:latest
 
 FROM node:16-alpine
 
