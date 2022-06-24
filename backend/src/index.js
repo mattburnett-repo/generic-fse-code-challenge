@@ -19,6 +19,8 @@ const server = new ApolloServer({
   }
 });
 
+// TODO: add cors?
+
 // The `listen` method launches a web server.
 server.listen(PORT).then(({ url }) => {
   console.log(`Generic FSE / GraphQL Server ready at ${url}`);

@@ -17,7 +17,7 @@
 # DEPLOY TO DOCKER HUB
 #   build
 #   tag
-#       docker tag generic-fse-authservere:latest mattburnett01/generic-fse-authserver:latest
+#       docker tag generic-fse-authserver:latest mattburnett01/generic-fse-authserver:latest
 #   push
 #       docker push mattburnett01/generic-fse-authserver:latest
 

@@ -1,16 +1,19 @@
 
 # in project root:
-#   docker-compose up -d
+#   docker-compose -p generic-fse up -d
 #   clear && docker ps
 #   docker-compose stop
 
 # clear && docker-compose up -d && clear && docker ps
 # clear && docker-compose stop
 
+# https://dashboard.heroku.com/apps/sleepy-mesa-01616/deploy/heroku-container
+
 version: "3.8"
 
 services:
   authserver:
+    container_name: generic-fse-authserver
     build: 
       context: authserver
       dockerfile: Dockerfile
@@ -19,6 +22,7 @@ services:
     ports:
       - 4500:4500
   backend:
+    container_name: generic-fse-backend
     build:
       context: backend
       dockerfile: Dockerfile
@@ -27,6 +31,7 @@ services:
     ports:
       - 5000:5000
   frontend:
+    container_name: generic-fse-frontend
     build:
       context: frontend
       dockerfile: Dockerfile
