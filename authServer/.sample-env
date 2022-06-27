@@ -7,7 +7,7 @@ COOKIE_MAX_AGE='in.total.milliseconds (eg: 1200000 = 20 mins.)'
 
 GOOGLE_CLIENT_ID='get.this.from.console.cloud.google.com'
 GOOGLE_CLIENT_SECRET='get.this.from.console.cloud.google.com'
-GOOGLE_REDIRECT_URL='something.like http://localhost:4000/auth/google/redirect'
+GOOGLE_REDIRECT_URL='something.like http://localhost:4500/auth/google/redirect'
 
 GITHUB_CLIENT_ID='get.this.from https://github.com/settings/application'
 GITHUB_CLIENT_SECRET='get.this.from https://github.com/settings/application'
