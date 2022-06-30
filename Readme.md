@@ -1,5 +1,5 @@
 
-![repo header](public/main-banner.jpeg?raw=true "Generic FSE Code Challenge")
+![repo header](public/dashboard.png?raw=true "Generic FSE Code Challenge")
 
 # Generic Full Stack Engineer Code Challenge
 
