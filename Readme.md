@@ -54,19 +54,20 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
   
 * You can run Docker containers for the [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend#getting-started--docker), the [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend#getting-started--docker) and the [authServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer#getting-started--docker). Instructions are in the respective README.md files
   
-* You can also run a docker-compose build from the project root directory, after you create the .env files for each container:
+* **You can also run the whole thing from the project root directory, after you create the .env files for each container (see READMEs for authServer / backend / frontend for how to do this. TLDR: Copy .sample-env to .env for each module).** You won't be able to use OAuth to log in, but you can log in / register using username / password and see the app.
+  
   ```bash
   docker-compose -p generic-fse up -d
   ```
   and then run
   ```bash
-  localhost:3000/
+  localhost:3000
   ```
-  in a browser window
+  in a browser window. It may take a few moments to load.
   
   Stop the Docker containers with:
   ```bash
-  docker-compose down
+  docker-compose -p generic-fse down
   ```
 
 ## Tests

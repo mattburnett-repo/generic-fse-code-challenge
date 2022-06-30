@@ -33,6 +33,8 @@ npm run dev
 ## Getting Started / Docker
 A Docker container of this repo can be found [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-backend). It has instructions for use.
 
+Use the [.sample-env file](./.sample-env) (rename to .env) for basic / default required vars
+
 ## Testing
 Tests are located in /backend/test. They use Mocha, with the Chai 'expect' module.
 

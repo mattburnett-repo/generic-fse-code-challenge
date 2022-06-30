@@ -43,6 +43,8 @@ Once everything is installed and running, you can send your app's auth-related r
 ## Getting Started / Docker
 A Docker container of this repo can be found [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-authserver). It has instructions for use.
 
+Use the [.sample-env file](./.sample-env) (rename to .env) for basic / default required vars
+
 ## Options
 * Basic Local
   * Username / Password 

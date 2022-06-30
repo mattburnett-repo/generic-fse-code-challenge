@@ -1,8 +1,10 @@
 
-# in project root:
+# START in project root:
 #   docker-compose -p generic-fse up -d
 #   clear && docker ps
-#   docker-compose stop
+# STOP in project root:
+#   docker-compose -p generic-fse down
+#   (optional) docker-compose rm -f
 
 # clear && docker-compose up -d && clear && docker ps
 # clear && docker-compose stop

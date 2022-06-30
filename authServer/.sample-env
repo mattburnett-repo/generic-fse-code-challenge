@@ -1,16 +1,25 @@
 
-AUTH_PORT='something.like 4500'
-SESSION_SECRET='put.your.session.secret.string.here'
-MONGO_CONNECTION_STRING='put.your.mongo.connection.string.here (eg: mongodb://localhost:27017)'
-AUTH_DATABASE_NAME='typcially.this.should.be.your.apps.namelike authServer'
-COOKIE_MAX_AGE='in.total.milliseconds (eg: 1200000 = 20 mins.)'
+AUTH_PORT=4500
+CLIENT_URL=http://localhost:3000
 
-GOOGLE_CLIENT_ID='get.this.from.console.cloud.google.com'
-GOOGLE_CLIENT_SECRET='get.this.from.console.cloud.google.com'
-GOOGLE_REDIRECT_URL='something.like http://localhost:4500/auth/google/redirect'
+MONGO_CONNECTION_STRING=mongodb+srv://mongo_db_user:V7zdxPiMbfh880Hv@cluster0.sq3ztzi.mongodb.net
+AUTH_DATABASE_NAME=genericFSE
 
-GITHUB_CLIENT_ID='get.this.from https://github.com/settings/application'
-GITHUB_CLIENT_SECRET='get.this.from https://github.com/settings/application'
-GITHUB_REDIRECT_URL='something.like /auth/oauth/github/callback'
-
+# in a terminal:
+# node <Enter>
+# require('crypto').randomBytes(64).toString('hex')
 JWT_TOKEN_SECRET='you.can.use.node.REPL.then.require(\'crypto\').randomBytes(64).toString(\'hex\') to make this'
+
+# # you probably won't need all ofthese. 
+# SESSION_SECRET='put.your.session.secret.string.here'
+# # 1200000 = 20 * 60 * 1000 (20 mins.)
+# COOKIE_MAX_AGE=1200000
+
+# # OAuth is now handled in Frontend / UI for Generic FSE
+# GOOGLE_CLIENT_ID='get.this.from.console.cloud.google.com'
+# GOOGLE_CLIENT_SECRET='get.this.from.console.cloud.google.com'
+# GOOGLE_REDIRECT_URL='something.like http://localhost:4500/auth/google/redirect'
+
+# GITHUB_CLIENT_ID='get.this.from https://github.com/settings/application'
+# GITHUB_CLIENT_SECRET='get.this.from https://github.com/settings/application'
+# GITHUB_REDIRECT_URL='something.like /auth/oauth/github/callback'

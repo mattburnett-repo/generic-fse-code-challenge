@@ -68,6 +68,10 @@ You will need environment vars. There is a [.sample-env file](./.sample-env) in 
 ## Getting Started / Docker
 A Docker container of this repo can be found [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-frontend). It has instructions for use.
 
+Use the [.sample-env file](./.sample-env) (rename to .env) for basic / default required vars
+
+* You will not be able to log in using OAuth. You will need to provide Google / Github ids / secrets / redirect URLs to use OAuth. However, you can register / log in using username / password to see the app
+
 You should start the authServer container before running the frontend container. Instructions are [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-authserver)
 
 You should start the backend container before running the frontend container.  Instructions are [here](https://hub.docker.com/repository/docker/mattburnett01/generic-fse-backend)
