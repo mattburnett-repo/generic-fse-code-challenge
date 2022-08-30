@@ -3,25 +3,19 @@
 
 # Generic Full Stack Engineer Code Challenge
 
-This repo is for an ongoing personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend), [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) and [authServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer)  code for a generic FSE code challenge. 
+This repo is for an ongoing personal project. It contains [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend), [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend) and [authServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer) code for a generic FSE code challenge. The project retrieves and displays insurance policy / customer records.
 
-It uses React (Frontend) to connect to an ApolloGraphQL server (Backend). The ApolloGraphQL server connects to a [remote REST API datastore](https://generic-fse-datastore.herokuapp.com/api/v1/api-docs/).
-
+It uses React (Frontend) to connect to an ApolloGraphQL server (Backend). The ApolloGraphQL server connects to a remote REST API datastore.
 Data is pulled from the datastore, through ApolloGraphQL and then displayed to the user as a React UI.
 
 Basic authentication is handled by [AuthServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer). Authentication is handled separately from application data.
 
 * The repo for the [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)
 * The repo for the [backend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/backend)
-* The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
-* The [datastore API / documentation](https://generic-fse-datastore.herokuapp.com/api/v1/api-docs/)
+* The repo for the [REST API `datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
 * Docker containers for the frontend, backend and authServer are available [here](https://hub.docker.com/u/mattburnett01)
 * The repo for [AuthServer](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/authServer)
   
-* There is a test deployment on [Google Cloud Run](https://generic-fse-frontend-3g7bisuwsq-ey.a.run.app/). 
-  * authServer has CORS issues that I need to figure out and resolve.
-    * Usernane Login / Registration are affected by this CORS issue
-  * You can log into the app using Google / GitHub OAuth to get a sense of what the app looks like.
   
 ## Technology used
 * Authentication
@@ -75,7 +69,6 @@ Basic authentication is handled by [AuthServer](https://github.com/mattburnett-r
 
 ## To Do
 * Google Cloud Deployment
-  * Resolve CORS issue with authServer
   * Develop CI/CD workflow as a separate effort / sandbox (similar to [authSandbox](https://github.com/mattburnett-repo/authSandbox))
 * Logging
 * Expire the auth token / localStorage ...
