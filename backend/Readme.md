@@ -9,7 +9,6 @@ Data is pulled from the datastore, through ApolloGraphQL and then displayed to t
 
 * The repo for the [frontend](https://github.com/mattburnett-repo/generic-fse-code-challenge/tree/main/frontend)
 * The repo for the [datastore](https://github.com/mattburnett-repo/feather-fullstack-codechallenge-datastore)
-* The [datastore API / documentation](https://feather-datastore.herokuapp.com/api/v1/api-docs/)
 
 * You can also pull and run the [Docker image](https://hub.docker.com/r/mattburnett01/generic-code-challenge-backend)
 
